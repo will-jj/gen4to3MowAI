@@ -46,11 +46,7 @@ function getDouble_AllyAI(moveData) {
 			case "Gastro Acid":
 				resultAiChecks.push("GastroAcid");
 				break;
-			
-			case "Acupressure":
-				resultAiChecks.push("Acupressure");
-				break;
-			
+						
 			default:
 				switch (moveData.battleEffect) {
 					case "Toxic":

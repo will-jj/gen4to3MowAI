@@ -1,21 +1,4 @@
 const double_AllyCheckText = {
-["Acupressure"]:
-`If the target's ability is not Simple, and the target's current attack, defense, speed, special attack, special defense, evasion, or accuracy is boosted to +6:
-	Score -30 and terminate
-
-If the target's ability is Simple, and the target's current attack, defense, speed, special attack, special defense, evasion, or accuracy is boosted to +3 or more:
-	Score -10 and terminate
-
-If the target's HP is under 51%:
-	Score -1 and terminate
-
-If the target's HP is over 90%:
-	68.8% (176/256) chance of score +2 and terminate
-
-Otherwise:
-	34.4% (88/256) chance of score +1 and terminate`,
-
-
 ["Check_ElectricAttack"]:
 `If the target's ability is Motor Drive, and the target's current speed is not boosted to +6:
 	37.5% (96/256) chance of score +3 and terminate

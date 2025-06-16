@@ -7,17 +7,6 @@ If the user's ability is Rock Head or Magic Guard:
 	Score +1 and terminate`,
 
 
-["Acupressure"]:
-`If the user's HP is under 51%:
-	Score -1 and terminate
-
-If the user's HP is over 90%:
-	75% (192/256) chance of score +1 and terminate
-
-Otherwise:
-	37.5% (96/256) chance of score +1 and terminate`,
-
-
 ["AquaRing"]:
 `If the user's HP is over 29%:
 	50% (128/256) chance of score +1 and terminate`,
@@ -857,7 +846,6 @@ Healing Wish
 Natural Gift
 Feint
 Tailwind
-Acupressure
 Fling
 Psycho Shift
 Heal Block

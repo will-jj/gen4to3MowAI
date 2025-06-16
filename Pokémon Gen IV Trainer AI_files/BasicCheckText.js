@@ -1,12 +1,4 @@
 const basicCheckText = {
-["Acupressure"]:
-`If the user's ability is Simple, and any of its stats are boosted to +3 or more:
-	Score -10 and terminate
-
-If any of the user's stats are boosted to +6:
-	Score -10 and terminate`,
-
-
 ["AquaRing"]:
 `If the user is already under the effect of Aqua Ring:
 	Score -10 and terminate`,

@@ -365,7 +365,6 @@ const moves = {
 	"Feint"         : { name: "Feint",         battleEffect: "Feint",                       damageType: "Normal"   }, 
 	"Pluck"         : { name: "Pluck",         battleEffect: "StealBerry",                  damageType: "Flying"   }, 
 	"Tailwind"      : { name: "Tailwind",      battleEffect: "Tailwind",                    damageType:  null      }, 
-	"Acupressure"   : { name: "Acupressure",   battleEffect: "Acupressure",                 damageType:  null      }, 
 	"Metal Burst"   : { name: "Metal Burst",   battleEffect: "MetalBurst",                  damageType:  null      }, 
 	"U-turn"        : { name: "U-turn",        battleEffect: "UTurn",                       damageType: "Bug"      }, 
 	"Close Combat"  : { name: "Close Combat",  battleEffect: "CloseCombat",                 damageType: "Fighting" }, 
