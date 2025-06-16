@@ -57,17 +57,6 @@ Otherwise:
 	Score -30 and terminate`,
 
 
-["GastroAcid"]:
-`If the target is already under the effect of Gastro Acid:
-	Score -30 and terminate
-
-If the target's ability is Truant or Slow Start:
-	Score +5 and terminate
-
-Otherwise:
-	No scoring change and terminate`,
-
-
 ["HelpingHand"]:
 `If the target's HP is 0% (after rounding):
 	Score -30 and terminate
@@ -91,8 +80,6 @@ DynamicPunch
 Blizzard
 Zap Cannon
 Megahorn
-Focus Blast
-Gunk Shot
 Magma Storm
 Power Whip
 Seed Flare

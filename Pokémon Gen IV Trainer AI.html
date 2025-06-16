@@ -89,7 +89,7 @@ Strong, Expert, and Doubles (others exist as well, but they are not used
 				<li>
 					<p><strong>Basic AI</strong> discourages using moves without 
 effect: stat-boosting moves when already at +6, healing moves when 
-already at full HP, Fling when not holding any item, etc.</p>
+already at full HP, etc.</p>
 				</li>
 				
 				<li>
@@ -206,9 +206,8 @@ Judgment, or Weather Ball, the move is adjusted to its correct type.</p>
 				<li><p>Scrappy</p></li>
 				<li><p>Mold Breaker</p></li>
 				<li><p>Odor Sleuth / Foresight</p></li>
-				<li><p>Gastro Acid</p></li>
 				<li><p>Miracle Eye</p></li>
-				<li><p>Roost / Ingrain / Iron Ball / Gravity</p></li>
+				<li><p>Roost / Ingrain / Iron Ball</p></li>
 				<li><p>Magnet Rise / Levitate</p></li>
 				<li><p>Wonder Guard</p></li>
 			</ul>
@@ -285,7 +284,6 @@ then its fixed damage is returned as the result.</p>
 				<li><p>Facade while the user is statused</p></li>
 				<li><p>SmellingSalt against a paralyzed target</p></li>
 				<li><p>Wake-Up Slap against a sleeping target</p></li>
-				<li><p>Brine against a target that is under 50% HP</p></li>
 				<li><p>Surf or Whirlpool against a target using Dive</p></li>
 				<li><p>Gust or Twister against a target using Fly</p></li>
 				<li><p>Earthquake or Magnitude against a target using Dig</p></li>
@@ -310,16 +308,16 @@ typeless properties.</p>
 			<p>Multipliers used for the <em>input</em> of damage calculation 
 (such as: Choice items / Light Ball / Thick Club / type-boosting items, 
 Light Screen / Reflect, Torrent / Huge Power / Thick Fat, weather type 
-boosts, etc., etc.) are applied as normal. Embargo negating held item 
-effects is also applied. For more information on this, check <a target="_blank" href="https://bulbapedia.bulbagarden.net/wiki/Damage#Generation_IV">the Bulbapedia article on damage calculation</a>,
+boosts, etc., etc.) are applied as normal.
+For more information on this, check <a target="_blank" href="https://bulbapedia.bulbagarden.net/wiki/Damage#Generation_IV">the Bulbapedia article on damage calculation</a>,
  as well as the corresponding article for any specific ability or item 
 to verify its exact mechanism of affecting the damage formula.</p>
 			
 			<h4>Excluded moves</h4>
 			<p>These moves are not accepted for damage calculation. Any attempt to calculate their damage will result in a damage of 0, <em>except</em>
  when checking the damage of the move previously used by another Pokémon
- (as in Copycat or Me First). If calculated in this way, moves with a 
-nonregular base power such as Fling, Present, Flail, or Sheer Cold will 
+ (as in Me First). If calculated in this way, moves with a 
+nonregular base power such as Present, Flail, or Sheer Cold will 
 be treated as having a base power of 1. Full HP will be assumed for 
 Eruption and Water Spout. Magnitude uniquely will generate a random 
 power level if its damage is calculated in this way.</p>
@@ -340,7 +338,6 @@ power level if its damage is calculated in this way.</p>
 				<li><p>Endeavor</p></li>
 				<li><p>Sheer Cold</p></li>
 				<li><p>Metal Burst</p></li>
-				<li><p>Fling</p></li>
 				<li><p>Trump Card</p></li>
 				<li><p>Wring Out</p></li>
 				<li><p>Punishment</p></li>
@@ -354,7 +351,6 @@ power level if its damage is calculated in this way.</p>
 				<li><p>Hydro Cannon</p></li>
 				<li><p>Blast Burn</p></li>
 				<li><p>Frenzy Plant</p></li>
-				<li><p>Giga Impact</p></li>
 				<li><p>Rock Wrecker</p></li>
 				<li><p>Roar of Time</p></li>
 				<li><p>Skull Bash</p></li>
@@ -456,22 +452,14 @@ reaches a "terminate".</p>
 						<option>Aeroblast</option>
 						<option>Agility</option>
 						<option>Air Cutter</option>
-						<option>Air Slash</option>
 						<option>Amnesia</option>
 						<option>AncientPower</option>
-						<option>Aqua Jet</option>
-						<option>Aqua Ring</option>
-						<option>Aqua Tail</option>
 						<option>Arm Thrust</option>
 						<option>Aromatherapy</option>
 						<option>Assist</option>
-						<option>Assurance</option>
 						<option>Astonish</option>
-						<option>Attack Order</option>
 						<option>Attract</option>
-						<option>Aura Sphere</option>
 						<option>Aurora Beam</option>
-						<option>Avalanche</option>
 						<option>Barrage</option>
 						<option>Barrier</option>
 						<option>Baton Pass</option>
@@ -489,82 +477,58 @@ reaches a "terminate".</p>
 						<option>Bone Rush</option>
 						<option>Bonemerang</option>
 						<option>Bounce</option>
-						<option>Brave Bird</option>
 						<option>Brick Break</option>
-						<option>Brine</option>
 						<option>Bubble</option>
 						<option>BubbleBeam</option>
-						<option>Bug Bite</option>
-						<option>Bug Buzz</option>
 						<option>Bulk Up</option>
-						<option>Bullet Punch</option>
 						<option>Bullet Seed</option>
 						<option>Calm Mind</option>
 						<option>Camouflage</option>
-						<option>Captivate</option>
 						<option>Charge</option>
-						<option>Charge Beam</option>
 						<option>Charm</option>
-						<option>Chatter</option>
 						<option>Clamp</option>
-						<option>Close Combat</option>
 						<option>Comet Punch</option>
 						<option>Confuse Ray</option>
 						<option>Confusion</option>
 						<option>Constrict</option>
 						<option>Conversion</option>
 						<option>Conversion2</option>
-						<option>Copycat</option>
 						<option>Cosmic Power</option>
 						<option>Cotton Spore</option>
 						<option>Counter</option>
 						<option>Covet</option>
 						<option>Crabhammer</option>
 						<option>Cross Chop</option>
-						<option>Cross Poison</option>
 						<option>Crunch</option>
 						<option>Crush Claw</option>
 						<option>Crush Grip</option>
 						<option>Curse</option>
 						<option>Cut</option>
-						<option>Dark Pulse</option>
-						<option>Dark Void</option>
-						<option>Defend Order</option>
 						<option>Defense Curl</option>
-						<option>Defog</option>
 						<option>Destiny Bond</option>
 						<option>Detect</option>
 						<option>Dig</option>
 						<option>Disable</option>
-						<option>Discharge</option>
 						<option>Dive</option>
 						<option>Dizzy Punch</option>
 						<option>Doom Desire</option>
-						<option>Double Hit</option>
 						<option>Double Kick</option>
 						<option>Double Team</option>
 						<option>Double-Edge</option>
 						<option>DoubleSlap</option>
-						<option>Draco Meteor</option>
 						<option>Dragon Claw</option>
 						<option>Dragon Dance</option>
-						<option>Dragon Pulse</option>
 						<option>Dragon Rage</option>
-						<option>Dragon Rush</option>
 						<option>DragonBreath</option>
-						<option>Drain Punch</option>
 						<option>Dream Eater</option>
 						<option>Drill Peck</option>
 						<option>DynamicPunch</option>
-						<option>Earth Power</option>
 						<option>Earthquake</option>
 						<option>Egg Bomb</option>
-						<option>Embargo</option>
 						<option>Ember</option>
 						<option>Encore</option>
 						<option>Endeavor</option>
 						<option>Endure</option>
-						<option>Energy Ball</option>
 						<option>Eruption</option>
 						<option>Explosion</option>
 						<option>Extrasensory</option>
@@ -575,26 +539,19 @@ reaches a "terminate".</p>
 						<option>Fake Tears</option>
 						<option>False Swipe</option>
 						<option>FeatherDance</option>
-						<option>Feint</option>
 						<option>Fire Blast</option>
-						<option>Fire Fang</option>
 						<option>Fire Punch</option>
 						<option>Fire Spin</option>
 						<option>Fissure</option>
 						<option>Flail</option>
 						<option>Flame Wheel</option>
 						<option>Flamethrower</option>
-						<option>Flare Blitz</option>
 						<option>Flash</option>
-						<option>Flash Cannon</option>
 						<option>Flatter</option>
-						<option>Fling</option>
 						<option>Fly</option>
-						<option>Focus Blast</option>
 						<option>Focus Energy</option>
 						<option>Focus Punch</option>
 						<option>Follow Me</option>
-						<option>Force Palm</option>
 						<option>Foresight</option>
 						<option>Frenzy Plant</option>
 						<option>Frustration</option>
@@ -602,21 +559,14 @@ reaches a "terminate".</p>
 						<option>Fury Cutter</option>
 						<option>Fury Swipes</option>
 						<option>Future Sight</option>
-						<option>Gastro Acid</option>
 						<option>Giga Drain</option>
-						<option>Giga Impact</option>
 						<option>Glare</option>
-						<option>Grass Knot</option>
 						<option>GrassWhistle</option>
-						<option>Gravity</option>
 						<option>Growl</option>
 						<option>Growth</option>
 						<option>Grudge</option>
-						<option>Guard Swap</option>
 						<option>Guillotine</option>
-						<option>Gunk Shot</option>
 						<option>Gust</option>
-						<option>Gyro Ball</option>
 						<option>Hail</option>
 						<option>Hammer Arm</option>
 						<option>Harden</option>

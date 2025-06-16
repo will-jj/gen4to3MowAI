@@ -43,10 +43,6 @@ function getDouble_AllyAI(moveData) {
 				resultAiChecks.push("Swagger");
 				break;
 			
-			case "Gastro Acid":
-				resultAiChecks.push("GastroAcid");
-				break;
-						
 			default:
 				switch (moveData.battleEffect) {
 					case "Toxic":

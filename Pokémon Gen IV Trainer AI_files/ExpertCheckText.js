@@ -7,22 +7,6 @@ If the user's ability is Rock Head or Magic Guard:
 	Score +1 and terminate`,
 
 
-["AquaRing"]:
-`If the user's HP is over 29%:
-	50% (128/256) chance of score +1 and terminate`,
-
-
-["Assurance"]:
-`If the user will move before the target:
-	No scoring change and terminate
-
-If the user's ability is Rough Skin:
-	50% (128/256) chance of score +1 and terminate
-
-Otherwise:
-	25% (64/256) chance of score +1 and terminate`,
-
-
 ["BatonPass"]:
 `If the user's current attack, defense, special attack, special defense, or evasion is boosted to +3 or more:
 	If the user will move before the foe, and the user's HP is over 60%:
@@ -74,35 +58,12 @@ If the current weather is hail:
 	Score +1 and terminate`,
 
 
-["Brine"]:
-`If the target's HP is under 51%:
-	Score +1 and continue
-	50% (128/256) chance of score +1 and terminate`,
-
-
 ["CannotMiss"]:
 `If the user's current accuracy is reduced to -5 or lower, or the target's current evasion is boosted to +5 or more:
 	Score +1 and continue
 
 If the user's current accuracy is reduced to -3 or lower, or the target's current evasion is boosted to +3 or more:
 	60.9% (156/256) chance of score +1 and terminate`,
-
-
-["Captivate"]:
-`If the target's current special attack level is not +0:
-	Score -1 and continue
-	
-	If the user's HP is under 91%:
-		Score -1 and continue
-	
-	If the target's current special attack is reduced to -3 or lower:
-		80.5% (206/256) chance of score -2 and continue
-
-If the target's HP is under 71%:
-	Score -2 and continue
-
-If the last moved used by the target was physical:
-	75% (192/256) chance of score -1 and terminate`,
 
 
 ["Check_ChargeTurnInvuln"]:
@@ -124,32 +85,12 @@ If the last move used by the target was Lock-On or Mind Reader:
 	Score -1 and terminate`,
 
 
-["CloseCombat"]:
-`If the user will move after the target, and the user's HP is under 81%:
-	Score -1 and terminate
-
-If the user will move before the target, and the user's HP is under 61%:
-	Score -1 and terminate`,
-
-
 ["Conversion"]:
 `If the user's HP is under 91%:
 	Score -2 and continue
 
 If this is not the first turn of the battle:
 	78.1% (200/256) chance of score -2 and terminate`,
-
-
-["Copycat"]:
-`If the user will move before the target:
-	If the last move used by the target (if used by the target against itself) would do more damage to the target than any of the user's moves:
-		87.5% (224/256) chance of score +2 and terminate
-	
-	If the last move used by the target is in the list below:
-		50% (128/256) chance of score +2 and terminate
-
-If the last move used by the target (if used by the target against itself) would not do more damage to the target than the user's most damaging move, and the last move used by the target is not in the list below:
-	68.8% (176/256) chance of score -1 and terminate`,
 
 
 ["Counter"]:
@@ -196,7 +137,7 @@ Otherwise:
 If the user's defense is boosted to +4 or more:
 	No scoring change and terminate
 
-If the user knows the move Trick Room or Gyro Ball:
+If the user knows the move Trick Room:
 	87.5% (224/256) chance of score +1 and continue
 	If score +1:
 		50% (128/256) chance of score +1 and continue
@@ -245,32 +186,6 @@ Else:
 	Score +2 and terminate`,
 
 
-["Defog"]:
-`If the foe's side of the field has Light Screen or Reflect active:
-	If the user's HP is over 30%:
-		Score +1 and continue
-		If the user has no other living party members:
-			No score change and terminate
-	
-	If the user's HP is under 31%, and the user has no other living party members:
-		If the foe's HP is under 71%:
-			Score -2 and continue
-		
-		80.5% (206/256) chance of score -2 and terminate
-	
-	If the foe's side of the field has Spikes, Stealth Rock, or Toxic Spikes active:
-		50% (128/256) chance of score -1 and continue
-
-If the foe's side of the field does not have Light Screen or Reflect active, and has Spikes, Stealth Rock, or Toxic Spikes active:
-	Score -2 and continue
-
-If the user's HP is under 70%, or the foe's evasion is reduced to -3 or lower:
-	80.5% (206/256) chance of score -2 and continue
-
-If the foe's HP is under 71%:
-	Score -2 and terminate`,
-
-
 ["DestinyBond"]:
 `If the user will move after the foe, or the user's HP is over 70%:
 	Score -1 and terminate
@@ -307,11 +222,6 @@ If the user's HP is under 51%:
 ["DreamEater"]:
 `If the target is asleep:
 	80.1% (205/256) of score +3 and terminate`,
-
-
-["Embargo"]:
-`Unconditionally:
-	50% (128/256) chance of score +1 and terminate`,
 
 
 ["Encore"]:
@@ -363,52 +273,9 @@ Otherwise:
 	Score +2 and terminate`,
 
 
-["Feint"]:
-`If the target does not know protect:
-	With a 75% (192/256) chance:
-		No scoring change and terminate
-
-If the user is poisoned, or infatuated, or under the effect of Curse, Perish Song, Leech Seed, or Yawn, or the target's HP is not full, or the target is holding Leftovers or Black Sludge:
-	50% (128/256) chance of score +1 and continue
-
-If the consecutive protection count of the target is 0:
-	50% (128/256) chance of score +1 and terminate
-
-If the consecutive protection count of the target is 1:
-	25% (64/256) chance of score +1 and terminate
-
-If the consecutive protection count of the target is 2 or more:
-	Score -2 and terminate`,
-
-
 ["Flatter"]:
 `Unconditionally:
 	50% (128/256) chance of score +1 and continue`,
-
-
-["Fling"]:
-`If the effectiveness of the move is 1/2x, 1/4x, or 0x:
-	If the user is not holding a King's Rock, Razor Fang, Poison Barb, Toxic Orb, Flame Orb, or Light Ball:
-		Score -1 and terminate
-	Else:
-		No score change and terminate
-
-If the Fling power of the user's item is 10:
-	Score -2 and terminate
-
-If the Fling power of the user's item is 100 or 130:
-	If the effectiveness of the move is 2x or 4x:
-		Score +4 and continue
-	Else:
-		50% (128/256) chance of score +1 and continue
-	
-	75% (192/256) chance of score +1 and terminate
-
-If the Fling power of the user's item is 70, 80, or 90:
-	75% (192/256) chance of score +1 and terminate
-
-Otherwise:
-	50% (128/256) chance of score -1 and terminate`,
 
 
 ["Fly"]:
@@ -449,60 +316,6 @@ Otherwise:
 	Score -3 and terminate`,
 
 
-["GastroAcid"]:
-`With a 25% (64/256) chance:
-	No scoring change and terminate
-Else:
-	Score +1 and continue
-
-If the target's HP is under 71%:
-	50% (128/256) chance of score -1 and continue
-
-If the target's HP is under 51%:
-	Score -1 and continue
-
-If the target's HP is under 31%:
-	Score -1 and terminate`,
-
-
-["Gravity"]:
-`If the foe is Flying type, or has the ability Levitate, or is under the effect of Magnet Rise:
-	Score +1 and terminate
-
-If the user's HP is over 59%:
-	37.5% (96/256) chance of score +1 and terminate`,
-
-
-["GuardSwap"]:
-`If the user's defense or special defense is boosted to a higher level than the target's:
-	No score change and terminate
-
-If the target's defense is boosted to a higher level than the user's, and the target's special defense level is exactly +1 higher than the user's:
-	No score change and terminate
-
-For the following checks, sum together the number of stages the target's defense and special defense are higher than the user's, with each stat being limited to a maximum of +4.
-
-If the sum is equal to 8:
-	With a 50% (128/256) chance:
-		Score +5 and terminate
-
-If the sum is greater than or equal to 6:
-	With a 50% (128/256) chance:
-		Score +4 and terminate
-
-If the sum is greater than or equal to 4:
-	With a 50% (128/256) chance:
-		Score +3 and terminate
-
-If the sum is greater than or equal to 2:
-	With a 50% (128/256) chance:
-		Score +2 and terminate
-
-If the sum is or equal to 1:
-	With a 50% (128/256) chance:
-		Score +1 and terminate`,
-
-
 ["Hail"]:
 `If the user's HP is under 40%:
 	Score -1 and terminate
@@ -539,7 +352,7 @@ Otherwise:
 
 
 ["HealBlock"]:
-`If the target knows a move in the list below, or is under the effect of Aqua Ring or Ingrain, or the user is under the effect of Leech Seed:
+`If the target knows a move in the list below, or is under the effect of Ingrain, or the user is under the effect of Leech Seed:
 	90.2% (231/256) chance of score +1 and terminate
 
 Otherwise:
@@ -712,56 +525,6 @@ Flame Orb
 Black Sludge`,
 
 
-["List_CopycatMoves"]:
-`Sleep Powder
-Lovely Kiss
-Spore
-Hypnosis
-Sing
-GrassWhistle
-Shadow Punch
-Sand-Attack
-SmokeScreen
-Toxic
-Guillotine
-Horn Drill
-Fissure
-Sheer Cold
-Cross Chop
-Aeroblast
-Confuse Ray
-Sweet Kiss
-Screech
-Cotton Spore
-Scary Face
-Fake Tears
-Metal Sound
-Thunder Wave
-Glare
-PoisonPowder
-Shadow Ball
-DynamicPunch
-Hyper Beam
-ExtremeSpeed
-Thief
-Covet
-Attract
-Swagger
-Torment
-Flatter
-Trick
-Superpower
-Skill Swap
-Psycho Shift
-Power Swap
-Guard Swap
-Sucker Punch
-Heart Swap
-Switcheroo
-Captivate
-Dark Void`,
-
-
 ["List_Encore"]:
 `Dream Eater
 Meditate
@@ -840,23 +603,17 @@ Mud Sport
 Water Sport
 Dragon Dance
 Camouflage
-Gravity
 Miracle Eye
 Healing Wish
 Natural Gift
-Feint
 Tailwind
-Fling
 Psycho Shift
 Heal Block
 Power Trick
-Gastro Acid
 Lucky Chant
 Power Swap
-Guard Swap
 Worry Seed
 Heart Swap
-Aqua Ring
 Magnet Rise
 Trick Room`,
 
@@ -906,9 +663,7 @@ Absorb
 Mega Drain
 Leech Life
 Giga Drain
-Drain Punch
 Ingrain
-Aqua Ring
 Leech Seed
 Healing Wish
 Lunar Dance`,
@@ -956,12 +711,9 @@ Superpower
 Skill Swap
 Psycho Shift
 Power Swap
-Guard Swap
 Sucker Punch
 Heart Swap
-Switcheroo
-Captivate
-Dark Void`,
+Switcheroo`,
 
 
 ["List_StealItem"]:
@@ -1049,7 +801,7 @@ Otherwise:
 `If the user's HP is under 50%:
 	No scoring change and terminate
 
-If the foe knows the move Earthquake, Earth Power, or Fissure:
+If the foe knows the move Earthquake, or Fissure:
 	Score +1 and continue
 
 If the foe is Ground type:
@@ -1078,7 +830,7 @@ Otherwise:
 `If the foe is asleep, infatuated, or confused:
 	Score -1 and terminate
 
-If the foe knows the move Revenge, Avalanche, Focus Punch, or Vital Throw:
+If the foe knows the move Revenge, Focus Punch, or Vital Throw:
 	Score -1 and terminate
 
 If the user's HP is under 31%:
@@ -1243,7 +995,7 @@ Otherwise:
 
 
 ["Protect"]:
-`If the foe has the move Feint or Shadow Force:
+`If the foe has the move Shadow Force:
 	50% (128/256) chance of score -2 and continue
 
 If the user's consecutive protection count is 2 or more:
@@ -1689,7 +1441,7 @@ If the target is poisoned:
 If the target is under the effect of Leech Seed:
 	72.7% (186/256) chance of score +2 and continue
 
-If the user is under the effect of Ingrain or Aqua Ring:
+If the user is under the effect of Ingrain:
 	50% (128/256) chance of score +1 and continue
 
 If the target is under the effect of Curse:
@@ -1890,7 +1642,7 @@ If the foe is poisoned:
 If the foe is under the effect of Leech Seed:
 	72.7% (186/256) chance of score +3 and continue
 
-If the user is under the effect of Ingrain or Aqua Ring:
+If the user is under the effect of Ingrain:
 	50% (128/256) chance of score +2 and continue
 
 If the foe is under the effect of Curse:

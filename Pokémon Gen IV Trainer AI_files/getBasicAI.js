@@ -50,8 +50,6 @@ function getBasicAI(moveData) {
 		case "Uproar":
 		case "Metal sound": 
 		case "Grasswhistle":
-		case "Bug Buzz":
-		case "Chatter":
 			resultAiChecks.push("Check_Soundproof");
 			break;
 	}
@@ -80,13 +78,11 @@ function getBasicAI(moveData) {
 		case "Superpower":
 		case "Endeavor":
 	//	case "DamageByTargetWeight":
-	//	case "GyroBall":
 		case "TrumpCard":
 		case "DamageByTargetHealth":
 		case "Punishment":
 		case "Ohko":
 		case "MetalBurst":
-		case "Fling":
 		case "Selfdestruction":
 			resultAiChecks.push("Check_DamageImmunity");
 			resultAiChecks.push("Check_WonderGuard");

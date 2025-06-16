@@ -73,10 +73,6 @@ function getDouble_EnemyAI(moveData) {
 			resultAiChecks.push("Sandstorm");
 			break;
 		
-		case "Gravity":
-			resultAiChecks.push("Gravity");
-			break;
-		
 		case "Trick Room":
 			resultAiChecks.push("TrickRoom");
 			break;
@@ -90,10 +86,6 @@ function getDouble_EnemyAI(moveData) {
 			switch (moveData.damageType) {
 				case "Electric":
 					switch (moveData.name) {
-						case "Discharge":
-							resultAiChecks.push("Check_Discharge");
-							break;
-						
 						default:
 							resultAiChecks.push("Check_ElectricAttack");
 							break;

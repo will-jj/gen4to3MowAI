@@ -4,20 +4,6 @@ const double_EnemyCheckText = {
 	Score +1 and terminate`,
 
 
-["Check_Discharge"]:
-`If the user's ally's ability is Volt Absorb or Motor Drive:
-	Score +3 and terminate
-
-If the user's ally is Water or Flying type:
-	Score -10 and terminate
-
-If the user's ally is Ground type:
-	Score +3 and terminate
-
-Otherwise:
-	Score -3 and terminate`,
-
-
 ["Check_Effectiveness1"]:
 `If the move cannot KO the target, and the user's ally's HP is over 0% (after rounding):
 	If the effectiveness of the move is 1/2x:
@@ -160,23 +146,6 @@ If the user's HP is over 30%:
 	
 	If the user will speed tie with its ally:
 		25% (64/256) chance of score -3 and terminate`,
-
-
-["Gravity"]:
-`If Gravity is currently active:
-	No scoring change and terminate
-
-If the user is Flying type, or has the ability Levitate, or is under the effect of Magnet Rise:
-	Score -5 and continue
-
-If the user's ally is Flying type, or has the ability Levitate, or is under the effect of Magnet Rise:
-	Score -5 and continue
-
-If the target is Flying type, or certainly has the ability Levitate, or is under the effect of Magnet Rise:
-	75% (192/256) chance of score +3 and continue
-
-If the target's ally is Flying type, or certainly has the ability Levitate, or is under the effect of Magnet Rise:
-	75% (192/256) chance of score +3 and terminate`,
 
 
 ["Hail"]:

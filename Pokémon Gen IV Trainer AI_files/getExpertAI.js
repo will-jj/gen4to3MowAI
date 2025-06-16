@@ -3,9 +3,6 @@ function getExpertAI(moveData) {
 	
 	// Pre-check before main effect (only effectiveness)
 	switch (moveData.battleEffect) {
-		case "Assurance":
-		case "Brine":
-		case "CloseCombat":
 		case "DamageAndUserSpattackDown2":
 		case "DreamEater":
 		case "FocusPunch":
@@ -60,11 +57,6 @@ function getExpertAI(moveData) {
 		case "HealBlock":
 			resultAiChecks.push("List_HealingMoves");
 			break;
-		
-		case "Copycat":
-			resultAiChecks.push("List_CopycatMoves");
-			break;
-		
 		
 		// Redirections
 		case "UserAttackUp2":
@@ -151,7 +143,6 @@ function getExpertAI(moveData) {
 		
 		
 		case "13Recoil":
-		case "FlareBlitz":
 		case "VoltTackle":
 		case "12Recoil":
 			resultAiChecks.push("14Recoil");

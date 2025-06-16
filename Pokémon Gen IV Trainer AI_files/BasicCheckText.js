@@ -1,9 +1,4 @@
 const basicCheckText = {
-["AquaRing"]:
-`If the user is already under the effect of Aqua Ring:
-	Score -10 and terminate`,
-
-
 ["Attract"]:
 `If the target is already infatuated:
 	Score -10 and terminate
@@ -65,17 +60,6 @@ If the user's current special defense is boosted to +6:
 
 ["Camouflage"]:
 `If the user is currently under the effect of Camouflage:
-	Score -10 and terminate`,
-
-
-["Captivate"]:
-`If the target's ability is Oblivious, Clear Body, or White Smoke, and the user's ability is not Mold Breaker:
-	Score -10 and terminate
-
-If the target is not the opposite gender as the user:
-	Score -10 and terminate
-
-If the target's special attack is reduced to -6:
 	Score -10 and terminate`,
 
 
@@ -144,11 +128,6 @@ If the target's special attack is reduced to -6:
 	Score -12 and terminate`,
 
 
-["Copycat"]:
-`If this is the first turn of the battle:
-	Score -10 and terminate`,
-
-
 ["Curse"]:
 `If the user is Ghost type:
 	If the target is already under the effect of Curse:
@@ -163,23 +142,6 @@ If the user is not Ghost type:
 	
 	If the user's current attack or defense is boosted to +6:
 		Score -10 and terminate`,
-
-
-["Defog"]:
-`If the target's evasion is not reduced to -6:
-	No scoring change and terminate
-
-If the target's side of the field has Light Screen or Reflect active:
-	No scoring change and terminate
-
-If the weather is foggy:
-	No scoring change and terminate
-
-If the target has no other living party members:
-	Score -10 and terminate
-
-If the target's side of the field does not have Stealth Rock, Spikes, or Toxic Spikes active:
-	Score -10 and terminate`,
 
 
 ["Disable"]:
@@ -203,17 +165,6 @@ If the user's current speed is boosted to +6:
 	Score -8 and terminate`,
 
 
-["Embargo"]:
-`If the target is already under the effect of Embargo:
-	Score -10 and terminate
-
-If the target has no item it could Recycle:
-	No scoring change and terminate
-
-If the fight is a Frontier fight:
-	Score -10 and terminate`,
-
-
 ["Encore"]:
 `If the target is already under the effect of Encore:
 	Score -8 and terminate`,
@@ -222,29 +173,6 @@ If the fight is a Frontier fight:
 ["FakeOut"]:
 `If this is not the first turn the user is active:
 	Score -10 and terminate`,
-
-
-["Fling"]:
-`If the user is not holding an item:
-	Score -10 and terminate
-
-If the user is holding a Poison Barb or Toxic Orb:
-	If the user's ability is Poison Heal, or the target is protected by Safeguard, or is already statused, or is Poison or Steel type, or has the ability Immunity, Poison Heal, or Magic Guard:
-		If the user is protected by Safeguard, or is already statused, or is Poison or Steel type, or has the ability Klutz, Immunity, Poison Heal, Magic Guard, or Guts:
-			Score -5 and terminate
-		Else:
-			Score +3 and terminate
-
-If the user is holding a Flame Orb:
-	If the target is protected by Safeguard, or is already statused, or is Fire type, or has the ability Magic Guard or Water Veil:
-		If the user protected by Safeguard, or is already statused, or is Fire type, or has the ability Klutz, Magic Guard, Water Veil, or Guts:
-			Score -5 and terminate
-		Else:
-			Score +3 and terminate
-
-If the user is holding a Light Ball:
-	If the target is protected by Safeguard, or is already statused, or has the ability Limber:
-		Score -5 and terminate`,
 
 
 ["FocusEnergy"]:
@@ -266,24 +194,6 @@ If the target's ability is Suction Cups, and the user's ability is not Mold Brea
 
 If the target's side is awaiting a future attack:
 	Score -12 and terminate`,
-
-
-["GastroAcid"]:
-`If the target is already under the effect of Gastro Acid:
-	Score -10 and terminate
-
-If the target's ability is Multitype, Truant, Slow Start, Stench, Run Away, Pickup, or Honey Gather:
-	Score -10 and terminate`,
-
-
-["Gravity"]:
-`If Gravity is currently active:
-	Score -10 and terminate`,
-
-
-["GuardSwap"]:
-`If the user's defense boosts and special defense boosts are both equal to or greater than the target's:
-	Score -10 and terminate`,
 
 
 ["Hail"]:

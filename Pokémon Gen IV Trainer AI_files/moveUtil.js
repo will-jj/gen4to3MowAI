@@ -19,7 +19,6 @@ function isSubjectToDamageCalc(moveData) {
 		
 		// Moves which do nonstandard damage, but are handled correctly and included
 		case "HiddenPower":
-		case "GyroBall":
 		case "NaturalGift":
 		case "Judgment":
 		case "DragonRage":
