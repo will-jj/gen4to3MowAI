@@ -74,17 +74,17 @@ If the user's current special defense is boosted to +6:
 
 
 ["Check_FlashFire"]:
-`If the target's ability is Flash Fire, and the user's ability is not Mold Breaker:
+`If the target's ability is Flash Fire:
 	Score -12 and terminate`,
 
 
 ["Check_Levitate"]:
-`If the target's ability is Levitate, and the user's ability is not Mold Breaker:
+`If the target's ability is Levitate:
 	Score -12 and terminate`,
 
 
 ["Check_Soundproof"]:
-`If the target's ability is Soundproof, and the user's ability is not Mold Breaker:
+`If the target's ability is Soundproof:
 	Score -10 and terminate`,
 
 
@@ -104,22 +104,22 @@ If the user's current special defense is boosted to +6:
 
 
 ["Check_VariableType"]:
-`If the target is immune to the move's damage due to Volt Absorb, Motor Drive, Water Absorb, or Flash Fire, and the user's ability is not Mold Breaker:
+`If the target is immune to the move's damage due to Volt Absorb, Motor Drive, Water Absorb, or Flash Fire:
 	Score -12 and terminate`,
 
 
 ["Check_VoltAbsorb"]:
-`If the target's ability is Volt Absorb or Motor Drive, and the user's ability is not Mold Breaker:
+`If the target's ability is Volt Absorb or Motor Drive:
 	Score -12 and terminate`,
 
 
 ["Check_WaterAbsorb"]:
-`If the target's ability is Water Absorb, and the user's ability is not Mold Breaker:
+`If the target's ability is Water Absorb:
 	Score -12 and terminate`,
 
 
 ["Check_WonderGuard"]:
-`If the target's ability is Wonder Guard, and the effectiveness of the move is not 2x or 4x, and the user's ability is not Mold Breaker:
+`If the target's ability is Wonder Guard, and the effectiveness of the move is not 2x or 4x:
 	Score -12 and terminate`,
 
 
@@ -179,7 +179,7 @@ If the user's current speed is boosted to +6:
 `If the target has no other living party members:
 	Score -10 and terminate
 
-If the target's ability is Suction Cups, and the user's ability is not Mold Breaker:
+If the target's ability is Suction Cups:
 	Score -10 and terminate`,
 
 
@@ -289,7 +289,7 @@ If the user's ability is No Guard, or the target's ability is No Guard:
 
 
 ["Magnitude"]:
-`If the target's ability is Levitate, and the user's ability is not Mold Breaker:
+`If the target's ability is Levitate:
 	Score -10 and terminate`,
 
 
@@ -386,7 +386,7 @@ If it is already raining:
 
 
 ["Selfdestruction"]:
-`If the target's ability is Damp, and the user's ability is not Mold Breaker:
+`If the target's ability is Damp:
 	Score -10 and terminate
 
 If the user has other living party members:
@@ -405,7 +405,7 @@ Otherwise:
 
 
 ["SoundBased"]:
-`If the target's ability is Soundproof, and the user's ability is not Mold Breaker:
+`If the target's ability is Soundproof:
 	Score -10 and terminate`,
 
 

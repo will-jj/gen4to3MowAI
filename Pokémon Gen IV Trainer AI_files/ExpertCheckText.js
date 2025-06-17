@@ -569,7 +569,6 @@ Chlorophyll
 Shield Dust 
 Adaptability 
 Magic Guard 
-Mold Breaker 
 Super Luck 
 Unaware 
 Tinted Lens 
