@@ -98,11 +98,6 @@ If the user's current special defense is boosted to +6:
 	Score -10 and terminate`,
 
 
-["Check_TrickRoom"]:
-`If Trick Room is currently active:
-	Score -10 and terminate`,
-
-
 ["Check_UserStockpile"]:
 `If the user's Stockpile count is 0:
 	Score -10 and terminate`,
@@ -223,17 +218,6 @@ Otherwise:
 	Score -10 and terminate`,
 
 
-["HealingWish"]:
-`Unconditionally:
-	Score -20 and continue
-
-If the user has no other living party members:
-	Score -10 and terminate
-
-If the user has no other living party member that is statused, or not at full HP:
-	Score -10 and terminate`,
-
-
 ["HelpingHand"]:
 `If the fight is not a double or multi battle:
 	Score -10 and terminate`,
@@ -280,11 +264,6 @@ If the target's ability is Own Tempo:
 	Score -10 and terminate`,
 
 
-["LastResort"]:
-`If the user has not used all of its other moves:
-	Score -10 and terminate`,
-
-
 ["LeechSeed"]:
 `If the target is already under the effect of Leech Seed:
 	Score -10 and terminate
@@ -309,27 +288,6 @@ If the user's ability is No Guard, or the target's ability is No Guard:
 	Score -10 and terminate`,
 
 
-["LuckyChant"]:
-`If the user's side of the field is already under the effect of Lucky Chant:
-	Score -10 and terminate`,
-
-
-["LunarDance"]:
-`Unconditionally:
-	Score -20 and continue
-
-If the user has no other living party members:
-	Score -10 and terminate
-
-If the user has no other living party member that is statused, or not at full HP, or missing any PP:
-	Score -10 and terminate`,
-
-
-["MagnetRise"]:
-`If the user is already under the effect of Magnet Rise, or has the ability Levitate, or is Flying type:
-	Score -10 and terminate`,
-
-
 ["Magnitude"]:
 `If the target's ability is Levitate, and the user's ability is not Mold Breaker:
 	Score -10 and terminate`,
@@ -349,22 +307,6 @@ If the user has no living party members:
 	Score -10 and terminate`,
 
 
-["MetalBurst"]:
-`If the target's ability is Stall, or the target is holding a Shiny Stone:
-	Score -10 and terminate
-
-If the user's ability is Stall, or the user is holding a Shiny Stone:
-	No scoring change and terminate
-
-If the user will attack before the target:
-	Score -10 and terminate`,
-
-
-["MiracleEye"]:
-`If the target is already under the effect of Miracle Eye:
-	Score -10 and terminate`,
-
-
 ["Mist"]:
 `If the user's side of the field already has Mist active:
 	Score -8 and terminate`,
@@ -372,11 +314,6 @@ If the user will attack before the target:
 
 ["MudSport"]:
 `If the user is already under the effect of Mud Sport:
-	Score -10 and terminate`,
-
-
-["NaturalGift"]:
-`If the user is not holding a berry:
 	Score -10 and terminate`,
 
 
@@ -402,39 +339,6 @@ If the target is a higher level than the user:
 ["PerishSong"]:
 `If the target is already under the effect of Perish Song:
 	Score -10 and terminate`,
-
-
-["PowerSwap"]:
-`If the user's attack boosts and special attack boosts are both equal to or greater than the target's:
-	Score -10 and terminate`,
-
-
-["PowerTrick"]:
-`If the user is already under the effect of Power Trick:
-	Score -10 and terminate`,
-
-
-["PsychoShift"]:
-`If the user is not statused:
-	Score -10 and terminate
-
-If the target is protected by Safeguard, or is already statused:
-	Score -10 and terminate
-
-If the user is poisoned:
-	If the user's ability is Poison Heal:
-		Score -10 and terminate
-	
-	If the target is Poison or Steel type, or has the ability Immunity, Poison Heal, or Magic Guard:
-		Score -10 and terminate
-	
-If the user is burned:
-	If the target is Fire type, or has the ability Water Veil or Magic Guard:
-		Score -10 and terminate
-
-If the user is paralyzed:
-	If the target's ability is Limber:
-		Score -10 and terminate`,
 
 
 ["RainDance"]:
@@ -513,14 +417,6 @@ If the target has no other living party members:
 	Score -10 and terminate`,
 
 
-["StealthRock"]:
-`If the target's side of the field already has Stealth Rock active:
-	Score -10 and terminate
-
-If the target has no other living part members:
-	Score -10 and terminate`,
-
-
 ["Stockpile"]:
 `If the user's Stockpile count is 3:
 	Score -10 and terminate`,
@@ -552,11 +448,6 @@ If it is already sunny:
 	Score -10 and terminate
 
 If the target is not holding any item:
-	Score -10 and terminate`,
-
-
-["Tailwind"]:
-`If Tailwind is aleady active:
 	Score -10 and terminate`,
 
 
@@ -645,22 +536,6 @@ If the weather is sunny and the target's ability is Leaf Guard, or the weather i
 	Score -10 and terminate`,
 
 
-["ToxicSpikes"]:
-`If the target's side of the field already has 2 layers of Toxic Spikes:
-	Score -10 and terminate
-
-If the target has no other living party members:
-	Score -10 and terminate`,
-
-
-["TrickRoom"]:
-`If the user will attack before the foe:
-	Score -10 and terminate
-
-If the user speed ties with the foe:
-	50% (128/256) chance of score -10 and terminate`,
-
-
 ["UserAccuracyUp1"]:
 `If the user's ability is No Guard, or the target's ability is No Guard:
 	Score -10 and terminate
@@ -725,14 +600,6 @@ If the user's current speed is boosted to +6:
 
 ["WaterSport"]:
 `If the user is already under the effect of Water Sport:
-	Score -10 and terminate`,
-
-
-["WorrySeed"]:
-`If the target's ability is Truant, Insomnia, Vital Spirit, or Multitype:
-	Score -10 and terminate
-
-If the target is asleep, and does not have the move Sleep Talk or Snore:
 	Score -10 and terminate`,
 
 

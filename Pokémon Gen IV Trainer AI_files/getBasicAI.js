@@ -27,8 +27,6 @@ function getBasicAI(moveData) {
 				switch (moveData.name) {
 					case "Hidden Power":
 					case "Weather Ball":
-					case "Natural Gift":
-					case "Judgment":
 						resultAiChecks.push("Check_VariableType");
 						break;
 				}
@@ -78,11 +76,8 @@ function getBasicAI(moveData) {
 		case "Superpower":
 		case "Endeavor":
 	//	case "DamageByTargetWeight":
-		case "TrumpCard":
 		case "DamageByTargetHealth":
-		case "Punishment":
 		case "Ohko":
-		case "MetalBurst":
 		case "Selfdestruction":
 			resultAiChecks.push("Check_DamageImmunity");
 			resultAiChecks.push("Check_WonderGuard");
@@ -119,14 +114,6 @@ function getBasicAI(moveData) {
 			break;
 		
 		
-		case "UserSpeedUp1":
-		case "TargetSpeedDown1":
-		case "DragonDance":
-		case "Tailwind":
-			resultAiChecks.push("Check_TrickRoom");
-			break;
-		
-		
 		case "TargetAttackDown2":
 			resultAiChecks.push("TargetAttackDown1");
 			break;
@@ -136,7 +123,6 @@ function getBasicAI(moveData) {
 			break;
 		
 		case "TargetSpeedDown2":
-			resultAiChecks.push("Check_TrickRoom");
 			resultAiChecks.push("TargetSpeedDown1");
 			break;
 		
@@ -167,7 +153,6 @@ function getBasicAI(moveData) {
 			break;
 		
 		case "UserSpeedUp2":
-			resultAiChecks.push("Check_TrickRoom");
 			resultAiChecks.push("UserSpeedUp1");
 			break;
 		
@@ -195,13 +180,11 @@ function getBasicAI(moveData) {
 		
 		
 		case "PsychUp":
-		case "HeartSwap":
 			resultAiChecks.push("Haze");
 			break;
 		
 		
 		case "SunRecover":
-		case "Roost":
 			resultAiChecks.push("Recover");
 			break;
 		
@@ -276,10 +259,6 @@ function getBasicAI(moveData) {
 			resultAiChecks.push("Check_DamageImmunity");
 			break;
 		
-		// Also a duplicate check
-	//	case "NaturalGift":
-	//		resultAiChecks.push("Check_DamageImmunity");
-	//		break;
 	}
 	
 	return resultAiChecks.filter(check => Object.hasOwn(basicCheckText, check));

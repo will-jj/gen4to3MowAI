@@ -73,10 +73,6 @@ function getDouble_EnemyAI(moveData) {
 			resultAiChecks.push("Sandstorm");
 			break;
 		
-		case "Trick Room":
-			resultAiChecks.push("TrickRoom");
-			break;
-		
 		case "Follow Me":
 			resultAiChecks.push("FollowMe");
 			break;
@@ -97,8 +93,7 @@ function getDouble_EnemyAI(moveData) {
 					resultAiChecks.push("Check_UserFlashFire");
 					
 					switch (moveData.name) {
-						case "Lava Plume":
-							resultAiChecks.push("Check_LavaPlume");
+						default:
 							break;
 					}
 					

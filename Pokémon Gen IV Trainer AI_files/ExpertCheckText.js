@@ -137,12 +137,6 @@ Otherwise:
 If the user's defense is boosted to +4 or more:
 	No scoring change and terminate
 
-If the user knows the move Trick Room:
-	87.5% (224/256) chance of score +1 and continue
-	If score +1:
-		50% (128/256) chance of score +1 and continue
-Else:
-	50% (128/256) chance of score +1 and continue
 
 If the user's defense is boosted to +2 or more:
 	No scoring change and terminate
@@ -330,11 +324,6 @@ If the weather is rain, sun, or sandstorm:
 		Score +2 and terminate`,
 
 
-["HammerArm"]:
-`If the user will move after the target:
-	Score +1 and terminate`,
-
-
 ["Haze"]:
 `If the user's current attack, defense, special attack, special defense, or evasion is boosted to +3 or more, or the target's current attack, defense, special attack, special defense, or evasion is reduced to -3 or lower:
 	80.5% (206/256) chance of score -3 and continue
@@ -357,45 +346,6 @@ Otherwise:
 
 Otherwise:
 	33.8% (693/2048) chance of score +1 and terminate`,
-
-
-["HealingWish"]:
-`If the user's HP is under 80%, or the user will move after the foe:
-	If the user's HP is over 50%:
-		80.5% (206/256) chance of score -1 and terminate
-	
-	With a 25% (64/256) chance:
-		Score +1 and continue
-		
-		If the user does not have a move to hit the foe super effectively:
-			25% (64/256) chance of score +1 and continue
-		
-		If a move a party member knows (if used by the user) would deal more damage than any of the user's moves:
-			50% (128/256) chance of score +1 and continue
-	
-	If the user's HP is under 31%:
-		50% (128/256) chance of score +1 and terminate
-
-Otherwise:
-	25% (64/256) chance of score -5 and terminate`,
-
-
-["HeartSwap"]:
-`If the target's current attack, defense, special attack, special defense, or evasion is boosted to +2 or more, or the target is under the effect of Focus energy:
-	If the user's current attack, defense, special attack, or special defense level is at +0 or below:
-		Score +1 and terminate
-	
-	If the user's current evasion level is at +0 or below:
-		Score +2 and terminate
-	
-	If the user is not under the effect of Focus Energy:
-		Score +1 and terminate
-
-	Otherwise:
-		19.5% (50/256) chance of score -2 and terminate
-
-Else:
-	Score -2 and terminate`,
 
 
 ["HighCritical"]:
@@ -487,11 +437,6 @@ If the user's HP is under 71%:
 
 If this is not the user's first turn in battle:
 	29.7% (76/256) chance of score +1 and terminate`,
-
-
-["LastResort"]:
-`If the user has used all of its other moves:
-	Score +1 and terminate`,
 
 
 ["LightScreen"]:
@@ -590,7 +535,6 @@ Will-O-Wisp
 Follow me
 Charge
 Trick
-Switcheroo
 Role Play
 Ingrain
 Recycle
@@ -603,19 +547,7 @@ Mud Sport
 Water Sport
 Dragon Dance
 Camouflage
-Miracle Eye
-Healing Wish
-Natural Gift
-Tailwind
-Psycho Shift
-Heal Block
-Power Trick
-Lucky Chant
-Power Swap
-Worry Seed
-Heart Swap
-Magnet Rise
-Trick Room`,
+Heal Block`,
 
 
 ["List_GoodAbilities"]:
@@ -651,8 +583,6 @@ Reckless`,
 Recover
 Milk Drink
 Slack Off
-Heal Order
-Roost
 Softboiled
 Morning Sun
 Moonlight
@@ -664,9 +594,7 @@ Mega Drain
 Leech Life
 Giga Drain
 Ingrain
-Leech Seed
-Healing Wish
-Lunar Dance`,
+Leech Seed`,
 
 
 ["List_MirrorMove"]:
@@ -708,12 +636,7 @@ Torment
 Flatter
 Trick
 Superpower
-Skill Swap
-Psycho Shift
-Power Swap
-Sucker Punch
-Heart Swap
-Switcheroo`,
+Skill Swap`,
 
 
 ["List_StealItem"]:
@@ -775,17 +698,6 @@ If the user will move after the target:
 		60.9% (156/256) chance of score +1 and terminate`,
 
 
-["LuckyChant"]:
-`If the user's HP is under 70%:
-	Score -1 and terminate
-
-If the opponent knows a move with a high critical hit ratio:
-	Score +1 and terminate
-
-Otherwise:
-	25% (64/256) chance of score +1 and terminate`,
-
-
 ["MagicCoat"]:
 `If the user's HP is under 31%:
 	60.9% (156/256) chance of score -1 and continue
@@ -795,69 +707,6 @@ If this is the user's first turn in battle:
 
 Otherwise:
 	88.3% (226/256) chance of score -1 and terminate`,
-
-
-["MagnetRise"]:
-`If the user's HP is under 50%:
-	No scoring change and terminate
-
-If the foe knows the move Earthquake, or Fissure:
-	Score +1 and continue
-
-If the foe is Ground type:
-	50% (128/256) chance of score +1 and terminate`,
-
-
-["MeFirst"]:
-`If the user will move after the target:
-	Score -2 and terminate
-
-If the last move used by the target (if used by the target against itself) would do more damage to the target than any of the user's moves:
-	87.5% (224/256) chance of score +1 and continue
-
-If the last move used by the target was not a status move, or the target has not yet used a move:
-	With a 50% (128/256) chance:
-		Score +1 and continue
-		75% (192/256) chance of score +1 and terminate
-	Else:
-		No scoring change and terminate
-
-Otherwise:
-	75% (192/256) chance of score +1 and terminate`,
-
-
-["MetalBurst"]:
-`If the foe is asleep, infatuated, or confused:
-	Score -1 and terminate
-
-If the foe knows the move Revenge, Focus Punch, or Vital Throw:
-	Score -1 and terminate
-
-If the user's HP is under 31%:
-	96.1% (246/256) chance of score -1 and continue
-
-If the user's HP is under 51%:
-	60.9% (156/256) chance of score -1 and continue
-
-Unconditionally:
-	25% (64/256) chance of score +1 and continue
-
-If the target is under the effect of Taunt, and the last move used by the target deals damage:
-	60.9% (156/256) chance of score +1 and continue
-
-If the target is under the effect of Taunt:
-	60.9% (156/256) chance of score +1 and terminate`,
-
-
-["MiracleEye"]:
-`If the target is Dark type:
-	47.3% (121/256) chance of score +2 and terminate
-
-If the target's current evasion is boosted to +3 or more:
-	68.8% (176/256) chance of score +2 adn terminate
-
-Otherwise:
-	Score -2 and terminate`,
 
 
 ["MirrorCoat"]:
@@ -945,60 +794,8 @@ If the user will move after the target:
 		Score +1 and terminate`,
 
 
-["Payback"]:
-`If the user will move after the target, and the user's HP is over 29%:
-	75% (192/256) chance of score +1 and terminate`,
-
-
-["PowerSwap"]:
-`If the user's attack or special attack is boosted to a higher level than the target's:
-	No score change and terminate
-
-If the target's attack is boosted to a higher level than the user's, and the target's special attack level is exactly +1 higher than the user's:
-	No score change and terminate
-
-For the following checks, sum together the number of stages the target's attack and special attack are higher than the user's, with each stat being limited to a maximum of +4.
-
-If the sum is equal to 8:
-	With a 50% (128/256) chance:
-		Score +5 and terminate
-
-If the sum is greater than or equal to 6:
-	With a 50% (128/256) chance:
-		Score +4 and terminate
-
-If the sum is greater than or equal to 4:
-	With a 50% (128/256) chance:
-		Score +3 and terminate
-
-If the sum is greater than or equal to 2:
-	With a 50% (128/256) chance:
-		Score +2 and terminate
-
-If the sum is or equal to 1:
-	With a 50% (128/256) chance:
-		Score +1 and terminate`,
-
-
-["PowerTrick"]:
-`If the user's HP is over 90%:
-	62.5% (160/256) chance of score +1 and terminate
-
-If the user's HP is over 60%:
-	50% (128/256) chance of score +1 and terminate
-
-If the user's HP is over 30%:
-	35.9% (92/256) chance of score +1 and terminate
-
-Otherwise:
-	Score -2 and terminate`,
-
-
 ["Protect"]:
-`If the foe has the move Shadow Force:
-	50% (128/256) chance of score -2 and continue
-
-If the user's consecutive protection count is 2 or more:
+`If the user's consecutive protection count is 2 or more:
 	Score -2 and terminate
 
 If the user is poisoned, or infatuated, or under the effect of Curse, Leech Seed, Yawn, or Perish Song, or the foe knows the move Recover or Defense Curl:
@@ -1020,14 +817,6 @@ If the user's consecutive protection count is 1:
 	50% (128/256) chance of score -1 and terminate`,
 
 
-["PsychoShift"]:
-`If the user is not statused:
-	Score -10 and terminate
-
-If the target's HP is over 29%:
-	50% (128/256) chance of score +1 and terminate`,
-
-
 ["PsychUp"]:
 `If the target's current attack, defense, special attack, special defense, or evasion are boosted to +3 or more:
 	If the user's current attack, defense, special attack, or special defense are at +0 or below:
@@ -1043,29 +832,9 @@ Otherwise:
 	Score -2 and terminate`,
 
 
-["Punishment"]:
-`If the effectiveness of the move is 1/2x, 1/4x, or 0x:
-	No scoring change and terminate
-
-If the total number of positive stat boosts for the target is 7 or more:
-	50% (128/256) chance of score +4 and continue
-
-If the total number of positive stat boosts for the target is 6 or more:
-	50% (128/256) chance of score +3 and continue
-
-If the total number of positive stat boosts for the target is 5 or more:
-	50% (128/256) chance of score +2 and continue
-
-If the total number of positive stat boosts for the target is 3 or more:
-	50% (128/256) chance of score +1 and terminate`,
-
-
 ["Pursuit"]:
 `If this is the user's first turn in battle, or the target is Ghost or Psychic type:
-	50% (128/256) chance of score +1 and continue
-
-If the target has the move U-Turn:
-	50% (128/256) chance of score +1 and terminate`,
+	50% (128/256) chance of score +1 and continue`,
 
 
 ["RainDance"]:
@@ -1193,14 +962,6 @@ Else:
 	80.5% (206/256) chance of score -3 and terminate`,
 
 
-["ShadowForce"]:
-`If the effectiveness of the move is 1/4x, 1/2x or 0x:
-	Score +1 and terminate
-
-If the user is holding a Power Herb:
-	Score +1 and terminate`,
-
-
 ["SleepTalk"]:
 `If the user is currently asleep:
 	Score +10 and terminate
@@ -1225,7 +986,7 @@ If the user will move after the target:
 	If the target's HP is over 25%:
 		88.3% (226/256) chance of score -2 and terminate
 	
-	If the target knows the move Recover, Softboiled, Milk Drink, Slack Off, Heal Order, or Defense Curl:
+	If the target knows the move Recover, Softboiled, Milk Drink, Slack Off, or Defense Curl:
 		41.4% (106/256) chance of score +2 and terminate
 	
 	Otherwise:
@@ -1312,11 +1073,6 @@ If the last move used by the foe was Supersonic, Confuse Ray, or Sweet Kiss, and
 
 If the last move used by the foe was Leech Seed, and the foe is not currently under the effect of Leech Seed:
 	60.9% (156/256) chance of score +1 and terminate`,
-
-
-["SuckerPunch"]:
-`Unconditionally:
-	75% (192/256) chance of score +1 and terminate`,
 
 
 ["SunnyDay"]:
@@ -1412,20 +1168,6 @@ If the user is holding a flavor-confusing berry (Figy, Wiki, Mago, Aguav, Iapapa
 
 Otherwise:
 	Score -3 and terminate`,
-
-
-["Tailwind"]:
-`With a 25% (64/256) chance:
-	No scoring change and terminate
-
-If the user will move before the foe, or the user's HP is under 31%:
-	Score -1 and terminate
-
-If the user's HP is over 75%:
-	Score +1 and terminate
-
-Otherwise:
-	75% (192/256) chance of score +1 and terminate`,
 
 
 ["TargetAccuracyDown1"]:
@@ -1529,55 +1271,9 @@ If the user knows the move Protect or Detect:
 	76.6% (196/256) chance of score +2 and terminate`,
 
 
-["ToxicSpikes"]:
-`With a 50% (128/256) chance:
-	No scoring change and terminate
-
-Unconditionally:
-	Score +1 and continue
-
-If the user knows the move Whirlwind or Roar:
-	75% (192/256) chance of score +1 and terminate`,
-
-
 ["Trap"]:
 `If the target is poisoned, or infatuated, or under the effect or Curse, or Perish Song:
 	50% (128/256) chance of score +1 and terminate`,
-
-
-["TrickRoom"]:
-`If this is a double/multi battle:
-	No scoring change and terminate
-
-If the user's HP is under 31%, and the user has no living party members:
-	No scoring change and terminate
-
-If the user will move after the foe:
-	75% (192/256) chance of score +3 and terminate
-Else:
-	Score -1 and terminate`,
-
-
-["TrumpCard"]:
-`If the remaining PP of the move is 4 or more:
-	If the foe's ability is Pressure:
-		88.3% (226/256) chance of score +1 and continue
-	
-	If the target's current evasion is boosted to +5 or more, or the user's current accuracy is reduced to -5 or lower:
-		Score +1 and continue
-	
-	If the target's current evasion is boosted to +3 or more, or the user's current accuracy is reduced to -3 or lower:
-		60.9% (156/256) chance of score +1 and terminate
-
-If the remaining PP of the move is 1:
-	Score +3 and terminate
-
-If the remaining PP of the move is 2:
-	Score +1 and continue
-	60.9% (156/256) chance of score +1 and terminate
-
-If the remaining PP of the move is 3:
-	60.9% (156/256) chance of score +1 and terminate`,
 
 
 ["UserAccuracyUp1"]:

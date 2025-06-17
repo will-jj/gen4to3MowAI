@@ -6,15 +6,10 @@ function getExpertAI(moveData) {
 		case "DamageAndUserSpattackDown2":
 		case "DreamEater":
 		case "FocusPunch":
-		case "HammerArm":
 		case "HighHpHighDamage":
-		case "LastResort":
 		case "MustRecharge":
-		case "Payback":
 		case "StealBerry":
-		case "SuckerPunch":
 		case "Superpower":
-		case "TrumpCard":
 		case "UTurn":
 		case "WakeUpSlap":
 			resultAiChecks.push("Check_Effectiveness");
@@ -160,13 +155,7 @@ function getExpertAI(moveData) {
 			break;
 		
 		
-		case "LunarDance":
-			resultAiChecks.push("HealingWish");
-			break;
-		
-		
 		case "SunRecover":
-		case "Roost":
 		case "Swallow":
 			resultAiChecks.push("Recover");
 			break;
@@ -203,13 +192,7 @@ function getExpertAI(moveData) {
 			break;
 		
 		case "Fly":
-		case "ShadowForce":
 			resultAiChecks.push("Check_ChargeTurnInvuln");
-			break;
-		
-		
-		case "StealthRock":
-			resultAiChecks.push("Spikes");
 			break;
 	}
 	

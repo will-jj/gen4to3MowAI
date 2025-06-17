@@ -33,20 +33,6 @@ If the user's ally's ability is Lightningrod:
 	Score -10 and terminate`,
 
 
-["Check_LavaPlume"]:
-`If the user's ally's ability is Dry Skin:
-	Score -3 and terminate
-
-If the user's ally's ability is Flash Fire:
-	Score +3 and terminate
-
-If the user's ally is Grass, Steel, Ice, or Bug type:
-	Score -10 and terminate
-
-Otherwise:
-	Score -3 and terminate`,
-
-
 ["Check_MostDamage"]:
 `If the move deals the most damage to the target when considering all of the user's ally's moves as well (regardless of if the ally is alive):
 	50% (128/256) chance of score +1 and continue`,
@@ -82,7 +68,7 @@ If the user's ally's ability is Storm Drain:
 
 
 ["Earthquake"]:
-`If the user's ally is Flying type, or has the ability Levitate, or is under the effect of Magnet Rise:
+`If the user's ally is Flying type, or has the ability Levitate:
 	Score +2 and terminate
 
 If the user's ally is Fire, Electric, Poison, or Rock type:
@@ -210,32 +196,4 @@ If the user's ally's ability is Solar Power:
 		Score +1 and continue
 	
 	50% (128/256) chance of score -2 and terminate`,
-
-
-["TrickRoom"]:
-`If the user's ally's HP is 0% (after rounding), or either of the foes' HP is 0% (after rounding):
-	Score -30 and terminate
-
-If the user and its ally will both move before both of the foes:
-	If the user and its ally are speed tied:
-		With a 25% (64/256) chance:
-			Score -5 and terminate
-	
-	Otherwise:
-		Score -30 and terminate
-
-If the user and its ally will both move after both of the foes:
-	If the user and its ally are speed tied:
-		With a 50% (128/256) chance:
-			Score -5 and terminate
-		Else:
-			75% (192/256) chance of score +5 and terminate
-	
-	Otherwise:
-		75% (192/256) chance of score +5 and terminate
-
-Otherwise:
-	Score -5 and terminate`,
-
-
 };

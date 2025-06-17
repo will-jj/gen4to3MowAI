@@ -79,11 +79,7 @@ Hydro Pump
 DynamicPunch
 Blizzard
 Zap Cannon
-Megahorn
-Magma Storm
-Power Whip
-Seed Flare
-Head Smash`,
+Megahorn`,
 
 
 ["SkillSwap"]:

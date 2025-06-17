@@ -13,14 +13,11 @@ function isSubjectToDamageCalc(moveData) {
 		case "FocusPunch":
 		case "Superpower":
 		case "HighHpHighDamage":
-		case "SuckerPunch":
 		case "12Recoil":
 			return false;
 		
 		// Moves which do nonstandard damage, but are handled correctly and included
 		case "HiddenPower":
-		case "NaturalGift":
-		case "Judgment":
 		case "DragonRage":
 		case "DamageIsLevel":
 		case "Psywave":

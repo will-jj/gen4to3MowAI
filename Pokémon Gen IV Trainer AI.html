@@ -192,8 +192,8 @@ activate.</p>
 			<p>When the AI checks for move effectiveness, it does so regardless of if the move in question is actually damaging.</p>
 			
 			<p>If the user has the ability Normalize, the move's type is changed 
-to Normal. Otherwise, if the move is Natural Gift, Hidden Power, 
-Judgment, or Weather Ball, the move is adjusted to its correct type.</p>
+to Normal. Otherwise, if the move is Hidden Power, 
+or Weather Ball, the move is adjusted to its correct type.</p>
 			
 			<p>The effectiveness multiplier is initialized to 1x, and then first adjusted by:</p>
 			<ul>
@@ -206,9 +206,8 @@ Judgment, or Weather Ball, the move is adjusted to its correct type.</p>
 				<li><p>Scrappy</p></li>
 				<li><p>Mold Breaker</p></li>
 				<li><p>Odor Sleuth / Foresight</p></li>
-				<li><p>Miracle Eye</p></li>
-				<li><p>Roost / Ingrain / Iron Ball</p></li>
-				<li><p>Magnet Rise / Levitate</p></li>
+				<li><p>Ingrain / Iron Ball</p></li>
+				<li><p>Levitate</p></li>
 				<li><p>Wonder Guard</p></li>
 			</ul>
 			
@@ -283,7 +282,6 @@ then its fixed damage is returned as the result.</p>
 				<li><p>Stomp against a target that has used Minimize</p></li>
 				<li><p>Facade while the user is statused</p></li>
 				<li><p>SmellingSalt against a paralyzed target</p></li>
-				<li><p>Wake-Up Slap against a sleeping target</p></li>
 				<li><p>Surf or Whirlpool against a target using Dive</p></li>
 				<li><p>Gust or Twister against a target using Fly</p></li>
 				<li><p>Earthquake or Magnitude against a target using Dig</p></li>
@@ -316,7 +314,7 @@ to verify its exact mechanism of affecting the damage formula.</p>
 			<h4>Excluded moves</h4>
 			<p>These moves are not accepted for damage calculation. Any attempt to calculate their damage will result in a damage of 0, <em>except</em>
  when checking the damage of the move previously used by another Pokémon
- (as in Me First). If calculated in this way, moves with a 
+ . If calculated in this way, moves with a 
 nonregular base power such as Present, Flail, or Sheer Cold will 
 be treated as having a base power of 1. Full HP will be assumed for 
 Eruption and Water Spout. Magnitude uniquely will generate a random 
@@ -337,10 +335,6 @@ power level if its damage is calculated in this way.</p>
 				<li><p>Spit Up</p></li>
 				<li><p>Endeavor</p></li>
 				<li><p>Sheer Cold</p></li>
-				<li><p>Metal Burst</p></li>
-				<li><p>Trump Card</p></li>
-				<li><p>Wring Out</p></li>
-				<li><p>Punishment</p></li>
 				<li><p>Crush Grip</p></li>
 				<li><p>Selfdestruct</p></li>
 				<li><p>Explosion</p></li>
@@ -351,8 +345,6 @@ power level if its damage is calculated in this way.</p>
 				<li><p>Hydro Cannon</p></li>
 				<li><p>Blast Burn</p></li>
 				<li><p>Frenzy Plant</p></li>
-				<li><p>Rock Wrecker</p></li>
-				<li><p>Roar of Time</p></li>
 				<li><p>Skull Bash</p></li>
 				<li><p>SolarBeam</p></li>
 				<li><p>Spit Up</p></li>
@@ -360,8 +352,6 @@ power level if its damage is calculated in this way.</p>
 				<li><p>Superpower</p></li>
 				<li><p>Eruption</p></li>
 				<li><p>Water Spout</p></li>
-				<li><p>Sucker Punch</p></li>
-				<li><p>Head Smash</p></li>
 			</ul>
 			
 			<h2>Other notes and quirks</h2>
@@ -568,16 +558,11 @@ reaches a "terminate".</p>
 						<option>Guillotine</option>
 						<option>Gust</option>
 						<option>Hail</option>
-						<option>Hammer Arm</option>
 						<option>Harden</option>
 						<option>Haze</option>
-						<option>Head Smash</option>
 						<option>Headbutt</option>
 						<option>Heal Bell</option>
 						<option>Heal Block</option>
-						<option>Heal Order</option>
-						<option>Healing Wish</option>
-						<option>Heart Swap</option>
 						<option>Heat Wave</option>
 						<option>Helping Hand</option>
 						<option>Hi Jump Kick</option>
@@ -593,25 +578,18 @@ reaches a "terminate".</p>
 						<option>Hypnosis</option>
 						<option>Ice Ball</option>
 						<option>Ice Beam</option>
-						<option>Ice Fang</option>
 						<option>Ice Punch</option>
-						<option>Ice Shard</option>
 						<option>Icicle Spear</option>
 						<option>Icy Wind</option>
 						<option>Imprison</option>
 						<option>Ingrain</option>
 						<option>Iron Defense</option>
-						<option>Iron Head</option>
 						<option>Iron Tail</option>
-						<option>Judgment</option>
 						<option>Jump Kick</option>
 						<option>Karate Chop</option>
 						<option>Kinesis</option>
 						<option>Knock Off</option>
-						<option>Last Resort</option>
-						<option>Lava Plume</option>
 						<option>Leaf Blade</option>
-						<option>Leaf Storm</option>
 						<option>Leech Life</option>
 						<option>Leech Seed</option>
 						<option>Leer</option>
@@ -620,17 +598,11 @@ reaches a "terminate".</p>
 						<option>Lock-On</option>
 						<option>Lovely Kiss</option>
 						<option>Low Kick</option>
-						<option>Lucky Chant</option>
-						<option>Lunar Dance</option>
 						<option>Luster Purge</option>
 						<option>Mach Punch</option>
 						<option>Magic Coat</option>
 						<option>Magical Leaf</option>
-						<option>Magma Storm</option>
-						<option>Magnet Bomb</option>
-						<option>Magnet Rise</option>
 						<option>Magnitude</option>
-						<option>Me First</option>
 						<option>Mean Look</option>
 						<option>Meditate</option>
 						<option>Mega Drain</option>
@@ -638,7 +610,6 @@ reaches a "terminate".</p>
 						<option>Mega Punch</option>
 						<option>Megahorn</option>
 						<option>Memento</option>
-						<option>Metal Burst</option>
 						<option>Metal Claw</option>
 						<option>Metal Sound</option>
 						<option>Meteor Mash</option>
@@ -647,61 +618,44 @@ reaches a "terminate".</p>
 						<option>Mimic</option>
 						<option>Mind Reader</option>
 						<option>Minimize</option>
-						<option>Miracle Eye</option>
 						<option>Mirror Coat</option>
 						<option>Mirror Move</option>
-						<option>Mirror Shot</option>
 						<option>Mist</option>
 						<option>Mist Ball</option>
 						<option>Moonlight</option>
 						<option>Morning Sun</option>
-						<option>Mud Bomb</option>
 						<option>Mud Shot</option>
 						<option>Mud Sport</option>
 						<option>Mud-Slap</option>
 						<option>Muddy Water</option>
-						<option>Nasty Plot</option>
-						<option>Natural Gift</option>
 						<option>Nature Power</option>
 						<option>Needle Arm</option>
 						<option>Night Shade</option>
-						<option>Night Slash</option>
 						<option>Nightmare</option>
 						<option>Octazooka</option>
 						<option>Odor Sleuth</option>
-						<option>Ominous Wind</option>
 						<option>Outrage</option>
 						<option>Overheat</option>
 						<option>Pain Split</option>
 						<option>Pay Day</option>
-						<option>Payback</option>
 						<option>Peck</option>
 						<option>Perish Song</option>
 						<option>Petal Dance</option>
 						<option>Pin Missile</option>
-						<option>Pluck</option>
 						<option>Poison Fang</option>
 						<option>Poison Gas</option>
-						<option>Poison Jab</option>
 						<option>Poison Sting</option>
 						<option>Poison Tail</option>
 						<option>PoisonPowder</option>
 						<option>Pound</option>
 						<option>Powder Snow</option>
-						<option>Power Gem</option>
-						<option>Power Swap</option>
-						<option>Power Trick</option>
-						<option>Power Whip</option>
 						<option>Present</option>
 						<option>Protect</option>
 						<option>Psybeam</option>
 						<option>Psych Up</option>
 						<option>Psychic</option>
 						<option>Psycho Boost</option>
-						<option>Psycho Cut</option>
-						<option>Psycho Shift</option>
 						<option>Psywave</option>
-						<option>Punishment</option>
 						<option>Pursuit</option>
 						<option>Quick Attack</option>
 						<option>Rage</option>
@@ -718,19 +672,14 @@ reaches a "terminate".</p>
 						<option>Revenge</option>
 						<option>Reversal</option>
 						<option>Roar</option>
-						<option>Roar of Time</option>
 						<option>Rock Blast</option>
-						<option>Rock Climb</option>
-						<option>Rock Polish</option>
 						<option>Rock Slide</option>
 						<option>Rock Smash</option>
 						<option>Rock Throw</option>
 						<option>Rock Tomb</option>
-						<option>Rock Wrecker</option>
 						<option>Role Play</option>
 						<option>Rolling Kick</option>
 						<option>Rollout</option>
-						<option>Roost</option>
 						<option>Sacred Fire</option>
 						<option>Safeguard</option>
 						<option>Sand Tomb</option>
@@ -740,15 +689,10 @@ reaches a "terminate".</p>
 						<option>Scratch</option>
 						<option>Screech</option>
 						<option>Secret Power</option>
-						<option>Seed Bomb</option>
-						<option>Seed Flare</option>
 						<option>Seismic Toss</option>
 						<option>Selfdestruct</option>
 						<option>Shadow Ball</option>
-						<option>Shadow Claw</option>
-						<option>Shadow Force</option>
 						<option>Shadow Punch</option>
-						<option>Shadow Sneak</option>
 						<option>Sharpen</option>
 						<option>Sheer Cold</option>
 						<option>Shock Wave</option>
@@ -775,7 +719,6 @@ reaches a "terminate".</p>
 						<option>Softboiled</option>
 						<option>SolarBeam</option>
 						<option>SonicBoom</option>
-						<option>Spacial Rend</option>
 						<option>Spark</option>
 						<option>Spider Web</option>
 						<option>Spike Cannon</option>
@@ -784,17 +727,14 @@ reaches a "terminate".</p>
 						<option>Spite</option>
 						<option>Splash</option>
 						<option>Spore</option>
-						<option>Stealth Rock</option>
 						<option>Steel Wing</option>
 						<option>Stockpile</option>
 						<option>Stomp</option>
-						<option>Stone Edge</option>
 						<option>Strength</option>
 						<option>String Shot</option>
 						<option>Stun Spore</option>
 						<option>Submission</option>
 						<option>Substitute</option>
-						<option>Sucker Punch</option>
 						<option>Sunny Day</option>
 						<option>Super Fang</option>
 						<option>Superpower</option>
@@ -805,13 +745,11 @@ reaches a "terminate".</p>
 						<option>Sweet Kiss</option>
 						<option>Sweet Scent</option>
 						<option>Swift</option>
-						<option>Switcheroo</option>
 						<option>Swords Dance</option>
 						<option>Synthesis</option>
 						<option>Tackle</option>
 						<option>Tail Glow</option>
 						<option>Tail Whip</option>
-						<option>Tailwind</option>
 						<option>Take Down</option>
 						<option>Taunt</option>
 						<option>Teeter Dance</option>
@@ -819,7 +757,6 @@ reaches a "terminate".</p>
 						<option>Thief</option>
 						<option>Thrash</option>
 						<option>Thunder</option>
-						<option>Thunder Fang</option>
 						<option>Thunder Wave</option>
 						<option>Thunderbolt</option>
 						<option>ThunderPunch</option>
@@ -827,18 +764,13 @@ reaches a "terminate".</p>
 						<option>Tickle</option>
 						<option>Torment</option>
 						<option>Toxic</option>
-						<option>Toxic Spikes</option>
 						<option>Transform</option>
 						<option>Tri Attack</option>
 						<option>Trick</option>
-						<option>Trick Room</option>
 						<option>Triple Kick</option>
-						<option>Trump Card</option>
 						<option>Twineedle</option>
 						<option>Twister</option>
-						<option>U-turn</option>
 						<option>Uproar</option>
-						<option>Vacuum Wave</option>
 						<option>ViceGrip</option>
 						<option>Vine Whip</option>
 						<option>Vital Throw</option>
@@ -856,14 +788,9 @@ reaches a "terminate".</p>
 						<option>Wing Attack</option>
 						<option>Wish</option>
 						<option>Withdraw</option>
-						<option>Wood Hammer</option>
-						<option>Worry Seed</option>
 						<option>Wrap</option>
-						<option>Wring Out</option>
-						<option>X-Scissor</option>
 						<option>Yawn</option>
 						<option>Zap Cannon</option>
-						<option>Zen Headbutt</option>
 					</select>
 				</div>
 				
