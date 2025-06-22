@@ -1196,8 +1196,8 @@ If the target's current attack level is not +0, and the user's HP is under 91%:
 If the target's current attack is reduced to -3 or lower:
 	80.5% (206/256) chance of score -2 and continue
 
-If the last move used by the target is special:
-	50% (128/256) chance of score -2 and terminate`,
+If either of the foe's types is not Normal, Fighting, Ground, Rock, Bug, or Steel:
+	80.5% (206/256) chance of score -2 and terminate`,
 
 
 ["TargetDefenseDown1"]:
