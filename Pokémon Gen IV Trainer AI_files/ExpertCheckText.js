@@ -54,7 +54,7 @@ If the current weather is hail:
 
 
 ["BrickBreak"]:
-`If the target's side of the field has Reflect or Light Screen active:
+`If the target's side of the field has Reflect active:
 	Score +1 and terminate`,
 
 
@@ -72,7 +72,7 @@ If the user's current accuracy is reduced to -3 or lower, or the target's curren
 
 If the current weather is hail and the user is is Rock, Ground, or Steel type, or the current weather is sandstorm and the user is Ice type:
 	68.8% (176/256) chance of score +1 and terminate
-	
+
 If the user will move after the target:
 	No scoring change and terminate
 
