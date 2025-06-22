@@ -70,9 +70,9 @@ If the user's current accuracy is reduced to -3 or lower, or the target's curren
 `If the target is poisoned, or under the effect or Curse or Leech Seed:
 	68.8% (176/256) chance of score +1 and terminate
 
-If the current weather is hail and the user is Ice type, or the current weather is sandstorm and the user is Rock, Ground, or Steel type:
+If the current weather is hail and the user is is Rock, Ground, or Steel type, or the current weather is sandstorm and the user is Ice type:
 	68.8% (176/256) chance of score +1 and terminate
-
+	
 If the user will move after the target:
 	No scoring change and terminate
 
@@ -274,10 +274,7 @@ Otherwise:
 
 ["Fly"]:
 `If the target knows the move Protect or Detect:
-	Score -1 and terminate
-
-If the effectiveness of the move is 1/4x, 1/2x or 0x:
-	Score +1 and terminate`,
+	Score -1 and terminate`,
 
 
 ["FocusPunch"]:
