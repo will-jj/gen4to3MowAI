@@ -637,6 +637,7 @@ Skill Swap`,
 Lum Berry
 Berry Juice
 Oran Berry
+Sitrus Berry
 BrightPowder
 Lax Incense
 Leftovers
