@@ -26,10 +26,7 @@ If the target is not the opposite gender as the user:
 
 
 ["BothDefenseUp1"]:
-`If the user's ability is Simple, and its current defense or special defense is boosted to +3 or more:
-	Score -10 and terminate
-
-If the user's current defense is boosted to +6:
+`If the user's current defense is boosted to +6:
 	Score -10 and terminate
 
 If the user's current special defense is boosted to +6:
@@ -37,10 +34,7 @@ If the user's current special defense is boosted to +6:
 
 
 ["BulkUp"]:
-`If the user's ability is Simple, and its current attack or defense is boosted to +3 or more:
-	Score -10 and terminate
-
-If the user's current attack is boosted to +6:
+`If the user's current attack is boosted to +6:
 	Score -10 and terminate
 
 If the user's current defense is boosted to +6:
@@ -48,10 +42,7 @@ If the user's current defense is boosted to +6:
 
 
 ["CalmMind"]:
-`If the user's ability is Simple, and its current special attack or special defense is boosted to +3 or more:
-	Score -10 and terminate
-
-If the user's current special attack is boosted to +6:
+`If the user's current special attack is boosted to +6:
 	Score -10 and terminate
 
 If the user's current special defense is boosted to +6:
@@ -132,9 +123,6 @@ If the user's current special defense is boosted to +6:
 		Score -10 and terminate
 
 If the user is not Ghost type:
-	If the user's ability is Simple, and its current attack or defense is boosted to +3 or more:
-		Score -10 and terminate
-	
 	If the user's current attack or defense is boosted to +6:
 		Score -10 and terminate`,
 
@@ -145,10 +133,7 @@ If the user is not Ghost type:
 
 
 ["DragonDance"]:
-`If the user's ability is Simple, and its current attack or speed is boosted to +3 or more:
-	Score -10 and terminate
-
-If the user's current attack is boosted to +6:
+`If the user's current attack is boosted to +6:
 	Score -10 and terminate
 
 If the user's current speed is boosted to +6:
@@ -540,26 +525,17 @@ If the weather is sunny and the target's ability is Leaf Guard, or the weather i
 `If the user's ability is No Guard, or the target's ability is No Guard:
 	Score -10 and terminate
 
-If the user's ability is Simple, and its accuracy is boosted to +3 or more:
-	Score -10 and terminate
-
 If the user's current accuracy is boosted to +6:
 	Score -10 and terminate`,
 
 
 ["UserAttackUp1"]:
-`If the user's ability is Simple, and its attack is boosted to +3 or more:
-	Score -10 and terminate
-
-If the user's current attack is boosted to +6:
+`If the user's current attack is boosted to +6:
 	Score -10 and terminate`,
 
 
 ["UserDefenseUp1"]:
-`If the user's ability is Simple, and its defense is boosted to +3 or more:
-	Score -10 and terminate
-
-If the user's current defense is boosted to +6:
+`If the user's current defense is boosted to +6:
 	Score -10 and terminate`,
 
 
@@ -567,34 +543,22 @@ If the user's current defense is boosted to +6:
 `If the user's ability is No Guard, or the target's ability is No Guard:
 	Score -10 and terminate
 
-If the user's ability is Simple, and its evasion is boosted to +3 or more:
-	Score -10 and terminate
-
 If the user's current evasion is boosted to +6:
 	Score -10 and terminate`,
 
 
 ["UserSpattackUp1"]:
-`If the user's ability is Simple, and its special attack is boosted to +3 or more:
-	Score -10 and terminate
-
-If the user's current special attack is boosted to +6:
+`If the user's current special attack is boosted to +6:
 	Score -10 and terminate`,
 
 
 ["UserSpdefenseUp1"]:
-`If the user's ability is Simple, and its special defense is boosted to +3 or more:
-	Score -10 and terminate
-
-If the user's current special defense is boosted to +6:
+`If the user's current special defense is boosted to +6:
 	Score -10 and terminate`,
 
 
 ["UserSpeedUp1"]:
-`If the user's ability is Simple, and its speed is boosted to +3 or more:
-	Score -10 and terminate
-
-If the user's current speed is boosted to +6:
+`If the user's current speed is boosted to +6:
 	Score -10 and terminate`,
 
 
