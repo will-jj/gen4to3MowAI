@@ -349,7 +349,7 @@ Otherwise:
 
 
 ["HighCritical"]:
-`If the effectiveness of the move is 1/2x, 1/4x, or 0x:
+`If the effectiveness of the move is 1/2x, or 1/4x:
 	No scoring change and terminate
 
 If the effectiveness of the move is 2x or 4x:
