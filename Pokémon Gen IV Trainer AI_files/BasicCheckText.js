@@ -110,16 +110,8 @@ If the user's current special defense is boosted to +6:
 
 
 ["Curse"]:
-`If the user is Ghost type:
-	If the target is already under the effect of Curse:
-		Score -10 and terminate
-	
-	If the target's ability is Magic Guard:
-		Score -10 and terminate
-
-If the user is not Ghost type:
-	If the user's current attack or defense is boosted to +6:
-		Score -10 and terminate`,
+`If the user's current attack or defense is boosted to +6:
+	Score -10 and terminate`,
 
 
 ["Disable"]:
