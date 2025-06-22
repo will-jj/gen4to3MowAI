@@ -771,13 +771,13 @@ If the user will move after the target:
 `If the user's consecutive protection count is 2 or more:
 	Score -2 and terminate
 
-If the user is poisoned, or infatuated, or under the effect of Curse, Leech Seed, Yawn, or Perish Song, or the foe knows the move Recover or Defense Curl:
-	If the user is under the effect of Lock-On or Mind Reader:
+If the user is poisoned, or infatuated, or under the effect of Curse, Leech Seed, Yawn, or Perish Song, or the foe knows the move Recover, Slack Off, or Defense Curl:
+	If the foe's last move was Lock-On or Mind Reader:
 		No scoring change and terminate
 	Else:
 		Score -2 and terminate
 
-If the foe is poisoned, or infatuated, or under the effect of Curse, Leech Seed, Yawn, or Perish Song, or this is a double battle, or the user is under the effect of Lock-On or Mind Reader:
+If the foe is poisoned, or infatuated, or under the effect of Curse, Leech Seed, Yawn, or Perish Song, or the foe's last move was Lock-On or Mind Reader:
 	Score +2 and continue
 Else:
 	33.2% (85/256) chance of score +2 and continue
