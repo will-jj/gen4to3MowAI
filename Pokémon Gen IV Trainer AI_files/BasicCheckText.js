@@ -49,11 +49,6 @@ If the user's current special defense is boosted to +6:
 	Score -8 and terminate`,
 
 
-["Camouflage"]:
-`If the user is currently under the effect of Camouflage:
-	Score -10 and terminate`,
-
-
 ["Check_ClearBody"]:
 `If the target's ability is Clear Body or White Smoke:
 	Score -10 and terminate`,
