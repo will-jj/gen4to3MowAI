@@ -106,7 +106,7 @@ If the user's current special defense is boosted to +6:
 
 ["Check_WonderGuard"]:
 `If the target's ability is Wonder Guard, and the effectiveness of the move is not 2x or 4x:
-	Score -12 and terminate`,
+	Score -10 and terminate`,
 
 
 ["Curse"]:
