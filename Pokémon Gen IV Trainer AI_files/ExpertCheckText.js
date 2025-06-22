@@ -81,7 +81,7 @@ If the last move used by the target was Lock-On or Mind Reader:
 
 
 ["Check_Effectiveness"]:
-`If the effectiveness of the move is 1/2x, 1/4x, or 0x:
+`If the effectiveness of the move is 1/2x, or 1/4x:
 	Score -1 and terminate`,
 
 
@@ -761,10 +761,7 @@ Otherwise:
 
 
 ["MustRecharge"]:
-`If the user's ability is Truant:
-	68.8% (176/256) chance of score +1 and terminate
-
-If the user will move after the target, and the user's HP is over 59%:
+`If the user will move after the target, and the user's HP is over 59%:
 	Score -1 and terminate
 
 If the user will move before the target, and the user's HP is over 40%:
