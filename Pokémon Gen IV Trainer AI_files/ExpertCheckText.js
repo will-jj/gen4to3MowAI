@@ -273,10 +273,7 @@ Otherwise:
 
 
 ["Fly"]:
-`If the user is holding a Power Herb:
-	Score +2 and terminate
-
-If the target knows the move Protect or Detect:
+`If the target knows the move Protect or Detect:
 	Score -1 and terminate
 
 If the effectiveness of the move is 1/4x, 1/2x or 0x:
@@ -848,9 +845,6 @@ If the current weather is sun, hail, or sandstorm, or the user's ability is Rain
 `If the effectiveness of the move is 1/2x, 1/4x, or 0x:
 	Score -2 and terminate
 
-If the user is holding a Power Herb:
-	Score +2 and terminate
-
 If the target knows the move Protect or Detect:
 	Score -2 and terminate
 
@@ -1004,7 +998,7 @@ Otherwise:
 `If the effectiveness of the move is 1/2x, 1/4x, or 0x:
 	Score -2 and terminate
 
-If the user is holding a Power Herb, or the current weather is sunny:
+If the current weather is sunny:
 	Score +2 and terminate
 
 If the target knows the move Protect or Detect:
