@@ -336,7 +336,7 @@ Otherwise:
 
 
 ["HealBell"]:
-`If the user, and all of its other party members, are not statused:
+`If the foe, and all of its other party members, are not statused:
 	Score -5 and terminate`,
 
 
