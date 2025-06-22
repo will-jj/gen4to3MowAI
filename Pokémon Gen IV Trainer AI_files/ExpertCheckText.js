@@ -641,25 +641,7 @@ BrightPowder
 Lax Incense
 Leftovers
 Light Ball
-Thick Club
-Occa Berry
-Passho Berry
-Wacan Berry
-Rindo Berry
-Yache Berry
-Chople Berry
-Kebia Berry
-Shuca Berry
-Coba Berry
-Payapa Berry
-Tanga Berry
-Charti Berry
-Kasib Berry
-Haban Berry
-Colbur Berry
-Babiri Berry
-Chilan Berry
-Black Sludge`,
+Thick Club`,
 
 
 ["LockOn"]:
