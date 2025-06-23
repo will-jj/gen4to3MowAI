@@ -527,8 +527,7 @@ Teeter Dance
 Mud Sport
 Water Sport
 Dragon Dance
-Camouflage
-Heal Block`,
+Camouflage`,
 
 
 ["List_GoodAbilities"]:

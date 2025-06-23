@@ -353,6 +353,5 @@ const moves = {
 	"Water Pulse"   : { name: "Water Pulse",   battleEffect:  null,                         damageType: "Water"    }, 
 	"Doom Desire"   : { name: "Doom Desire",   battleEffect: "FutureAttack",                damageType: "Steel"    }, 
 	"Psycho Boost"  : { name: "Psycho Boost",  battleEffect: "DamageAndUserSpattackDown2",  damageType: "Psychic"  }, 
-	"Heal Block"    : { name: "Heal Block",    battleEffect: "HealBlock",                   damageType:  null      }, 
 	"Worry Seed"    : { name: "Worry Seed",    battleEffect: "WorrySeed",                   damageType:  null      }, 
 };

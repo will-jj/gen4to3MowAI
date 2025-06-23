@@ -188,11 +188,6 @@ Otherwise:
 	Score -10 and terminate`,
 
 
-["HealBlock"]:
-`If the target is already under the effect of Heal Block:
-	Score -10 and terminate`,
-
-
 ["HelpingHand"]:
 `If the fight is not a double or multi battle:
 	Score -10 and terminate`,
