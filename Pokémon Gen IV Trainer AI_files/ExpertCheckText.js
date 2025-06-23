@@ -205,11 +205,6 @@ If the user's HP is under 51%:
 	72.7% (186/256) chance of score -1 and terminate`,
 
 
-["DreamEater"]:
-`If the target is asleep:
-	80.1% (205/256) of score +3 and terminate`,
-
-
 ["Encore"]:
 `If the target is under the effect of Disable:
 	88.3% (226/256) chance of score +3 and terminate
