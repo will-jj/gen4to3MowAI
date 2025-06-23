@@ -1,12 +1,4 @@
 const expertCheckText = {
-["14Recoil"]:
-`If the effectiveness of the move is 1/2x, 1/4x, or 0x:
-	No scoring change and terminate
-
-If the user's ability is Rock Head or Magic Guard:
-	Score +1 and terminate`,
-
-
 ["BatonPass"]:
 `If the user's current attack, defense, special attack, special defense, or evasion is boosted to +3 or more:
 	If the user will move before the foe, and the user's HP is over 60%:
