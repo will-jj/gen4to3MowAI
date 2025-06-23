@@ -92,7 +92,7 @@ If the user's ability is Levitate, and the target's ability is not Levitate, and
 	Else:
 		Score -29 and terminate
 
-If the user's ability is CompoundEyes or No Guard, and the target knows a move in the list below:
+If the user's ability is CompoundEyes, and the target knows a move in the list below:
 	Score +3 and terminate
 
 Otherwise:

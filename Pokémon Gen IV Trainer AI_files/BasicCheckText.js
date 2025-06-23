@@ -257,9 +257,7 @@ If the target's ability is Magic Guard:
 
 ["LockOn"]:
 `If the target is already under the effect of Lock-On:
-	Score -10 and terminate
 
-If the user's ability is No Guard, or the target's ability is No Guard:
 	Score -10 and terminate`,
 
 
@@ -430,10 +428,7 @@ If the target is not holding any item:
 `If the target's accuracy is reduced to -6:
 	Score -10 and terminate
 
-If the user's ability is No Guard:
-	Score -10 and terminate
-
-If the target's ability is No Guard or Keen Eye:
+If the target's ability is Keen Eye:
 	Score -10 and terminate`,
 
 
@@ -452,12 +447,6 @@ If the target's ability is Hyper Cutter:
 
 ["TargetEvasionDown1"]:
 `If the target's evasion is reduced to -6:
-	Score -10 and terminate
-
-If the user's ability is No Guard:
-	Score -10 and terminate
-
-If the target's ability is No Guard:
 	Score -10 and terminate`,
 
 
@@ -512,10 +501,7 @@ If the weather is sunny and the target's ability is Leaf Guard, or the weather i
 
 
 ["UserAccuracyUp1"]:
-`If the user's ability is No Guard, or the target's ability is No Guard:
-	Score -10 and terminate
-
-If the user's current accuracy is boosted to +6:
+`If the user's current accuracy is boosted to +6:
 	Score -10 and terminate`,
 
 
@@ -530,10 +516,7 @@ If the user's current accuracy is boosted to +6:
 
 
 ["UserEvasionUp1"]:
-`If the user's ability is No Guard, or the target's ability is No Guard:
-	Score -10 and terminate
-
-If the user's current evasion is boosted to +6:
+`If the user's current evasion is boosted to +6:
 	Score -10 and terminate`,
 
 
