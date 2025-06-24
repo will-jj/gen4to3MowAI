@@ -265,17 +265,14 @@ Otherwise:
 
 
 ["FocusPunch"]:
-`If the user is behind a substitute:
-	Score +5 and terminate
-
-If the target is asleep:
+`If the target is asleep:
 	Score +1 and terminate
 
-If the target is infatuated or confused:
-	60.9% (156/256) chance of score +1 and terminate
+If the target is infatuated or confused, and the user is behind a substitute:
+	60.9% (156/256) chance of score +5 and terminate
 
 If this is the user's first turn in battle:
-	21.9% (56/256) chance of score +1 and terminate`,
+	60.9% (156/256) chance of score +1 and terminate`,
 
 
 ["ForceSwitch"]:
