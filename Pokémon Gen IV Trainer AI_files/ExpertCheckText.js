@@ -731,11 +731,6 @@ If the user will move before the target, and the user's HP is over 40%:
 	Score -1 and terminate`,
 
 
-["Ohko"]:
-`Unconditionally:
-	25% (64/256) chance of score +1 and terminate`,
-
-
 ["PainSplit"]:
 `If the target's HP is under 80%:
 	Score -1 and terminate
