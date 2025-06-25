@@ -365,7 +365,7 @@ Otherwise:
 `If the user is Ghost type:
 	47.3% (121/256) chance of score +2 and terminate
 
-If the target's current evasion is boosted to +3 or more:
+If the user's current evasion is boosted to +3 or more:
 	68.8% (176/256) chance of score +2 and terminate
 
 Otherwise:
