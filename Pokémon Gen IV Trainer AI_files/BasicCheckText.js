@@ -168,13 +168,7 @@ Otherwise:
 
 ["Hail"]:
 `If the weather is already hail:
-	Score -8 and terminate
-
-If the foe's ability is Ice Body:
-	If the user's ability is Ice Body:
-		No scoring change and terminate
-	Else:
-		Score -8 and terminate`,
+	Score -8 and terminate`,
 
 
 ["Haze"]:

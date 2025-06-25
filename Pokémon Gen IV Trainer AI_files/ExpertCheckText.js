@@ -293,13 +293,7 @@ Otherwise:
 	Score -1 and terminate
 
 If the weather is rain, sun, or sandstorm:
-	Score +1 and continue
-	
-	If the user knows the move Blizzard:
-		Score +2 and continue
-	
-	If the user's ability is Ice Body:
-		Score +2 and terminate`,
+	Score +1 and terminate`,
 
 
 ["Haze"]:
