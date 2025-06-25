@@ -183,7 +183,7 @@ Otherwise:
 
 
 ["HelpingHand"]:
-`If the fight is not a double or multi battle:
+`If the fight is a singles battle:
 	Score -10 and terminate`,
 
 
