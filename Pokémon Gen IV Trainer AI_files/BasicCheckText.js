@@ -204,7 +204,7 @@ Otherwise:
 
 
 ["InflictBurn"]:
-`If the target's ability is Water Veil or Magic Guard:
+`If the target's ability is Water Veil:
 	Score -10 and terminate
 
 If the target is a Fire type:
@@ -220,7 +220,7 @@ If the target's ability is Own Tempo:
 
 
 ["InflictParalysis"]:
-`If the target's ability is Limber or Magic Guard:
+`If the target's ability is Limber:
 	Score -10 and terminate`,
 
 
