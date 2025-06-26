@@ -233,9 +233,6 @@ If the target's ability is Own Tempo:
 	Score -10 and terminate
 
 If the target is Grass type:
-	Score -10 and terminate
-
-If the target's ability is Magic Guard:
 	Score -10 and terminate`,
 
 
@@ -284,10 +281,7 @@ If the user has no living party members:
 	Score -10 and terminate
 
 If the target is not asleep:
-	Score -8 and terminate
-
-If the target's ability is Magic Guard:
-	Score -10 and terminate`,
+	Score -8 and terminate`,
 
 
 ["Ohko"]:
@@ -479,7 +473,7 @@ If the target's current defense is reduced to -6:
 `If the target is Steel or Poison type:
 	Score -10 and terminate
 
-If the target's ability is Immunity, Magic Guard, or Poison Heal:
+If the target's ability is Immunity, or Poison Heal:
 	Score -10 and terminate
 
 If the weather is sunny and the target's ability is Leaf Guard, or the weather is rainy and the target's ability is Hydration:
