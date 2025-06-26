@@ -193,7 +193,7 @@ Otherwise:
 
 
 ["Imprison"]:
-`If the user is currently imprisoning the target, or is currently being imprisoned by the target:
+`If the user is currently imprisoning the target:
 	Score -10 and terminate`,
 
 
