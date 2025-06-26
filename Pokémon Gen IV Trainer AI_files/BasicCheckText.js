@@ -407,9 +407,6 @@ If it is already sunny:
 
 ["SwitchItems"]:
 `If the target's ability is Sticky Hold:
-	Score -10 and terminate
-
-If the target is not holding any item:
 	Score -10 and terminate`,
 
 
