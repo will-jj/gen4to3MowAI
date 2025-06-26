@@ -302,11 +302,6 @@ If it is already raining:
 	Score -8 and terminate`,
 
 
-["Recover"]:
-`If the user's HP is full:
-	Score -8 and terminate`,
-
-
 ["Recycle"]:
 `If the user has no item to recycle:
 	Score -10 and terminate`,
