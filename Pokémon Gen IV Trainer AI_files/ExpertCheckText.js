@@ -350,11 +350,6 @@ Otherwise:
 	80.5% (206/256) of score -3 and terminate`,
 
 
-["IcyWind"]:
-`If the game version is not Diamond or Pearl, and the effectiveness of the move is 1/2x, 1/4x or 0x:
-	No scoring change and terminate`,
-
-
 ["Identify"]:
 `If the user is Ghost type:
 	47.3% (121/256) chance of score +2 and terminate
