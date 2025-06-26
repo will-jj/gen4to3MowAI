@@ -410,11 +410,8 @@ If this is not the user's first turn in battle:
 `If the user's HP is under 50%:
 	Score -2 and terminate
 
-If the user's HP is over 89%:
-	50% (128/256) chance of score +1 and continue
-
-If the last move used by the foe was special:
-	75% (192/256) chance of score +1 and terminate`,
+If either of the foe's types is not Fire, Water, Grass, Electric, Psychic, Ice, Dragon, or Dark:
+	80.5% (206/256) chance of score -2 and terminate`,
 
 
 ["List_BadTrade"]:
