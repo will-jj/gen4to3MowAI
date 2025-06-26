@@ -61,7 +61,7 @@ function getBasicAI(moveData) {
 		case "SuperFang":
 	//	case "DragonRage":
 		case "MustRecharge":
-		case "DamageIsLevel":
+	//	case "DamageIsLevel":
 	//	case "Psywave":
 		case "Counter":
 		case "LowHpHighDamage":
