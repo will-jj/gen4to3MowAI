@@ -241,12 +241,6 @@ If the target is Grass type:
 	Score -8 and terminate`,
 
 
-["LockOn"]:
-`If the target is already under the effect of Lock-On:
-
-	Score -10 and terminate`,
-
-
 ["Magnitude"]:
 `If the target's ability is Levitate:
 	Score -10 and terminate`,
