@@ -459,10 +459,7 @@ If the target's current defense is reduced to -6:
 `If the target is Steel or Poison type:
 	Score -10 and terminate
 
-If the target's ability is Immunity, or Poison Heal:
-	Score -10 and terminate
-
-If the weather is sunny and the target's ability is Leaf Guard, or the weather is rainy and the target's ability is Hydration:
+If the target's ability is Immunity:
 	Score -10 and terminate`,
 
 
