@@ -289,16 +289,7 @@ If the target is a higher level than the user:
 
 
 ["RainDance"]:
-`If the user's ability is Swift Swim or Hydration:
-	If it is already raining:
-		Score -8 and terminate
-	Else:
-		No score change and terminate
-	
-If the foe's ability is Hydration, and they are statused:
-	Score -8 and terminate
-
-If it is already raining:
+`If it is already raining:
 	Score -8 and terminate`,
 
 

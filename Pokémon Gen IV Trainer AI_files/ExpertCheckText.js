@@ -781,7 +781,7 @@ Otherwise:
 If the user's HP is under 40%:
 	Score -1 and terminate
 
-If the current weather is sun, hail, or sandstorm, or the user's ability is Rain Dish, or the user's ability is Hydration and the user is statused:
+If the current weather is sun, hail, or sandstorm, or the user's ability is Rain Dish:
 	Score +1 and terminate`,
 
 
