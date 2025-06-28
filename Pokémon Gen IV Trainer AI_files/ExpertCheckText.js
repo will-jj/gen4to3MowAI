@@ -786,7 +786,7 @@ If the current weather is sun, hail, or sandstorm, or the user's ability is Rain
 
 
 ["RazorWind"]:
-`If the effectiveness of the move is 1/2x, 1/4x, or 0x:
+`If the effectiveness of the move is 1/2x, or 1/4x:
 	Score -2 and terminate
 
 If the target knows the move Protect or Detect:
