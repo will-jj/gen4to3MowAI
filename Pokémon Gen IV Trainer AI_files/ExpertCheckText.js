@@ -529,15 +529,7 @@ Shed Skin
 Marvel Scale 
 Pure Power 
 Chlorophyll 
-Shield Dust 
-Adaptability 
-Magic Guard 
-Super Luck 
-Unaware 
-Tinted Lens 
-Filter 
-Solid Rock 
-Reckless`,
+Shield Dust`,
 
 
 ["List_HealingMoves"]:
