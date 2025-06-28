@@ -826,11 +826,8 @@ Otherwise:
 `If the user's HP is under 50%:
 	Score -2 and terminate
 
-If the user's HP is over 89%:
-	50% (128/256) chance of score +1 and continue
-
-If the last move used by the foe was physical:
-	75% (192/256) chance of score +1 and terminate`,
+If either of the foe's types is not Normal, Fighting, Flying, Poison, Ground, Rock, Bug, Steel, or Ghost:
+	80.4% (206/256) chance of score -2 and terminate`,
 
 
 ["Refresh"]:
