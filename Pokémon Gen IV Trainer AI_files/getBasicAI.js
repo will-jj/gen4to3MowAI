@@ -46,8 +46,8 @@ function getBasicAI(moveData) {
 		case "Screech":
 		case "Snore":
 		case "Uproar":
-		case "Metal sound": 
-		case "Grasswhistle":
+		case "Metal Sound": 
+		case "GrassWhistle":
 			resultAiChecks.push("Check_Soundproof");
 			break;
 	}
