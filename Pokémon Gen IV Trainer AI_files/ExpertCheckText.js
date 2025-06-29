@@ -1024,53 +1024,16 @@ If the user will move before the target, and the user's HP is over 40%:
 
 
 ["SwitchItems"]:
-`If the target is holding an item in the list below:
-	Score -3 and terminate
-
-If the user is holding a Choice item, an Iron Ball, a Full Incense or Lagging Tail, or a Power item:
-	Score +5 and terminate
-
-If the user is holding a Toxic Orb:
-	If the target is already statused, or is protected by Safeguard, or is Poison or Steel type, or has the ability Magic Guard, Immunity, or Poison Heal:
-		If the user is already statused, or is protected by Safeguard, or is Poison or Steel type, or has the ability Magic Guard, Immunity, Poison Heal, or Klutz:
-			Score -3 and terminate
-		Else:
-			Score +5 and terminate
-	
-	Otherwise:
-		Score +5 and terminate
-
-If the user is holding a Flame Orb:
-	If the target is already statused, or is protected by Safeguard, or is Fire type, or has the ability Water Veil or Magic Guard:
-		If the user is already statused, or is protected by Safeguard, or is Fire type, or has the ability Water Veil, Magic Guard, or Klutz:
-			Score -3 and terminate
-		Else:
-			Score +5 and terminate
-	
-	Otherwise:
-		Score +5 and terminate
-
-If the user is holding Black Sludge:
-	If the target is Poison type:
-		If the user is Poison type, or has the ability Magic Guard or Klutz:
-			Score -3 and terminate
-		Else:
-			Score +5 and terminate
-	
-	If the target's ability is Magic Guard:
-		If the user is already statused, or is protected by Safeguard, or is Poison or Steel type, or has the ability Magic Guard, Immunity, Poison Heal, or Klutz:
-			Score -3 and terminate
-		Else:
-			Score +5 and terminate
-	
-	Otherwise:
-		Score +5 and terminate
-
-If the user is holding a flavor-confusing berry (Figy, Wiki, Mago, Aguav, Iapapa):
-	If the target is holding a flavor-confusing berry:
+`If the user is holding a Choice Band:
+	If the target is holding a Choice Band:
 		Score -3 and terminate
-	
-	Otherwise:
+	Else:
+		Score +5 and terminate
+
+If the user is holding a flavor-confusing berry (Figy, Wiki, Mago, Aguav, Iapapa), Macho Brace, or Choice Band:
+	If the target is holding a flavor-confusing berry, Macho Brace, or Choice Band:
+		Score -3 and terminate
+	Else:
 		80.5% (206/256) chance of score +2 and terminate
 
 Otherwise:

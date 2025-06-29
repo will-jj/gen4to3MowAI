@@ -36,10 +36,6 @@ function getExpertAI(moveData) {
 			resultAiChecks.push("List_StealItem");
 			break;
 		
-		case "SwitchItems":
-			resultAiChecks.push("List_BadTrade");
-			break;
-		
 		case "SkillSwap":
 			resultAiChecks.push("RolePlay");
 			resultAiChecks.push("List_GoodAbilities");
