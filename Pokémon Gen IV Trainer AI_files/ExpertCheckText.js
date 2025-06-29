@@ -938,16 +938,6 @@ If the user's HP is under 39%:
 	Score -1 and terminate`,
 
 
-["Spikes"]:
-`With a 50% (128/256) chance:
-	No scoring change and terminate
-Else:
-	Score +1 and continue
-
-If the user also has the move Whirlwind or Roar:
-	75% (192/256) chance of score +1 and terminate`,
-
-
 ["SpitUp"]:
 `If the user's stockpile count is 2 or 3:
 	68.8% (176/256) chance of score +2 and terminate`,

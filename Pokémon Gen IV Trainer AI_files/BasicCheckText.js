@@ -343,10 +343,7 @@ Otherwise:
 
 
 ["Spikes"]:
-`If the target's side of the field already has 3 layers of Spikes:
-	Score -10 and terminate
-
-If the target has no other living party members:
+`If the target's side of the field already has a layer of Spikes:
 	Score -10 and terminate`,
 
 
