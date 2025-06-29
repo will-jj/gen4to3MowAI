@@ -17,6 +17,21 @@ function getStrongAI(moveData) {
 		
 	} else {
 		switch (moveData.battleEffect) {
+			case "DreamEater":
+			case "RazorWind":
+			case "SkyAttack":
+			case "MustRecharge":
+			case "SkullBash":
+			case "Solarbeam":
+			case "SpitUp":
+			case "FocusPunch":
+			case "Superpower":
+			case "HighHpHighDamage":
+			case "DamageAndUserSpattackDown2":
+				resultAiChecks.push("Check_GeneralCanKO")
+				resultAiChecks.push("Check_Effectiveness");
+				break;
+
 			case "Selfdestruction":
 				resultAiChecks.push("Check_Selfdestruct");
 				resultAiChecks.push("Check_CannotKO");
