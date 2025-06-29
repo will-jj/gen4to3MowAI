@@ -163,7 +163,7 @@ If the target's side is awaiting a future attack:
 	Score -12 and terminate
 
 Otherwise:
-	Score -5 and terminate`,
+	Score +5 and terminate`,
 
 
 ["Hail"]:
