@@ -960,10 +960,7 @@ Otherwise:
 
 
 ["Substitute"]:
-`If the user also has the move Focus Punch:
-	62.5% (160/256) chance of score +1 and continue
-
-If the user's HP is under 91%:
+`If the user's HP is under 91%:
 	60.9% (156/256) chance of score -1 and continue
 
 If the user's HP is under 71%:
