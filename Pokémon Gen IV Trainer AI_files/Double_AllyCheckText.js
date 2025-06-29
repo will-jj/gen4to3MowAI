@@ -114,19 +114,8 @@ Otherwise:
 	Score -30 and terminate`,
 
 
-["Toxic"]:
-`If the target's ability is Poison Heal, and the target is not already statused, and the target's HP is under 92%:
-	Score +5 and terminate
-
-Otherwise:
-	Score -30 and terminate`,
-
-
-["WillOWisp"]:
-`If the target's ability is Flash Fire, and Flash Fire has not been activated already:
-	Score +3 and terminate
-
-If the target's ability is Guts, and the target is not currently statused, and the target is not Fire type, and the target is not holding a Flame Orb or Toxic Orb, and the target's HP is over 80%:
+["TryStatus"]:
+`If the target's ability is Guts, and the target is not currently statused, and the user's HP is over 90%:
 	Score +5 and terminate
 
 Otherwise:

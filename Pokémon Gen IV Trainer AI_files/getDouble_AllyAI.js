@@ -27,7 +27,8 @@ function getDouble_AllyAI(moveData) {
 				break;
 			
 			case "Will-O-Wisp":
-				resultAiChecks.push("WillOWisp");
+			case "Toxic":
+				resultAiChecks.push("TryStatus");
 				break;
 			
 			case "Thunder Wave":
@@ -45,7 +46,6 @@ function getDouble_AllyAI(moveData) {
 			
 			default:
 				switch (moveData.battleEffect) {
-					case "Toxic":
 					case "InflictPoison":
 						resultAiChecks.push("Toxic");
 						break;
