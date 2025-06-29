@@ -2,11 +2,7 @@ function getStrongAI(moveData) {
 	let resultAiChecks = [];
 	
 	if (isSubjectToDamageCalc(moveData)) {
-		switch (moveData.battleEffect) {
-			case "FutureAttack":
-				resultAiChecks.push("Check_RiskyCanKO");
-				break;
-			
+		switch (moveData.battleEffect) {		
 			case "Priority":
 				resultAiChecks.push("Check_PriorityCanKO");
 				break;
