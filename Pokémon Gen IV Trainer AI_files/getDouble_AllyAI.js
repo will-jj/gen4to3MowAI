@@ -6,15 +6,7 @@ function getDouble_AllyAI(moveData) {
 			case "Fire":
 				resultAiChecks.push("Check_FireAttack");
 				break;
-			
-			case "Electric":
-				resultAiChecks.push("Check_ElectricAttack");
-				break;
-			
-			case "Water":
-				resultAiChecks.push("Check_WaterAttack");
-				break;
-			
+
 			default:
 				resultAiChecks.push("Check_NoReason");
 				break;
@@ -40,16 +32,7 @@ function getDouble_AllyAI(moveData) {
 				break;
 			
 			default:
-				switch (moveData.battleEffect) {
-					case "InflictPoison":
-						resultAiChecks.push("Toxic");
-						break;
-					
-					default:
-						resultAiChecks.push("Check_NoReason");
-						break;
-				}
-				
+				resultAiChecks.push("Check_NoReason");
 				break;
 		}
 	}
