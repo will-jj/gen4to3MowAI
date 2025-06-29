@@ -31,11 +31,6 @@ function getDouble_AllyAI(moveData) {
 				resultAiChecks.push("TryStatus");
 				break;
 			
-			case "Thunder Wave":
-				resultAiChecks.push("ThunderWave");
-				resultAiChecks.push("Check_ElectricAttack");
-				break;
-			
 			case "Helping Hand":
 				resultAiChecks.push("HelpingHand");
 				break;
