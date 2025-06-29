@@ -53,7 +53,7 @@ Otherwise:
 
 ["Check_UserFlashFire"]:
 `If the user's ability is Flash Fire, and Flash Fire has been activated already:
-	Score +1 and continue`,
+	Score +1 and terminate`,
 
 
 ["Check_WaterAttack"]:
