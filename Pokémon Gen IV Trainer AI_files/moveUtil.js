@@ -17,8 +17,6 @@ function isSubjectToDamageCalc(moveData) {
 			return false;
 
 		// Moves which do nonstandard damage, but are handled correctly and included
-		case "HiddenPower":
-		case "DragonRage":
 		case "DamageIsLevel":
 		case "Psywave":
 		case "Return":

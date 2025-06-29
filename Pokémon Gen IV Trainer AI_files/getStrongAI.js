@@ -5,15 +5,27 @@ function getStrongAI(moveData) {
 		switch (moveData.battleEffect) {		
 			case "Priority":
 				resultAiChecks.push("Check_PriorityCanKO");
+				resultAiChecks.push("Check_CannotKO");
+				resultAiChecks.push("Check_Effectiveness");
+				break;
+			
+			case "DamageIsLevel":
+			case "Psywave":
+			case "Return":
+			case "Frustration":
+			case "Sonicboom":
+			case "DamageByTargetWeight":
+				resultAiChecks.push("Check_GeneralCanKO");
+				resultAiChecks.push("Check_Effectiveness");
 				break;
 			
 			default:
 				resultAiChecks.push("Check_GeneralCanKO");
+				resultAiChecks.push("Check_CannotKO");
+				resultAiChecks.push("Check_Effectiveness");
 				break;
 		}
 		
-		resultAiChecks.push("Check_CannotKO");
-		resultAiChecks.push("Check_Effectiveness");
 		
 	} else {
 		switch (moveData.battleEffect) {
@@ -28,7 +40,9 @@ function getStrongAI(moveData) {
 			case "Superpower":
 			case "HighHpHighDamage":
 			case "DamageAndUserSpattackDown2":
-				resultAiChecks.push("Check_GeneralCanKO")
+			case "HiddenPower":
+			case "DragonRage":
+				resultAiChecks.push("Check_GeneralCanKO");
 				resultAiChecks.push("Check_Effectiveness");
 				break;
 

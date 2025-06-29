@@ -80,7 +80,7 @@ const moves = {
 	"Sleep Powder"  : { name: "Sleep Powder",  battleEffect: "InflictSleep",                damageType:  null      }, 
 	"Petal Dance"   : { name: "Petal Dance",   battleEffect:  null,                         damageType: "Grass"    }, 
 	"String Shot"   : { name: "String Shot",   battleEffect: "TargetSpeedDown1",            damageType:  null      }, 
-	"Dragon Rage"   : { name: "Dragon Rage",   battleEffect: "DragonRage",                  damageType: "Dragon"   }, 
+	"Dragon Rage"   : { name: "Dragon Rage",   battleEffect: "DragonRage",                  damageType:  null      }, 
 	"Fire Spin"     : { name: "Fire Spin",     battleEffect: "Trap",                        damageType: "Fire"     }, 
 	"ThunderShock"  : { name: "ThunderShock",  battleEffect:  null,                         damageType: "Electric" }, 
 	"Thunderbolt"   : { name: "Thunderbolt",   battleEffect:  null,                         damageType: "Electric" }, 
