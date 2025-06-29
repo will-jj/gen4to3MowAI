@@ -26,7 +26,7 @@ function getDouble_EnemyAI(moveData) {
 		case "Will-O-Wisp":
 			resultAiChecks.push("Check_UserFlashFire");
 			handled = true;
-			break;		
+			break;
 	}
 
 	switch (moveData.damageType) {
@@ -41,17 +41,13 @@ function getDouble_EnemyAI(moveData) {
 			break;
 	}
 
-	if (handled)
-	{
-		return resultAiChecks.filter(check => Object.hasOwn(double_EnemyCheckText, check));
-	}
-
-
-	if (aiIsPowerOther(moveData)) {
-		resultAiChecks.push("Check_UserStatus_Power_Other")
-	}
-	else {
-		resultAiChecks.push("Check_UserStatus")
+	if (!handled) {
+		if (aiIsPowerOther(moveData)) {
+			resultAiChecks.push("Check_UserStatus_Power_Other")
+		}
+		else {
+			resultAiChecks.push("Check_UserStatus")
+		}
 	}
 
 	return resultAiChecks.filter(check => Object.hasOwn(double_EnemyCheckText, check));
