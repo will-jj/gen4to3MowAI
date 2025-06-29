@@ -26,10 +26,6 @@ function getStrongAI(moveData) {
 				resultAiChecks.push("Check_CannotKO");
 				resultAiChecks.push("Check_Effectiveness");
 				break;
-			case "FocusPunch":
-				resultAiChecks.push("Check_MoveCheck");
-				resultAiChecks.push("Check_Effectiveness");
-				break;
 			
 			default:
 				resultAiChecks.push("Check_Effectiveness");
