@@ -29,4 +29,9 @@ const strongCheckText = {
 	33.6% (85/256) chance of score +4 and terminate`,
 
 
+["Check_Selfdestruct"]:
+`If the move can KO the target:
+	No score change and terminate`,
+
+
 };

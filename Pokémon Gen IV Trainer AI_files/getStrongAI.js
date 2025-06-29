@@ -22,6 +22,9 @@ function getStrongAI(moveData) {
 	} else {
 		switch (moveData.battleEffect) {
 			case "Selfdestruction":
+				resultAiChecks.push("Check_Selfdestruct");
+				resultAiChecks.push("Check_CannotKO");
+				resultAiChecks.push("Check_Effectiveness");
 				break;
 			case "FocusPunch":
 				resultAiChecks.push("Check_MoveCheck");
