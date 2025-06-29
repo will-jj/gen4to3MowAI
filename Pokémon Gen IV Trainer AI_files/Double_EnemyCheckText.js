@@ -193,4 +193,20 @@ If the user's ally's ability is Solar Power:
 		Score +1 and continue
 	
 	50% (128/256) chance of score -2 and terminate`,
+
+
+["Check_UserStatus_Power_Other"]:
+`If the user does not have the ability Guts and is statused:
+	Score -5 and terminate`,
+
+
+["Check_UserStatus"]:
+`If the user does not have the ability Guts and is statused:
+	If the move deals the most damage to the target when considering all of the user's ally's moves as well (regardless of if the ally is alive):
+		Score + 3 and terminate
+	Else:
+		Score +1 and terminate
+
+If the user has the ability Guts and the user's ally knows the move Helping Hand: 
+	Score + 1 and terminate`,
 };
