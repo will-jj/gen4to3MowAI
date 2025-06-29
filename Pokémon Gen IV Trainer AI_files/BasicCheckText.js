@@ -361,10 +361,7 @@ If the user's HP is under 26%:
 
 
 ["SunnyDay"]:
-`If the user's ability is not Flower Gift, Leaf Guard, or Solar Power, and the foe's ability is Hydration, and the foe is statused:
-	Score -10 and terminate
-
-If it is already sunny:
+`If it is already sunny:
 	Score -8 and terminate`,
 
 

@@ -986,7 +986,7 @@ If the last move used by the foe was Leech Seed, and the foe is not currently un
 `If the user's HP is under 40%:
 	Score -1 and terminate
 
-If the current weather is rain, hail, or sandstorm, or the user's ability is Flower Gift, or the user's ability is Leaf Guard and the user is statused:
+If the current weather is rain, hail, or sandstorm:
 	Score +1 and terminate`,
 
 
