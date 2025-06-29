@@ -58,17 +58,10 @@ Otherwise:
 
 
 ["HelpingHand"]:
-`If the target's HP is 0% (after rounding):
-	Score -30 and terminate
-
-If the target's HP is over 50%, or the target will move before both of its foes:
-	With a 25% (64/256) chance:
-		Score -1 and terminate
-	Else:
-		75% (192/256) chance of score +2 and terminate
-
+`25% (64/256) chance:
+	Score -1 and terminate
 Otherwise:
-	No scoring change and terminate`,
+	Score +2 and terminate`,
 
 
 ["List_SkillSwapMoves"]:
