@@ -425,10 +425,7 @@ If the target's ability is certainly Speed Boost:
 
 
 ["Tickle"]:
-`If the target's ability is Clear Body or White Smoke:
-	Score -10 and terminate
-
-If the target's current attack is reduced to -6:
+`If the target's current attack is reduced to -6:
 	Score -10 and terminate
 
 If the target's current defense is reduced to -6:
