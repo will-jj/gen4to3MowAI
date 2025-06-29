@@ -263,7 +263,7 @@ const moves = {
 	"Memento"       : { name: "Memento",       battleEffect: "Memento",                     damageType:  null      }, 
 	"Facade"        : { name: "Facade",        battleEffect: "Facade",                      damageType: "Normal"   }, 
 	"Focus Punch"   : { name: "Focus Punch",   battleEffect: "FocusPunch",                  damageType: "Fighting" }, 
-	"SmellingSalt"  : { name: "SmellingSalt",  battleEffect: "Smellingsalt",                damageType: "Normal"   }, 
+	"SmellingSalt"  : { name: "SmellingSalt",  battleEffect: "SmellingSalt",                damageType: "Normal"   }, 
 	"Follow Me"     : { name: "Follow Me",     battleEffect: "FollowMe",                    damageType:  null      }, 
 	"Nature Power"  : { name: "Nature Power",  battleEffect:  null,                         damageType:  null      }, 
 	"Charge"        : { name: "Charge",        battleEffect: "Charge",                      damageType:  null      }, 
