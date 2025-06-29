@@ -248,7 +248,7 @@ const moves = {
 	"Shadow Ball"   : { name: "Shadow Ball",   battleEffect:  null,                         damageType: "Ghost"    }, 
 	"Future Sight"  : { name: "Future Sight",  battleEffect: "FutureAttack",                damageType: "Psychic"  }, 
 	"Rock Smash"    : { name: "Rock Smash",    battleEffect:  null,                         damageType: "Fighting" }, 
-	"Whirlpool"     : { name: "Whirlpool",     battleEffect:  null,                         damageType: "Water"    }, 
+	"Whirlpool"     : { name: "Whirlpool",     battleEffect:  "Trap",                       damageType: "Water"    }, 
 	"Beat Up"       : { name: "Beat Up",       battleEffect:  null,                         damageType: "Dark"     }, 
 	"Fake Out"      : { name: "Fake Out",      battleEffect: "FakeOut",                     damageType: "Normal"   }, 
 	"Uproar"        : { name: "Uproar",        battleEffect:  null,                         damageType: "Normal"   }, 
