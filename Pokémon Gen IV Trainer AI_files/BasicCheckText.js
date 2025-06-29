@@ -90,12 +90,12 @@ If the user's current special defense is boosted to +6:
 
 
 ["Check_VariableType"]:
-`If the target is immune to the move's damage due to Volt Absorb, Motor Drive, Water Absorb, or Flash Fire:
+`If the target is immune to the move's damage due to Volt Absorb, Water Absorb, or Flash Fire:
 	Score -12 and terminate`,
 
 
 ["Check_VoltAbsorb"]:
-`If the target's ability is Volt Absorb or Motor Drive:
+`If the target's ability is Volt Absorb:
 	Score -12 and terminate`,
 
 
