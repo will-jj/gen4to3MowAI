@@ -201,7 +201,7 @@ Otherwise:
 `If the target's ability is Water Veil:
 	Score -10 and terminate
 
-If the target is a Fire type:
+If the effectiveness of the move is 1/2x, 1/4x, or 0x:
 	Score -10 and terminate`,
 
 
