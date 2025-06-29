@@ -92,7 +92,7 @@ Otherwise:
 
 
 ["Swagger"]:
-`If the target is holding a Lum Berry or Persim Berry:
+`If the target is holding a Persim Berry:
 	If the target's current attack is boosted to +2 or more:
 		No scoring change and terminate
 	Else:
