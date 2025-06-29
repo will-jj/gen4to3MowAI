@@ -159,10 +159,10 @@ If the user's ally's ability is Sand Veil, or the user's ally is Rock type:
 
 
 ["SkillSwap"]:
-`If the user's ability is Truant, Slow Start, Stall, or Klutz:
+`If the user's ability is Truant:
 	Score +5 and terminate
 
-If the target's ability is Shadow Tag, Pure Power, Huge Power, Solid Rock, Filter, or Flower Gift:
+If the target's ability is Shadow Tag, or Pure Power:
 	Score +2 and terminate`,
 
 
