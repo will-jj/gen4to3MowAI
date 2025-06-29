@@ -66,7 +66,7 @@ If the user's current special defense is boosted to +6:
 
 ["Check_Levitate"]:
 `If the target's ability is Levitate:
-	Score -12 and terminate`,
+	Score -10 and terminate`,
 
 
 ["Check_Soundproof"]:
