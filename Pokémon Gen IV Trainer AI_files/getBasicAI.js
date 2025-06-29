@@ -99,14 +99,6 @@ function getBasicAI(moveData) {
 			resultAiChecks.push("Check_TargetSafeguard");
 			break;
 		
-		
-		case "Yawn":
-			resultAiChecks.push("Check_TargetStatused");
-			resultAiChecks.push("Check_TargetSafeguard");
-			resultAiChecks.push("InflictSleep");
-			break;
-		
-		
 		case "InflictParalysis":
 			// Erroneously checks all paralysis moves instead of just Thunder Wave.
 			// As a result Glare will appear to not affect ghosts.
