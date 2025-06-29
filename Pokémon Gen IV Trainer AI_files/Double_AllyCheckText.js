@@ -78,12 +78,11 @@ Cross Chop
 Hydro Pump
 DynamicPunch
 Blizzard
-Zap Cannon
 Megahorn`,
 
 
 ["SkillSwap"]:
-`If the target's ability is Truant or Slow Start:
+`If the target's ability is Truant:
 	Score +10 and terminate
 
 If the user's ability is Levitate, and the target's ability is not Levitate, and the target is Electric type:
