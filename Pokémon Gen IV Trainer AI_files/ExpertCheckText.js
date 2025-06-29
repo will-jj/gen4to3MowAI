@@ -931,9 +931,6 @@ Otherwise:
 `If the effectiveness of the move is 1/2x, 1/4x, or 0x:
 	Score -2 and terminate
 
-If the current weather is sunny:
-	Score +2 and terminate
-
 If the target knows the move Protect or Detect:
 	Score -2 and terminate
 
