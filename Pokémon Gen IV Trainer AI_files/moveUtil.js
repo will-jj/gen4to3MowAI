@@ -159,6 +159,7 @@ function aiIsPowerOther(moveData) {
 		case "FocusPunch":
 		case "Superpower":
 		case "HighHpHighDamage":
+		case "DamageAndUserSpattackDown2":
 			return true;
 
 		default:
