@@ -23,15 +23,6 @@ function getBasicAI(moveData) {
 				resultAiChecks.push("Check_Levitate");
 				break;
 			
-			default:
-				switch (moveData.name) {
-					case "Hidden Power":
-					case "Weather Ball":
-						resultAiChecks.push("Check_VariableType");
-						break;
-				}
-				
-				break;
 		}
 		
 		resultAiChecks.push("Check_WonderGuard");
