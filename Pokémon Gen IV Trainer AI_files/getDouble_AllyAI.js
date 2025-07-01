@@ -1,7 +1,7 @@
 function getDouble_AllyAI(moveData) {
 	let resultAiChecks = [];
 	
-	if (isSubjectToDamageCalc(moveData)) {
+	if (!aiIsPowerOther(moveData)) {
 		switch (moveData.damageType) {
 			case "Fire":
 				resultAiChecks.push("Check_FireAttack");
