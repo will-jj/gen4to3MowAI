@@ -17,15 +17,6 @@ function isSubjectToDamageCalc(moveData) {
 		case "DamageAndUserSpattackDown2":
 			return false;
 
-		// Moves which do nonstandard damage, but are handled correctly and included
-		case "DamageIsLevel":
-		case "Psywave":
-		case "Return":
-		case "Frustration":
-		case "Sonicboom":
-		case "DamageByTargetWeight":
-			return true;
-
 		default:
 			return (moveData.damageType !== null);
 	}
