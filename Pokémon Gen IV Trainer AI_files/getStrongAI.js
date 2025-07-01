@@ -1,7 +1,7 @@
 function getStrongAI(moveData) {
 	let resultAiChecks = [];
 	
-	if (isSubjectToDamageCalc(moveData)) {
+	if (!aiIsPowerOther(moveData)) {
 		switch (moveData.battleEffect) {		
 			case "Priority":
 				resultAiChecks.push("Check_PriorityCanKO");
