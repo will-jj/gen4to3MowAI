@@ -14,6 +14,7 @@ function isSubjectToDamageCalc(moveData) {
 		case "Superpower":
 		case "HighHpHighDamage":
 		case "12Recoil":
+		case "DamageAndUserSpattackDown2":
 			return false;
 
 		// Moves which do nonstandard damage, but are handled correctly and included
