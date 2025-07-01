@@ -15,7 +15,6 @@ function getStrongAI(moveData) {
 			case "Frustration":
 			case "Sonicboom":
 			case "DamageByTargetWeight":
-				resultAiChecks.push("Check_GeneralCanKO");
 				resultAiChecks.push("Check_Effectiveness");
 				break;
 			
@@ -29,6 +28,8 @@ function getStrongAI(moveData) {
 		
 	} else {
 		switch (moveData.battleEffect) {
+			
+			// Moves in sIgnoredPowerfulMoveEffects are not checked for cannot KO
 			case "DreamEater":
 			case "RazorWind":
 			case "SkyAttack":
@@ -40,15 +41,12 @@ function getStrongAI(moveData) {
 			case "Superpower":
 			case "HighHpHighDamage":
 			case "DamageAndUserSpattackDown2":
-			case "HiddenPower":
-			case "DragonRage":
 				resultAiChecks.push("Check_GeneralCanKO");
 				resultAiChecks.push("Check_Effectiveness");
 				break;
-
+			
 			case "Selfdestruction":
 				resultAiChecks.push("Check_Selfdestruct");
-				resultAiChecks.push("Check_CannotKO");
 				resultAiChecks.push("Check_Effectiveness");
 				break;
 			
