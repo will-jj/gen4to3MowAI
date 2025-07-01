@@ -1,7 +1,7 @@
 function getBasicAI(moveData) {
 	let resultAiChecks = [];
 	
-	if (isSubjectToDamageCalc(moveData)) {
+	if (!aiIsPowerOther(moveData)) {
 		// General effectiveness immunity
 		resultAiChecks.push("Check_DamageImmunity");
 		
@@ -22,7 +22,7 @@ function getBasicAI(moveData) {
 			case "Ground":
 				resultAiChecks.push("Check_Levitate");
 				break;
-			
+
 		}
 		
 		resultAiChecks.push("Check_WonderGuard");
