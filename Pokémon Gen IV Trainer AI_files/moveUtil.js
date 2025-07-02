@@ -18,7 +18,7 @@ function isSubjectToDamageCalc(moveData) {
 			return false;
 
 		default:
-			return (moveData.damageType !== null);
+			return (moveData.type !== null);
 	}
 }
 
