@@ -1,24 +1,14 @@
 function getStrongAI(moveData) {
 	let resultAiChecks = [];
-	
-	if (!aiIsPowerOther(moveData)) {
-		switch (moveData.battleEffect) {		
+
+
+	if (moveData.damageFormula == DamageFormulaType.STANDARD_DAMAGE) {
+		switch (moveData.battleEffect) {
 			case "Priority":
 				resultAiChecks.push("Check_PriorityCanKO");
 				resultAiChecks.push("Check_CannotKO");
 				break;
-						
-			default:
-				resultAiChecks.push("Check_GeneralCanKO");
-				resultAiChecks.push("Check_CannotKO");
-				break;
-		}
 
-		resultAiChecks.push("Check_Effectiveness");		
-		
-	} else {
-		switch (moveData.battleEffect) {
-			
 			// Moves in sIgnoredPowerfulMoveEffects are not checked for cannot KO
 			case "DreamEater":
 			case "RazorWind":
@@ -32,19 +22,20 @@ function getStrongAI(moveData) {
 			case "HighHpHighDamage":
 			case "DamageAndUserSpattackDown2":
 				resultAiChecks.push("Check_GeneralCanKO");
-				resultAiChecks.push("Check_Effectiveness");
 				break;
-			
+
 			case "Selfdestruction":
 				resultAiChecks.push("Check_Selfdestruct");
-				resultAiChecks.push("Check_Effectiveness");
 				break;
-			
+
 			default:
-				resultAiChecks.push("Check_Effectiveness");
+				resultAiChecks.push("Check_GeneralCanKO");
+				resultAiChecks.push("Check_CannotKO");
 				break;
 		}
 	}
-	
+
+	resultAiChecks.push("Check_Effectiveness");
+
 	return resultAiChecks.filter(check => Object.hasOwn(strongCheckText, check));
 }
