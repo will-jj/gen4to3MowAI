@@ -80,6 +80,8 @@ function getBasicAI(moveData) {
 			// Erroneously checks all paralysis moves instead of just Thunder Wave.
 			// As a result Glare will appear to not affect ghosts.
 			resultAiChecks.push("Check_DamageImmunity");
+			resultAiChecks.push("Check_TargetStatused");
+			resultAiChecks.push("Check_TargetSafeguard");
 			break;
 
 
@@ -192,15 +194,6 @@ function getBasicAI(moveData) {
 		case "TargetAccuracyDown2":
 		case "TargetEvasionDown2":
 			resultAiChecks.push("Check_ClearBody");
-			break;
-
-		case "InflictParalysis":
-			if (moveData.name === "Thunder Wave") {
-				resultAiChecks.push("Check_VoltAbsorb");
-			}
-
-			resultAiChecks.push("Check_TargetStatused");
-			resultAiChecks.push("Check_TargetSafeguard");
 			break;
 
 		case "Toxic":
