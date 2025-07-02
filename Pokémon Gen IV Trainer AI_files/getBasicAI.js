@@ -216,10 +216,6 @@ function getBasicAI(moveData) {
 			resultAiChecks.push("UserAttackUp1");
 			break;
 
-		case "DreamEater":
-			resultAiChecks.push("Check_DamageImmunity");
-			break;
-
 	}
 
 	return resultAiChecks.filter(check => Object.hasOwn(basicCheckText, check));
