@@ -29,7 +29,7 @@ function getDouble_EnemyAI(moveData) {
 			break;
 	}
 
-	switch (moveData.damageType) {
+	switch (moveData.type) {
 		case "Electric":
 			resultAiChecks.push("Check_ElectricAttack");
 			handled = true;
@@ -42,11 +42,11 @@ function getDouble_EnemyAI(moveData) {
 	}
 
 	if (!handled) {
-		if (aiIsPowerOther(moveData)) {
-			resultAiChecks.push("Check_UserStatus_Power_Other")
+		if (moveData.damageFormula == DamageFormulaType.STANDARD_DAMAGE) {
+			resultAiChecks.push("Check_UserStatus")
 		}
 		else {
-			resultAiChecks.push("Check_UserStatus")
+			resultAiChecks.push("Check_UserStatus_Power_Other")
 		}
 	}
 
