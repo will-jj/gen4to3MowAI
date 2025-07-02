@@ -105,38 +105,40 @@ footer {
 }
 
 #basic-ai-container {
-	--border-color:              #3e973b;
-	--header-background-color:   #67fb5b;
-	--header-color:              #12370a;
-	--body-background-color:     #d3ffd8;
+	--border-color: #973b91;
+	--header-background-color: #ffa0fe;
+	--header-color: #41104e;
+	--body-background-color: #ffdbfd;
 }
 
 #strong-ai-container {
-	--border-color:              #97513b;
-	--header-background-color:   #fb8f5b;
-	--header-color:              #481f0b;
-	--body-background-color:     #ffe5d8;
+	--border-color: #a02828;
+	--header-background-color: #ff7070;
+	--header-color: #380303;
+	--body-background-color: #ffd8d8;
 }
 
 #expert-ai-container {
-	--border-color:              #3e3b97;
-	--header-background-color:   #9a6dfb;
-	--header-color:              #080735;
-	--body-background-color:     #e8d8ff;
+	--border-color: #3b9775;
+	--header-background-color: #6dfbab;
+	--header-color: #07351f;
+	--body-background-color: #eafff7;
 }
 
 #double-enemy-ai-container {
-	--border-color:              #97663b;
-	--header-background-color:   #fbde6d;
-	--header-color:              #352a07;
-	--body-background-color:     #fff2d8;
+	--border-color: #135361;
+	--header-background-color: #A4CCD9;
+	--header-color: #002c36;
+	--body-background-color: #C4E1E6;
+
 }
 
 #double-ally-ai-container {
-	--border-color:              #3b7597;
-	--header-background-color:   #75d7fd;
-	--header-color:              #072a35;
-	--body-background-color:     #d6f0ff;
+	--border-color: #52357B;
+	--header-background-color: #5459AC;
+	--header-color: #1c053d;
+	--body-background-color: #b8ccdf;
+
 }
 
 #ai-subtitle {
