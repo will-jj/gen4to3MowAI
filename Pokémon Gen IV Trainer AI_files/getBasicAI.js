@@ -33,30 +33,25 @@ function getBasicAI(moveData) {
 
 	// Pre-checks before main effect
 	switch (moveData.battleEffect) {
-
-		// A bunch of these are flagged to duplicate check damage immunity. I have removed that
+	    case "Magnitude":
 		case "Bide":
 		case "RazorWind":
 		case "SuperFang":
-		//	case "DragonRage":
 		case "MustRecharge":
-		//	case "DamageIsLevel":
-		//	case "Psywave":
+		case "DamageIsLevel":
+		case "Psywave":
 		case "Counter":
 		case "LowHpHighDamage":
-		//	case "Return":
+		case "Return":
 		case "Present":
-		//	case "Frustration":
-		//	case "Sonicboom":
-		//	case "HiddenPower":
+		case "Frustration":
+		case "Sonicboom":
 		case "MirrorCoat":
 		case "SkullBash":
 		case "FocusPunch":
 		case "Superpower":
 		case "Endeavor":
-		//	case "DamageByTargetWeight":
-		case "DamageByTargetHealth":
-		case "Selfdestruction":
+		case "DamageByTargetWeight":
 			resultAiChecks.push("Check_DamageImmunity");
 			resultAiChecks.push("Check_WonderGuard");
 			break;
@@ -229,7 +224,6 @@ function getBasicAI(moveData) {
 			break;
 
 		case "DreamEater":
-		case "Magnitude":
 			resultAiChecks.push("Check_DamageImmunity");
 			break;
 
