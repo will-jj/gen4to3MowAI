@@ -114,7 +114,7 @@ If the last move used by foe is damaging:
 If the foe is under the effect of Taunt:
 	60.9% (156/256) chance of score +1 and continue
 
-If either of the foe's types is Normal, Fighting, Flying, Poison, Ground, Rock, Bug, Ghost, or Steel:
+If either of the foe's types is Physical:
 	No scoring change and terminate
 
 Otherwise:
@@ -821,7 +821,7 @@ Otherwise:
 `If the user's HP is under 50%:
 	Score -2 and terminate
 
-If either of the foe's types is not Normal, Fighting, Flying, Poison, Ground, Rock, Bug, Steel, or Ghost:
+If the either of the foe's types is Special:
 	80.4% (206/256) chance of score -2 and terminate`,
 
 
