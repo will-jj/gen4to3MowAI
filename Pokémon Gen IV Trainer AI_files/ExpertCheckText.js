@@ -69,6 +69,9 @@ If the user will move after the target:
 	No scoring change and terminate
 
 If the last move used by the target was Lock-On or Mind Reader:
+	No scoring change and terminate
+
+Otherwise:
 	68.8% (176/256) chance of score +1 and terminate`,
 
 
