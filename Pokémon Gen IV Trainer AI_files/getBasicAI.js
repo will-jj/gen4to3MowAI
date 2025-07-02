@@ -61,7 +61,8 @@ function getBasicAI(moveData) {
 			break;
 
 		case "SpitUp":
-			resultAiChecks.push("Check_DamageImmunity");
+			// Duplicate immunity check for spit up
+			// resultAiChecks.push("Check_DamageImmunity");
 			resultAiChecks.push("Check_UserStockpile");
 			break;
 
