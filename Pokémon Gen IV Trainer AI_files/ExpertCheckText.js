@@ -413,7 +413,7 @@ If this is not the user's first turn in battle:
 `If the user's HP is under 50%:
 	Score -2 and terminate
 
-If either of the foe's types is not Fire, Water, Grass, Electric, Psychic, Ice, Dragon, or Dark:
+If either of the foe's types is Physical:
 	80.5% (206/256) chance of score -2 and terminate`,
 
 
