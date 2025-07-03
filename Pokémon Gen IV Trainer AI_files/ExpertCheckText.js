@@ -127,12 +127,12 @@ Otherwise:
 
 If the user's defense is boosted to +4 or more:
 	No scoring change and terminate
-
+Else:
+	50% (128/256) chance of score +1 and continue
 
 If the user's defense is boosted to +2 or more:
 	No scoring change and terminate
-
-Unconditionally:
+Else:
 	50% (128/256) chance of score +1 and continue
 
 If the user's defense is boosted to +1 or more:
