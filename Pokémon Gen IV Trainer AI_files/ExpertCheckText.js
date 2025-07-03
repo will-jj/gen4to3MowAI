@@ -101,18 +101,15 @@ If the user's HP is under 51%:
 If the user also has the move Mirror Coat:
 	60.9% (156/256) chance of score +4 and terminate
 
-If the last move used by foe is damaging:
-	If the foe is under the effect of Taunt:
-		60.9% (156/256) chance of score +1 and continue
-	
+If the foe is under the effect of Taunt:
+	60.9% (156/256) chance of score +1 and continue
+
+If the last move used by foe is damaging:	
 	If the last move used by the foe is special:
 		Score -1 and terminate
 	
 	Otherwise:
 		60.9% (156/256) chance of score +1 and terminate
-
-If the foe is under the effect of Taunt:
-	60.9% (156/256) chance of score +1 and continue
 
 If either of the foe's types is Physical:
 	No scoring change and terminate
@@ -662,18 +659,15 @@ If the user's HP is under 51%:
 If the user also has the move Counter:
 	60.9% (156/256) chance of score +4 and terminate
 
+If the foe is under the effect of Taunt:
+	60.9% (156/256) chance of score +1 and continue
+
 If the last move used by foe is damaging:
-	If the foe is under the effect of Taunt:
-		60.9% (156/256) chance of score +1 and continue
-	
 	If the last move used by the foe is physical:
 		Score -1 and terminate
 	
 	Otherwise:
 		60.9% (156/256) chance of score +1 and terminate
-
-If the foe is under the effect of Taunt:
-	60.9% (156/256) chance of score +1 and contine
 
 If either of the foe's types is Special:
 	No scoring change and terminate
