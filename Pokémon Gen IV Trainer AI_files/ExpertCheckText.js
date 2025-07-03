@@ -107,9 +107,8 @@ If the foe is under the effect of Taunt:
 If the last move used by foe is damaging:	
 	If the last move used by the foe is special:
 		Score -1 and terminate
-	
-	Otherwise:
-		60.9% (156/256) chance of score +1 and terminate
+	Else:
+        60.9% (156/256) chance of score +1 and terminate
 
 If either of the foe's types is Physical:
 	No scoring change and terminate
@@ -665,9 +664,8 @@ If the foe is under the effect of Taunt:
 If the last move used by foe is damaging:
 	If the last move used by the foe is physical:
 		Score -1 and terminate
-	
-	Otherwise:
-		60.9% (156/256) chance of score +1 and terminate
+	Else:
+        60.9% (156/256) chance of score +1 and terminate
 
 If either of the foe's types is Special:
 	No scoring change and terminate
