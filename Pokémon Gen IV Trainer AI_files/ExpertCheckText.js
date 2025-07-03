@@ -675,7 +675,7 @@ If the last move used by foe is damaging:
 If the foe is under the effect of Taunt:
 	60.9% (156/256) chance of score +1 and contine
 
-If either of the foe's types is Fire, Water, Grass, Electric, Psychic, Ice, Dragon, or Dark:
+If either of the foe's types is Special:
 	No scoring change and terminate
 
 Otherwise:
