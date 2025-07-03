@@ -1043,7 +1043,7 @@ If the target's accuracy is reduced to -2 or lower:
 	68.8% (176/256) chance of score -2 and continue
 
 If the target is poisoned:
-	72.7% (186/256) chance of score +2 and contine
+	72.7% (186/256) chance of score +2 and continue
 
 If the target is under the effect of Leech Seed:
 	72.7% (186/256) chance of score +2 and continue
