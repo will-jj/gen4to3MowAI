@@ -110,8 +110,11 @@ If the user's current special defense is boosted to +6:
 
 
 ["Curse"]:
-`If the user's current attack or defense is boosted to +6:
-	Score -10 and terminate`,
+`If the user's current attack is boosted to +6:
+	Score -10 and terminate
+
+If the user's current defense is boosted to +6:
+	Score -8 and terminate`,
 
 
 ["Disable"]:
