@@ -63,7 +63,7 @@ const moves = {
 	"Hydro Pump"    : { name: "Hydro Pump",    battleEffect:  null,                         type: "Water"    , damageFormula: DamageFormulaType.STANDARD_DAMAGE     }, 
 	"Surf"          : { name: "Surf",          battleEffect:  null,                         type: "Water"    , damageFormula: DamageFormulaType.STANDARD_DAMAGE     }, 
 	"Ice Beam"      : { name: "Ice Beam",      battleEffect:  null,                         type: "Ice"      , damageFormula: DamageFormulaType.STANDARD_DAMAGE     }, 
-	"Blizzard"      : { name: "Blizzard",      battleEffect: "Blizzard",                    type: "Ice"      , damageFormula: DamageFormulaType.STANDARD_DAMAGE     }, 
+	"Blizzard"      : { name: "Blizzard",      battleEffect:  null,                         type: "Ice"      , damageFormula: DamageFormulaType.STANDARD_DAMAGE     }, 
 	"Psybeam"       : { name: "Psybeam",       battleEffect:  null,                         type: "Psychic"  , damageFormula: DamageFormulaType.STANDARD_DAMAGE     }, 
 	"BubbleBeam"    : { name: "BubbleBeam",    battleEffect: "DamageAndTargetSpeedDown1",   type: "Water"    , damageFormula: DamageFormulaType.NO_DAMAGE           }, 
 	"Aurora Beam"   : { name: "Aurora Beam",   battleEffect:  null,                         type: "Ice"      , damageFormula: DamageFormulaType.STANDARD_DAMAGE     }, 
