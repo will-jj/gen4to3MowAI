@@ -58,6 +58,35 @@ If the user's current special defense is boosted to +6:
 `If the effectiveness of the move is 0x:
 	Score -10 and terminate`,
 
+["Check_DamageImmunityElectricMove"]:
+`If the target has a Ground typing:
+	If the target also has a Flying, or Dragon Typing:
+		No score change and continue
+	Else:
+		Score -10 and terminate`,
+
+["Check_DamageImmunityGroundMove"]:
+`If the target has a Flying typing:
+	If the target also has a Bug, Rock, or Steel Typing:
+		No score change and continue
+	Else:
+		Score -10 and terminate`,
+
+
+["Check_DamageImmunityPsychicMove"]:
+`If the target has a Dark typing:
+	If the target also has a Steel Typing:
+		No score change and continue
+	Else:
+		Score -10 and terminate`,
+
+
+["Check_DamageImmunityGhostMove"]:
+`If the target has a Normal typing:
+	If the target also has a Psychic, Dark, Steel, or Ghost Typing:
+		No score change and continue
+	Else:
+		Score -10 and terminate`,
 
 ["Check_FlashFire"]:
 `If the target's ability is Flash Fire:

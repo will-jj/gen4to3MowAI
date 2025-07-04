@@ -3,7 +3,7 @@ function getBasicAI(moveData) {
 
 	switch (moveData.damageFormula) {
 		case DamageFormulaType.STANDARD_DAMAGE:
-			resultAiChecks.push("Check_DamageImmunity");
+			addImmunityCheck(moveData.type, resultAiChecks);
 			addCheckIfNegativeTypes(moveData.type, resultAiChecks);
 			break;
 
@@ -52,17 +52,17 @@ function getBasicAI(moveData) {
 		case "Superpower":
 		case "Endeavor":
 		case "DamageByTargetWeight":
-			resultAiChecks.push("Check_DamageImmunity");
+			addImmunityCheck(moveData.type, resultAiChecks);
 			resultAiChecks.push("Check_WonderGuard");
 			break;
 
 		case "Ohko":
-			resultAiChecks.push("Check_DamageImmunity");
+			addImmunityCheck(moveData.type, resultAiChecks);
 			break;
 
 		case "SpitUp":
 			// Duplicate immunity check for spit up
-			// resultAiChecks.push("Check_DamageImmunity");
+			// addImmunityCheck(moveData.type, resultAiChecks);
 			resultAiChecks.push("Check_UserStockpile");
 			break;
 
@@ -80,7 +80,7 @@ function getBasicAI(moveData) {
 		case "InflictParalysis":
 			// Erroneously checks all paralysis moves instead of just Thunder Wave.
 			// As a result Glare will appear to not affect ghosts.
-			resultAiChecks.push("Check_DamageImmunity");
+			addImmunityCheck(moveData.type, resultAiChecks);
 			resultAiChecks.push("Check_TargetStatused");
 			resultAiChecks.push("Check_TargetSafeguard");
 			break;
@@ -220,6 +220,27 @@ function getBasicAI(moveData) {
 	}
 
 	return resultAiChecks.filter(check => Object.hasOwn(basicCheckText, check));
+}
+
+function addImmunityCheck(type, resultAiChecks)
+{
+	switch (type) {
+		case "Electric":
+			resultAiChecks.push("Check_DamageImmunityElectricMove")
+			break;
+		case "Ground":
+			resultAiChecks.push("Check_DamageImmunityGroundMove")
+			break;
+		case "Psychic":
+			resultAiChecks.push("Check_DamageImmunityPsychicMove")
+			break;
+		case "Ghost":
+			resultAiChecks.push("Check_DamageImmunityGhostMove")
+			break;
+		default:
+			resultAiChecks.push("Check_DamageImmunity")
+			break;
+	}
 }
 
 function addCheckIfNegativeTypes(type, resultAiChecks) {
