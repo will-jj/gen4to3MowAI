@@ -37,14 +37,6 @@ Otherwise:
 	Score -2 and terminate`,
 
 
-["Blizzard"]:
-`If the effectiveness of the move is 1/2x, 1/4x, or 0x:
-	80.5% (206/256) chance of score -3 and terminate
-
-If the current weather is hail:
-	Score +1 and terminate`,
-
-
 ["BrickBreak"]:
 `If the target's side of the field has Reflect active:
 	Score +1 and terminate`,
@@ -145,20 +137,6 @@ If the user's defense is boosted to +1 or more:
 
 If the user will move before the target, and the user's HP is under 61%:
 	Score -1 and terminate`,
-
-
-["DamageByTargetHealth"]:
-`If the effectiveness of the move is 1/2x, 1/4x, or 0x, or the target's HP is under 50%:
-	Score -1 and terminate
-
-If the target's HP is full:
-	Score +1 and continue
-
-If the target's HP is full, and the user will move before the target:
-	Score +1 and continue
-
-If the target's HP is over 85%:
-	90.2% (231/256) chance of score +1 and terminate`,
 
 
 ["DamageRevenge"]:
