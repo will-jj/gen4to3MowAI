@@ -34,17 +34,15 @@
 
 	<details id="ai-info-panel">
 		<summary>Important: Background information</summary>
+		<h2>Beta Release Notice</h2>
+		<p>This site, and information within is adapted from the <a
+				href="https://pokemow.com/Gen4/TrainerAI/pokemow.com/">Generation 4 site.</a>
+		During the initial deployment some information in this briefing, and the subsequent move choice scoring may
+		reflect that - please report any issues wherever you discovered this site.</p>
 		<h2>Overview</h2>
 		<p>This page will look up trainer battle AI procedures for the
-			Generation IV Pokémon games – Pokémon Diamond, Pearl, Platinum,
-			HeartGold, and SoulSilver. Trainer AI between each of these games is
-			nearly identical, with only Diamond and Pearl having a single small
-			difference from Platinum, HeartGold, and SoulSilver (in Icy Wind / Mud
-			Shot / Rock Tomb!).</p>
+			Generation III Pokémon games – Pokémon Emerald.</p>
 
-		<p>I recommend you read over this whole article at least once to be
-			made aware of all the strange quirks and edge cases that affect the AI
-			procedures.</p>
 
 		<p>The Battle AI uses a scoring system to determine which move to use
 			(and which target to use it on, if applicable). Each move starts with a
@@ -69,9 +67,6 @@
 		<p>The scoring process is nondeterministic: a given move and target
 			may result in a different score each time it is checked due to
 			randomness within the scoring functions.</p>
-
-		<p>See also: <a href="https://pokemow.com/Gen4/TrainerAI/switching.html">side article on switch-in and
-				withdrawal AI.</a></p>
 
 		<h2>Move Scoring</h2>
 		<p>The scoring procedure is split into four main modules: Basic,
@@ -118,25 +113,20 @@
 		<p>In the Battle Frontier, the AI is enabled as follows:</p>
 		<ul>
 			<li>
-				<p><strong>Battle Tower</strong>: Always Basic + Strong + Expert AI.</p>
+				<p><strong>Battle Tower</strong>, <strong>Battle Dome</strong>, <strong>Battle Palace</strong>,
+					<strong>Battle Arena</strong>, <strong>Battle Pike</strong>, and <strong>Battle Pyramid</strong>:
+				</p>
+				<p>Always Basic + Strong + Expert AI.</p>
 			</li>
 
-			<li>
-				<p><strong>Battle Hall</strong>:</p>
-				<ul>
-					<li>Rank 1-3: No AI</li>
-					<li>Rank 4-7: Basic AI</li>
-					<li>Rank 8-10: Basic + Strong + Expert AI</li>
-				</ul>
-			</li>
 
 			<li>
-				<p><strong>Battle Factory</strong>, <strong>Battle Castle</strong>, and <strong>Battle Arcade</strong>:
+				<p><strong>Battle Factory</strong>:
 				</p>
 				<ul>
 					<li>Rounds 1 and 2: No AI</li>
 					<li>Rounds 3 and 4: Basic AI</li>
-					<li>Round 5 onward: Basic + Strong + Expert AI</li>
+					<li>Silver Battle & Round 5 onward: Basic + Strong + Expert AI</li>
 				</ul>
 			</li>
 		</ul>
@@ -191,308 +181,9 @@
 		<p>When the AI checks for move effectiveness, it does so regardless of if the move in question is actually
 			damaging.</p>
 
-		<p>If the user has the ability Normalize, the move's type is changed
-			to Normal. Otherwise, if the move is Hidden Power,
-			or Weather Ball, the move is adjusted to its correct type.</p>
+		<!-- TODO: check when the dynamic typing occurs fully, Cmd_setweatherballtype  Cmd_hiddenpowercalc<p>-->
 
-		<p>The effectiveness multiplier is initialized to 1x, and then first adjusted by:</p>
-		<ul>
-			<li>
-				<p>STAB</p>
-			</li>
-			<li>
-				<p>Adaptability</p>
-			</li>
-		</ul>
-
-		<p>The move's calculated type is then checked against the target's type(s), applying:</p>
-		<ul>
-			<li>
-				<p>Scrappy</p>
-			</li>
-			<li>
-				<p>Odor Sleuth / Foresight</p>
-			</li>
-			<li>
-				<p>Ingrain / Iron Ball</p>
-			</li>
-			<li>
-				<p>Levitate</p>
-			</li>
-			<li>
-				<p>Wonder Guard</p>
-			</li>
-		</ul>
-
-		<p>Subsequently, if the move deals damage at all (including OHKO moves, countering moves, etc.), the check
-			applies:</p>
-		<ul>
-			<li>
-				<p>Tinted Lens</p>
-			</li>
-			<li>
-				<p>Expert Belt</p>
-			</li>
-			<li>
-				<p>Filter / Solid Rock</p>
-			</li>
-		</ul>
-
-		<p>The resulting multiplier is returned as the total effectiveness of the move.</p>
-
-		<p>All of these other factors are always ignored:</p>
-		<ul>
-			<li>
-				<p>Water Absorb</p>
-			</li>
-			<li>
-				<p>Flash Fire</p>
-			</li>
-			<li>
-				<p>Motor Drive</p>
-			</li>
-			<li>
-				<p>Volt Absorb</p>
-			</li>
-			<li>
-				<p>Dry Skin</p>
-			</li>
-			<li>
-				<p>Soundproof</p>
-			</li>
-			<li>
-				<p>Damp</p>
-			</li>
-			<li>
-				<p>If the move deals fixed damage</p>
-			</li>
-		</ul>
-
-		<p>The effectiveness check specifically cheats and checks if your
-			ability is Filter, Solid Rock, Levitate, or Wonder Guard, and returns an
-			appropriate multiplier. This means that, for example, if you have a
-			Levitate Bronzong, the AI will see Earthquake as 0x effective. But, if
-			you have a Heatproof Bronzong, the AI will see that Earthquake is 2x
-			effective, but will still, 50% of the time, guess that it has Levitate
-			and avoid picking it.</p>
-
-		<p>If the overall effectiveness as a result of this check is exactly
-			0.375x, 0.75x, 3x, or 6x, it makes the assumption that this must be STAB
-			boosted and adjusts the effectiveness to 0.25x, 0.5x, 2x, and 4x,
-			respectively. This adjustment occurs even if the move is not actually
-			STAB boosted (for instance, 4x supereffective vs Solid Rock results in a
-			3x multiplier, which is then adjusted to 2x).</p>
-
-		<p>Therefore, when the AI runs a check on a condition such as "If the
-			move is 4x supereffective...", this works normally for STAB and
-			non-STAB moves, but may fail to trigger properly when Adaptability,
-			Expert Belt, Tinted Lens, or Filter / Solid Rock are in effect.</p>
-
-		<h3>Damage</h3>
-		<p>When the AI checks how much damage a move will deal, it uses the
-			game's normal and correct procedure for calculating damage for that
-			move, but without any of the multipliers used on the <em>output</em> of damage calculation:</p>
-		<ul>
-			<li>
-				<p>Critical hits</p>
-			</li>
-			<li>
-				<p>Life Orb / Metronome</p>
-			</li>
-			<li>
-				<p>STAB</p>
-			</li>
-			<li>
-				<p>Random variance</p>
-			</li>
-			<li>
-				<p>Type effectiveness</p>
-			</li>
-			<li>
-				<p>Solid Rock / Filter</p>
-			</li>
-			<li>
-				<p>Expert Belt</p>
-			</li>
-			<li>
-				<p>Tinted Lens</p>
-			</li>
-			<li>
-				<p>Damage-reducing berries</p>
-			</li>
-		</ul>
-
-		<p>Instead, if the move does not deal fixed damage, the raw damage
-			value is multiplied by the AI's effectiveness multiplier, with the step
-			of adjusting STAB omitted. If the move deals fixed damage, it is
-			properly checked for type immunities (i.e. Seismic Toss vs Ghosts) and
-			then its fixed damage is returned as the result.</p>
-
-		<p>Importantly, the Life Orb and Metronome are ignored by the AI for purposes of checking the damage of a move.
-		</p>
-
-		<p>Damage boosts in these situations are also ignored during damage calculation:</p>
-		<ul>
-			<li>
-				<p>Recoil moves with the Reckless ability</p>
-			</li>
-			<li>
-				<p>Stomp against a target that has used Minimize</p>
-			</li>
-			<li>
-				<p>Facade while the user is statused</p>
-			</li>
-			<li>
-				<p>SmellingSalt against a paralyzed target</p>
-			</li>
-			<li>
-				<p>Surf or Whirlpool against a target using Dive</p>
-			</li>
-			<li>
-				<p>Gust or Twister against a target using Fly</p>
-			</li>
-			<li>
-				<p>Earthquake or Magnitude against a target using Dig</p>
-			</li>
-			<li>
-				<p>Rollout or Ice Ball after the user has used Defense Curl</p>
-			</li>
-			<li>
-				<p>Rollout when hitting consecutively</p>
-			</li>
-			<li>
-				<p>Fury Cutter when hitting consecutively</p>
-			</li>
-			<li>
-				<p>Weather Ball during sun, rain, hail, or sandstorm</p>
-			</li>
-		</ul>
-
-		<p>Uniquely, damage calculation omits adjusting the type of Weather
-			Ball, resulting in it possibly failing to properly receive STAB or type
-			effectiveness.</p>
-
-		<p>The move Psywave generates a random power level for damage calculation.</p>
-
-		<p>The moves Future Sight and Doom Desire have their damage
-			calculated applying STAB and effectiveness, ignoring their normal
-			typeless properties.</p>
-
-		<p>Multi-strike moves only have a single strike considered.</p>
-
-		<p>Multipliers used for the <em>input</em> of damage calculation
-			(such as: Choice items / Light Ball / Thick Club / type-boosting items,
-			Light Screen / Reflect, Torrent / Huge Power / Thick Fat, weather type
-			boosts, etc., etc.) are applied as normal.
-			For more information on this, check <a target="_blank"
-				href="https://bulbapedia.bulbagarden.net/wiki/Damage#Generation_IV">the Bulbapedia article on damage
-				calculation</a>,
-			as well as the corresponding article for any specific ability or item
-			to verify its exact mechanism of affecting the damage formula.</p>
-
-		<h4>Excluded moves</h4>
-		<p>These moves are not accepted for damage calculation. Any attempt to calculate their damage will result in a
-			damage of 0, <em>except</em>
-			when checking the damage of the move previously used by another Pokémon
-			. If calculated in this way, moves with a
-			nonregular base power such as Present, Flail, or Sheer Cold will
-			be treated as having a base power of 1. Full HP will be assumed for
-			Eruption and Water Spout. Magnitude uniquely will generate a random
-			power level if its damage is calculated in this way.</p>
-
-		<ul>
-			<li>
-				<p>Guillotine</p>
-			</li>
-			<li>
-				<p>Horn Drill</p>
-			</li>
-			<li>
-				<p>Counter</p>
-			</li>
-			<li>
-				<p>Fissure</p>
-			</li>
-			<li>
-				<p>Bide</p>
-			</li>
-			<li>
-				<p>Super Fang</p>
-			</li>
-			<li>
-				<p>Flail</p>
-			</li>
-			<li>
-				<p>Reversal</p>
-			</li>
-			<li>
-				<p>Present</p>
-			</li>
-			<li>
-				<p>Magnitude</p>
-			</li>
-			<li>
-				<p>Mirror Coat</p>
-			</li>
-			<li>
-				<p>Spit Up</p>
-			</li>
-			<li>
-				<p>Endeavor</p>
-			</li>
-			<li>
-				<p>Sheer Cold</p>
-			</li>
-			<li>
-				<p>Selfdestruct</p>
-			</li>
-			<li>
-				<p>Explosion</p>
-			</li>
-			<li>
-				<p>Dream Eater</p>
-			</li>
-			<li>
-				<p>Razor Wind</p>
-			</li>
-			<li>
-				<p>Sky Attack</p>
-			</li>
-			<li>
-				<p>Hyper Beam</p>
-			</li>
-			<li>
-				<p>Hydro Cannon</p>
-			</li>
-			<li>
-				<p>Blast Burn</p>
-			</li>
-			<li>
-				<p>Frenzy Plant</p>
-			</li>
-			<li>
-				<p>Skull Bash</p>
-			</li>
-			<li>
-				<p>SolarBeam</p>
-			</li>
-			<li>
-				<p>Spit Up</p>
-			</li>
-			<li>
-				<p>Focus Punch</p>
-			</li>
-			<li>
-				<p>Superpower</p>
-			</li>
-			<li>
-				<p>Eruption</p>
-			</li>
-			<li>
-				<p>Water Spout</p>
-			</li>
-		</ul>
-
+		
 		<h2>Other notes and quirks</h2>
 		<p>When the AI checks something like "50% chance of score +1 and
 			terminate", this means that the score change happens with probability
@@ -508,29 +199,6 @@
 		<p>Rarely, the AI will compare a Pokémon's HP to 0%; this is not the
 			same thing as being fainted: a Pokémon with 1/101 HP is considered 0%
 			after rounding.</p>
-
-		<p>When checking if a move deals damage, any move that deals damage
-			in any way counts, including OHKO moves, fixed-damage moves, countering
-			moves, and variable damage moves like Low Kick or Return.</p>
-
-		<p>When checking specifically if a Pokémon has a move to hit a target
-			supereffectively, unlike the effectiveness multiplier calculation, this
-			check actually works correctly in all situations by checking the flag
-			that would generate the "It's super effective!" text. This means no
-			Expert Belt, Filter / Solid Rock, Adaptability, fixed-damage move, or
-			nondamaging move would interfere with the check.</p>
-
-		<p>The AI never considers the accuracy of a move.</p>
-
-		<p>If you are playing Pair / Link mode with another DS, and you are
-			linking Diamond or Pearl with Platinum, HeartGold, or SoulSilver, then
-			the PtHGSS game will always be in charge of battle AI decisions, due to
-			having a newer version of the battle software.</p>
-
-		<p>If you specifically link Diamond or Pearl as the leader with
-			Platinum, HeartGold, or SoulSilver as the guest, then an oversight in
-			the battle setup will cause the trainers to have no AI except for
-			Doubles.</p>
 
 		<hr>
 
