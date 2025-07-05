@@ -336,7 +336,7 @@ If the target is a higher level than the user:
 
 
 ["Refresh"]:
-`If the user is not burned, paralyzed, or poisoned:
+`If the user is not burned, paralyzed, poisoned, or badly poisoned:
 	Score -10 and terminate`,
 
 

@@ -51,7 +51,7 @@ If the user's current accuracy is reduced to -3 or lower, or the target's curren
 
 
 ["Check_ChargeTurnInvuln"]:
-`If the target is poisoned, or under the effect or Curse or Leech Seed:
+`If the target is badly poisoned, or under the effect or Curse or Leech Seed:
 	68.8% (176/256) chance of score +1 and terminate
 
 If the current weather is hail and the user is is Rock, Ground, or Steel type, or the current weather is sandstorm and the user is Ice type:
@@ -222,7 +222,7 @@ Otherwise:
 
 
 ["Facade"]:
-`If the target is burned, paralyzed, or poisoned:
+`If the target is burned, paralyzed, poisoned, or badly poisoned:
 	Score +1 and terminate`,
 
 
@@ -695,13 +695,13 @@ If the user will move after the target:
 `If the user's consecutive protection count is 2 or more:
 	Score -2 and terminate
 
-If the user is poisoned, or infatuated, or under the effect of Curse, Leech Seed, Yawn, or Perish Song, or the foe knows the move Recover, Slack Off, or Defense Curl:
+If the user is badly poisoned, or infatuated, or under the effect of Curse, Leech Seed, Yawn, or Perish Song, or the foe knows the move Recover, Slack Off, or Defense Curl:
 	If the foe's last move was Lock-On or Mind Reader:
 		No scoring change and terminate
 	Else:
 		Score -2 and terminate
 
-If the foe is poisoned, or infatuated, or under the effect of Curse, Leech Seed, Yawn, or Perish Song, or the foe's last move was Lock-On or Mind Reader:
+If the foe is badly poisoned, or infatuated, or under the effect of Curse, Leech Seed, Yawn, or Perish Song, or the foe's last move was Lock-On or Mind Reader:
 	Score +2 and continue
 Else:
 	33.2% (85/256) chance of score +2 and continue
@@ -1015,7 +1015,7 @@ Otherwise:
 If the target's accuracy is reduced to -2 or lower:
 	68.8% (176/256) chance of score -2 and continue
 
-If the target is poisoned:
+If the target is badly poisoned:
 	72.7% (186/256) chance of score +2 and continue
 
 If the target is under the effect of Leech Seed:
@@ -1110,7 +1110,7 @@ If the user knows the move Protect or Detect:
 
 
 ["Trap"]:
-`If the target is poisoned, or infatuated, or under the effect or Curse, or Perish Song:
+`If the target is badly poisoned, or infatuated, or under the effect or Curse, or Perish Song:
 	50% (128/256) chance of score +1 and terminate`,
 
 
@@ -1167,7 +1167,7 @@ Otherwise:
 If the user's current evasion is boosted to +3 or more:
 	50% (128/256) chance of score -1 and continue
 
-If the foe is poisoned:
+If the foe is badly poisoned:
 	If the user's HP is over 50%:
 		80.5% (206/256) chance of score +3 and continue
 	Else:
