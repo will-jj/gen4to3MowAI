@@ -253,12 +253,7 @@ If this is the user's first turn in battle:
 
 
 ["ForceSwitch"]:
-`If the target has been in battle for more than 3 turns:
-	75% (192/256) chance of score +2 and continue
-	50% (128/256) chance of score +2 and terminate
-	(Overall: 12.5% chance of no scoring change, 50% chance of score +2, 37.5% chance of score +4)
-
-If the target's attack, defense, special attack, special defense, or evasion is boosted to +3 or more:
+`If the target's attack, defense, special attack, special defense, or evasion is boosted to +3 or more:
 	50% (128/256) chance of score +2 and terminate
 
 Otherwise:
