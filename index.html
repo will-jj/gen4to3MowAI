@@ -37,8 +37,8 @@
 		<h2>Beta Release Notice</h2>
 		<p>This site, and information within is adapted from the <a
 				href="https://pokemow.com/Gen4/TrainerAI/pokemow.com/">Generation 4 site.</a>
-		During the initial deployment some information in this briefing, and the subsequent move choice scoring may
-		reflect that - please report any issues wherever you discovered this site.</p>
+			During the initial deployment some information in this briefing, and the subsequent move choice scoring may
+			reflect that - please report any issues wherever you discovered this site.</p>
 		<h2>Overview</h2>
 		<p>This page will look up trainer battle AI procedures for the
 			Generation III Pokémon games – Pokémon Emerald.</p>
@@ -183,7 +183,7 @@
 
 		<!-- TODO: check when the dynamic typing occurs fully, Cmd_setweatherballtype  Cmd_hiddenpowercalc<p>-->
 
-		
+
 		<h2>Other notes and quirks</h2>
 		<p>When the AI checks something like "50% chance of score +1 and
 			terminate", this means that the score change happens with probability
@@ -840,6 +840,20 @@
 				} else if (keyEvent.key === "Delete") {
 					text.value = "";
 					text.focus();
+				}
+			});
+
+			document.addEventListener('DOMContentLoaded', function () {
+				const urlParams = new URLSearchParams(window.location.search);
+				const paramValue = urlParams.get("move");
+				const select = document.getElementById("ai-move-select");
+				const aiInputText = document.getElementById("ai-move-text-input");
+				const aiForm = document.getElementById("ai-form");
+
+				if (paramValue && select && aiInputText && aiForm) {
+					select.value = paramValue;
+					text.value = paramValue;
+					form.requestSubmit();
 				}
 			});
 
