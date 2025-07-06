@@ -24,6 +24,8 @@
 	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/getDouble_AllyAI.js"></script>
 
 	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/formatter.js"></script>
+		<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/inputUtil.js"></script>
+
 
 	<link rel="stylesheet" href="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/main.css">
 
@@ -851,8 +853,13 @@
 				const aiForm = document.getElementById("ai-form");
 
 				if (paramValue && select && aiInputText && aiForm) {
-					select.value = paramValue;
-					text.value = paramValue;
+					const idx = findClosestMoveIndex(select, paramValue);
+					if (idx >= 0) {
+						select.selectedIndex = idx;
+					}
+					else {
+						return;
+					}
 					form.requestSubmit();
 				}
 			});
