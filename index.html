@@ -845,9 +845,11 @@
 				}
 			});
 
-			const urlParams = new URLSearchParams(window.location.search);
-			const paramValue = urlParams.get("move");
+			const paramValue = window.location.hash.slice(1);
 
+			//clear the hash (don't care about search params just now)
+			history.pushState("", document.title, window.location.pathname);
+			
 			if (paramValue) {
 				const idx = findClosestMoveIndex(select, paramValue);
 				if (idx >= 0) {
