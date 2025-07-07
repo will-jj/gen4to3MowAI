@@ -849,10 +849,9 @@
 				const urlParams = new URLSearchParams(window.location.search);
 				const paramValue = urlParams.get("move");
 				const select = document.getElementById("ai-move-select");
-				const aiInputText = document.getElementById("ai-move-text-input");
 				const aiForm = document.getElementById("ai-form");
 
-				if (paramValue && select && aiInputText && aiForm) {
+				if (paramValue && select && aiForm) {
 					const idx = findClosestMoveIndex(select, paramValue);
 					if (idx >= 0) {
 						select.selectedIndex = idx;
