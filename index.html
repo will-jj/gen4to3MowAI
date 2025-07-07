@@ -10,6 +10,7 @@
 	<link rel="icon" href="https://pokemow.com/favicon.png">
 
 	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/moves.js"></script>
+	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/MoveInfoCheckText.js"></script>
 	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/BasicCheckText.js"></script>
 	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/StrongCheckText.js"></script>
 	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/ExpertCheckText.js"></script>
@@ -17,6 +18,7 @@
 	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/Double_AllyCheckText.js"></script>
 
 	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/moveUtil.js"></script>
+	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/getMoveInfo.js"></script>
 	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/getBasicAI.js"></script>
 	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/getStrongAI.js"></script>
 	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/getExpertAI.js"></script>
@@ -24,7 +26,7 @@
 	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/getDouble_AllyAI.js"></script>
 
 	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/formatter.js"></script>
-		<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/inputUtil.js"></script>
+	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/inputUtil.js"></script>
 
 
 	<link rel="stylesheet" href="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/main.css">
@@ -606,6 +608,12 @@
 
 			<div class="flex-column gapless self-center">
 				<label>
+					<input type="checkbox" id="move-info-checkbox" checked="checked">
+					<span>Move Info</span>
+				</label>
+
+
+				<label>
 					<input type="checkbox" id="basic-ai-checkbox" checked="checked">
 					<span>Basic AI</span>
 				</label>
@@ -634,6 +642,11 @@
 
 	<div class="flex-column">
 		<h2 id="ai-subtitle" style="display:none"></h2>
+
+		<div class="flex-column gapless" id="move-info-container" style="display:none">
+			<div class="ai-header move-info">Move Info</div>
+			<div id="move-info-body" class="ai-body flex-column"></div>
+		</div>
 
 		<div class="flex-column gapless" id="basic-ai-container" style="display:none">
 			<div class="ai-header basic">Basic AI</div>
@@ -753,6 +766,7 @@
 
 			bindTextToSelect(select, text);
 
+			const moveInfoCheckbox = document.getElementById("move-info-checkbox");
 			const basicCheckbox = document.getElementById("basic-ai-checkbox");
 			const strongCheckbox = document.getElementById("strong-ai-checkbox");
 			const expertCheckbox = document.getElementById("expert-ai-checkbox");
@@ -760,12 +774,14 @@
 
 			const subtitle = document.getElementById("ai-subtitle");
 
+			const moveInfoBody = document.getElementById("move-info-body");
 			const basicBody = document.getElementById("basic-ai-body");
 			const strongBody = document.getElementById("strong-ai-body");
 			const expertBody = document.getElementById("expert-ai-body");
 			const doubleEnemyBody = document.getElementById("double-enemy-ai-body");
 			const doubleAllyBody = document.getElementById("double-ally-ai-body");
 
+			const moveInfoContainer = document.getElementById("move-info-container");
 			const basicContainer = document.getElementById("basic-ai-container");
 			const strongContainer = document.getElementById("strong-ai-container");
 			const expertContainer = document.getElementById("expert-ai-container");
@@ -785,6 +801,15 @@
 					subtitle.textContent = `AI procedures: ${move}`;
 					subtitle.style.display = "";
 				}
+
+				if (moveInfoCheckbox.checked) {
+					let results = prepareChecks(getMoveInfo(moves[move]), moveInfoCheckText, true);
+					moveInfoBody.replaceChildren(...results);
+					moveInfoContainer.style.display = "";
+				} else {
+					moveInfoContainer.style.display = "none";
+				}
+
 
 				if (basicCheckbox.checked) {
 					let results = prepareChecks(getBasicAI(moves[move]), basicCheckText);

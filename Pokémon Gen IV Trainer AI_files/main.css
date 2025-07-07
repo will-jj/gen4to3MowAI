@@ -104,6 +104,13 @@ footer {
 	gap: 0;
 }
 
+#move-info-container {
+  --border-color: #2d8476;
+  --header-background-color: #6ab1a5;
+  --header-color: #0b1f1b;
+  --body-background-color: #b6fff3;
+}
+
 #basic-ai-container {
   --border-color: #2d5384;
   --header-background-color: #6da4fb;

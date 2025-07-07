@@ -37,7 +37,7 @@ function createSpacer() {
 	return spacerNode;
 }
 
-function prepareChecks(keys, textSource) {
+function prepareChecks(keys, textSource, infoNotAi=false) {
 	let lists = [];
 	let nodes = [];
 	
@@ -74,7 +74,12 @@ function prepareChecks(keys, textSource) {
 	}
 	
 	if (keys.length === 0) {
-		nodes.push(createTextLine(0, "(No applicable AI procedures)"));
+		if(infoNotAi){
+			nodes.push(createTextLine(0, "(No additional information)"));
+		}
+		else {
+			nodes.push(createTextLine(0, "(No applicable AI procedures)"));
+		}
 	}
 	
 	return nodes.concat(lists);
