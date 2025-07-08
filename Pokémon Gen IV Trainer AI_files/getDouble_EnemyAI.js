@@ -43,7 +43,27 @@ function getDouble_EnemyAI(moveData) {
 
 	if (!handled) {
 		if (moveData.damageFormula == DamageFormulaType.STANDARD_DAMAGE) {
-			resultAiChecks.push("Check_UserStatus")
+			switch (moveData.battleEffect) {
+				// Verbose listing of MOVE_POWER_OTHER moves with standard damage
+				case "DreamEater":
+				case "RazorWind":
+				case "SkyAttack":
+				case "MustRecharge":
+				case "SkullBash":
+				case "Solarbeam":
+				case "SpitUp":
+				case "FocusPunch":
+				case "Superpower":
+				case "HighHpHighDamage":
+				case "DamageAndUserSpattackDown2":
+				case "Selfdestruction":
+					resultAiChecks.push("Check_UserStatus_Power_Other")
+					break;
+
+				default:
+					resultAiChecks.push("Check_UserStatus")
+					break;
+			}
 		}
 		else {
 			resultAiChecks.push("Check_UserStatus_Power_Other")

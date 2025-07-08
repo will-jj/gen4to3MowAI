@@ -15,6 +15,7 @@ function getDouble_AllyAI(moveData) {
 			case "Superpower":
 			case "HighHpHighDamage":
 			case "DamageAndUserSpattackDown2":
+			case "Selfdestruction":
 				resultAiChecks.push("Check_NoReason");
 				break;
 
