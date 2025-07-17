@@ -117,20 +117,21 @@ Otherwise:
 	Otherwise:
 		No scoring change and terminate
 
-If the user's defense is boosted to +4 or more:
-	No scoring change and terminate
-Else:
-	50% (128/256) chance of score +1 and continue
-
-If the user's defense is boosted to +2 or more:
-	No scoring change and terminate
-Else:
-	50% (128/256) chance of score +1 and continue
-
-If the user's defense is boosted to +1 or more:
-	No scoring change and terminate
-Else:
-	50% (128/256) chance of +1 score and terminate`,
+If the user's defense is boosted to:
+	+4 or Higher:
+		No scoring change and terminate
+	+2 or +3:
+		50% (128/256) chance of score +0 and terminate
+		50% (128/256) chance of score +1 and terminate
+	+1:
+		25% (64/256)	chance of score +0 and terminate
+		50% (128/256)	chance of score +1 and terminate
+		25% (64/256)	chance of score +2 and terminate
+	+0 or Lower:
+		12.5% (32/256)	chance of score +0 and terminate
+		37.5% (96/256)	chance of score +1 and terminate
+		37.5% (96/256)	chance of score +2 and terminate
+		12.5% (32/256)	chance of score +3 and terminate`,
 
 
 ["DamageAndUserSpattackDown2"]:
