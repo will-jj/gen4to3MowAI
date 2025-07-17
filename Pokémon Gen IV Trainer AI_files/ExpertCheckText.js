@@ -128,7 +128,9 @@ Else:
 	50% (128/256) chance of score +1 and continue
 
 If the user's defense is boosted to +1 or more:
-	50% (128/256) chance of score +1 and terminate`,
+	No scoring change and terminate
+Else:
+	50% (128/256) chance of +1 score and terminate`,
 
 
 ["DamageAndUserSpattackDown2"]:
