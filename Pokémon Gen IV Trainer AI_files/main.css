@@ -170,6 +170,14 @@ footer {
 	background-color: var(--body-background-color);
 }
 
+.ai-body.move-info {
+	border-top-width: 2px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	margin-top: 1ch;
+	margin-bottom: 1ch;
+}
+
 .ai-spacer {
 	height: 1.6ch;
 }

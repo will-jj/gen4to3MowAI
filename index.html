@@ -15,6 +15,9 @@
 	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/ExpertCheckText.js"></script>
 	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/Double_EnemyCheckText.js"></script>
 	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/Double_AllyCheckText.js"></script>
+	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/BasicMoveInfoText.js"></script>
+	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/StrongMoveInfoText.js"></script>
+	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/ExpertMoveInfoText.js"></script>
 
 	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/moveUtil.js"></script>
 	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/getBasicAI.js"></script>
@@ -22,6 +25,10 @@
 	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/getExpertAI.js"></script>
 	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/getDouble_EnemyAI.js"></script>
 	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/getDouble_AllyAI.js"></script>
+	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/getBasicMoveInfo.js"></script>
+	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/getStrongMoveInfo.js"></script>
+	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/getExpertMoveInfo.js"></script>
+
 
 	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/formatter.js"></script>
 		<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/inputUtil.js"></script>
@@ -638,16 +645,19 @@
 		<div class="flex-column gapless" id="basic-ai-container" style="display:none">
 			<div class="ai-header basic">Basic AI</div>
 			<div id="basic-ai-body" class="ai-body flex-column"></div>
+			<div id="basic-move-info-body" class="ai-body move-info flex-column"></div>
 		</div>
 
 		<div class="flex-column gapless" id="strong-ai-container" style="display:none">
 			<div class="ai-header strong">Strong AI</div>
 			<div id="strong-ai-body" class="ai-body flex-column"></div>
+			<div id="strong-move-info-body" class="ai-body move-info flex-column"></div>
 		</div>
 
 		<div class="flex-column gapless" id="expert-ai-container" style="display:none">
 			<div class="ai-header expert">Expert AI</div>
 			<div id="expert-ai-body" class="ai-body flex-column"></div>
+			<div id="expert-move-info-body" class="ai-body move-info flex-column"></div>
 		</div>
 
 		<div class="flex-column gapless" id="double-enemy-ai-container" style="display:none">
@@ -763,6 +773,9 @@
 			const basicBody = document.getElementById("basic-ai-body");
 			const strongBody = document.getElementById("strong-ai-body");
 			const expertBody = document.getElementById("expert-ai-body");
+			const basicMoveInfoBody = document.getElementById("basic-move-info-body");
+			const strongMoveInfoBody = document.getElementById("strong-move-info-body");
+			const expertMoveInfoBody = document.getElementById("expert-move-info-body");
 			const doubleEnemyBody = document.getElementById("double-enemy-ai-body");
 			const doubleAllyBody = document.getElementById("double-ally-ai-body");
 
@@ -790,6 +803,17 @@
 					let results = prepareChecks(getBasicAI(moves[move]), basicCheckText);
 					basicBody.replaceChildren(...results);
 					basicContainer.style.display = "";
+
+					let resultsMoveInfo = getBasicMoveInfo(moves[move])
+					if (resultsMoveInfo.length == 0) {
+						basicMoveInfoBody.remove()
+					}
+					else {
+						let resultsMoveInfoFormatted = prepareChecks(resultsMoveInfo, basicMoveInfoCheckText);
+						basicMoveInfoBody.replaceChildren(...resultsMoveInfoFormatted);
+						basicBody.prepend(basicMoveInfoBody)
+					}
+
 				} else {
 					basicContainer.style.display = "none";
 				}
@@ -798,6 +822,17 @@
 					let results = prepareChecks(getStrongAI(moves[move]), strongCheckText);
 					strongBody.replaceChildren(...results);
 					strongContainer.style.display = "";
+
+					let resultsMoveInfo = getStrongMoveInfo(moves[move])
+					if (resultsMoveInfo.length == 0) {
+						strongMoveInfoBody.remove()
+					}
+					else {
+						let resultsMoveInfoFormatted = prepareChecks(resultsMoveInfo, strongMoveInfoCheckText);
+						strongMoveInfoBody.replaceChildren(...resultsMoveInfoFormatted);
+						strongBody.prepend(strongMoveInfoBody)
+					}
+
 				} else {
 					strongContainer.style.display = "none";
 				}
@@ -806,6 +841,18 @@
 					let results = prepareChecks(getExpertAI(moves[move]), expertCheckText);
 					expertBody.replaceChildren(...results);
 					expertContainer.style.display = "";
+
+					let resultsMoveInfo = getExpertMoveInfo(moves[move])
+					if (resultsMoveInfo.length == 0) {
+						expertMoveInfoBody.remove()
+					}
+					else {
+						let resultsMoveInfoFormatted = prepareChecks(resultsMoveInfo, expertMoveInfoCheckText);
+						expertMoveInfoBody.replaceChildren(...resultsMoveInfoFormatted);
+						expertBody.prepend(expertMoveInfoBody)
+					}
+
+
 				} else {
 					expertContainer.style.display = "none";
 				}
