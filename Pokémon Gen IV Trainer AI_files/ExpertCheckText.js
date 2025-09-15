@@ -734,7 +734,7 @@ Otherwise:
 
 ["Pursuit"]:
 `If this is the user's first turn in battle, and the target is Ghost or Psychic type:
-	50% (128/256) chance of score +1 and continue`,
+	50% (128/256) chance of score +1 and terminate`,
 
 
 ["RainDance"]:
