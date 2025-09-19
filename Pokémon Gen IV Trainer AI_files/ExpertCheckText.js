@@ -699,12 +699,12 @@ If the user will move after the target:
 	Score -2 and terminate
 
 If the user is badly poisoned, or infatuated, or under the effect of Curse, Leech Seed, Yawn, or Perish Song, or the foe knows the move Recover, Slack Off, or Defense Curl:
-	If the foe's last move was Lock-On or Mind Reader:
+	If the foe's last move was not Lock-On or Mind Reader:
 		No scoring change and terminate
 	Else:
 		Score -2 and terminate
 
-If the foe is badly poisoned, or infatuated, or under the effect of Curse, Leech Seed, Yawn, or Perish Song, or the foe's last move was Lock-On or Mind Reader:
+If the foe is badly poisoned, or infatuated, or under the effect of Curse, Leech Seed, Yawn, or Perish Song, or the foe's last move was not Lock-On or Mind Reader:
 	Score +2 and continue
 Else:
 	33.2% (85/256) chance of score +2 and continue
