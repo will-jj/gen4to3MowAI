@@ -107,8 +107,9 @@ AI_CV_Hail_End:
         <h3>Review</h3>
         <p>From these definitions, functions, & knowledge that the <code>AI_THINKING_STRUCT->funcResult</code> is only
             cleared at the beginning of a turn, when there is no weather, & if the function result was previously set to
-            0, 1, or 2 (i.e Sun, Rain, or Sandstorm), & the user is at 40% health or greater, then the move will receive
-            a +1 score, next we will cover how these values tend to get set.</p>
+            0, 1, or 2 (i.e. Sun, Rain, or Sandstorm), & the user is at 40% health or greater, then the move will receive
+            a +1 score.
+            Next we will cover how these values tend to get set.</p>
 
         <h3>(More) Definitions, & Functions</h3>
 
@@ -179,7 +180,7 @@ AI_CV_Hail_End:
             (Rain), 2 (Sandstorm), or 3 (Hail) can be set by a prior function, & be read by the AI's weather check. An
             exhaustive list of functions which make use of this variable are listed in the appendix. Here, we will focus
             on the role of the Strong / Try to Faint AI, which is ran prior to the Expert / Check Viability AI.
-            For each move in order they are scored, 0 for move power other, 1, for not most powerful, & 2, for most
+            For each move in order, they are scored: 0 for move power other, 1, for not most powerful, & 2, for most
             powerful.
             As we have covered, these values correspond to Sun, Rain, & Sandstorm respectively.
             Glalie-1's last move is protect, this will be scored as 0, move power other.
