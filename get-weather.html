@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Pokémon Emerald Weather AI [Bug]</title>
+    <meta name="viewport" content="width=600" />
+    <link rel="icon" href="https://pokemow.com/favicon.png">
+
+    <link rel="stylesheet" href="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/main.css">
+    <link rel="stylesheet" href="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/explainer.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        #switch-points-table {
+            border-collapse: collapse;
+            margin: auto;
+        }
+
+        #switch-points-table th,
+        #switch-points-table td {
+            border: 1px solid #fff6;
+            text-align: center;
+            padding: 0.3ch;
+        }
+    </style>
+
+</head>
+
+<body class="flex-column">
+    <h1>Pokémon Emerald Weather AI [Bug]</h1>
+    <article>
+
+        <h2>Overview</h2>
+        <p>Within the codebase for Pokémon Emerald, there is a lack of definition for no weather. This is the root cause
+            of the bug, & consequential deviation from expected move scoring which will be covered here. During the
+            scoring of a move, if the weather is required by the AI; a function is called to ascertain the state of the
+            weather, this function sets the result based on whether it is Rain, Sandstorm, Sun, or Hail. However, as
+            mentioned there is no state for no weather. Therefore, in this case, the function result is as it was set by
+            the last function which makes use of the result variable. In certain cases, this can lead to erroneous
+            scoring which will be covered in the remainder of this article.</p>
+
+
+        <h2>Why it Happens: The Code</h2>
+
+        <p>Here, we will show the code, & go step by step through the process for a given example. It is necessary to
+            understand, the function result variable is reset to 0 at the start of a turn, the AI scores each move in
+            order, first with basic/check bad move AI, strong/try to faint AI, & expert/check viability AI (doubles is
+            left as an exercise for the reader). We will focus, on the AI & only cover what is required to understand
+            the weather related bug. The code snippets shown here are taken from the pret decompilation and will include
+            perma-links to the source. It will focus on a simplistic example of a full health Glalie-1 from the
+            frontier.</p>
+
+        <h3>Definitions, & Functions</h3>
+
+        <h4><a class="simple" target="_blank" rel="noopener noreferrer"
+                href="https://github.com/pret/pokeemerald/blob/9c8cfe3b7586471958c9b90a04e0fab65f04a37a/include/constants/battle_ai.h#L25">AI
+                Weather Definitions</a></h4>
+
+
+        <pre><code class="language-c">#define AI_WEATHER_SUN 0
+#define AI_WEATHER_RAIN 1
+#define AI_WEATHER_SANDSTORM 2
+#define AI_WEATHER_HAIL 3</code></pre>
+
+
+        <h4><a class="simple" target="_blank" rel="noopener noreferrer"
+                href="https://github.com/pret/pokeemerald/blob/9c8cfe3b7586471958c9b90a04e0fab65f04a37a/src/battle_ai_script_commands.c#L1644">AI
+                Get Weather Function</a></h4>
+        <pre><code class="language-c">static void Cmd_get_weather(void)
+{
+    if (gBattleWeather & B_WEATHER_RAIN)
+        AI_THINKING_STRUCT->funcResult = AI_WEATHER_RAIN;
+    if (gBattleWeather & B_WEATHER_SANDSTORM)
+        AI_THINKING_STRUCT->funcResult = AI_WEATHER_SANDSTORM;
+    if (gBattleWeather & B_WEATHER_SUN)
+        AI_THINKING_STRUCT->funcResult = AI_WEATHER_SUN;
+    if (gBattleWeather & B_WEATHER_HAIL)
+        AI_THINKING_STRUCT->funcResult = AI_WEATHER_HAIL;
+
+    gAIScriptPtr += 1;
+}</code></pre>
+
+        <h4><a class="simple" target="_blank" rel="noopener noreferrer"
+                href="https://github.com/pret/pokeemerald/blob/9c8cfe3b7586471958c9b90a04e0fab65f04a37a/data/battle_ai_scripts.s#L2261">Expert/Check
+                Viabilty AI Script for Hail</a></h4>
+        <pre><code class="language-c">AI_CV_Hail:
+	if_hp_less_than AI_USER, 40, AI_CV_Hail_ScoreDown1
+	get_weather
+	if_equal AI_WEATHER_SUN, AI_CV_Hail2
+	if_equal AI_WEATHER_RAIN, AI_CV_Hail2
+	if_equal AI_WEATHER_SANDSTORM, AI_CV_Hail2
+	goto AI_CV_Hail_End
+
+AI_CV_Hail2:
+	score +1
+	goto AI_CV_Hail_End
+
+AI_CV_Hail_ScoreDown1:
+	score -1
+AI_CV_Hail_End:
+	end</code></pre>
+
+        <h3>Review</h3>
+        <p>From these definitions, functions, & knowledge that the <code>AI_THINKING_STRUCT->funcResult</code> is only
+            cleared at the beginning of a turn, when there is no weather, & if the function result was previously set to
+            0, 1, or 2 (i.e Sun, Rain, or Sandstorm), & the user is at 40% health or greater, then the move will receive
+            a +1 score, next we will cover how these values tend to get set.</p>
+
+        <h3>(More) Definitions, & Functions</h3>
+
+        <h4><a class="simple" target="_blank" rel="noopener noreferrer"
+                href="https://github.com/pret/pokeemerald/blob/9c8cfe3b7586471958c9b90a04e0fab65f04a37a/include/constants/battle_ai.h#L31">AI
+                Move Power Scoring Definitions</a></h4>
+
+
+        <pre><code class="language-c">#define MOVE_POWER_OTHER        0
+#define MOVE_NOT_MOST_POWERFUL  1
+#define MOVE_MOST_POWERFUL      2</code></pre>
+
+
+        <h4><a class="simple" target="_blank" rel="noopener noreferrer"
+                href="https://github.com/pret/pokeemerald/blob/9c8cfe3b7586471958c9b90a04e0fab65f04a37a/data/battle_ai_scripts.s#L2616">AI
+                Strong/Try to Faint Script</a></h4>
+
+        <pre><code class="language-c">AI_TryToFaint:
+	if_target_is_ally AI_Ret
+	if_can_faint AI_TryToFaint_TryToEncourageQuickAttack
+	get_how_powerful_move_is
+	if_equal MOVE_NOT_MOST_POWERFUL, Score_Minus1
+	if_type_effectiveness AI_EFFECTIVENESS_x4, AI_TryToFaint_DoubleSuperEffective
+	end</code></pre>
+
+
+        <h4><a class="simple" target="_blank" rel="noopener noreferrer"
+                href="https://github.com/pret/pokeemerald/blob/9c8cfe3b7586471958c9b90a04e0fab65f04a37a/src/battle_ai_script_commands.c#L1174">AI
+                Get How Powerful Move is Function</a></h4>
+
+        <pre><code class="language-c">static void Cmd_get_how_powerful_move_is(void)
+{
+    s32 i, checkedMove;
+    s32 moveDmgs[MAX_MON_MOVES];
+
+    ...
+    ...
+    ...
+
+        if (checkedMove == MAX_MON_MOVES)
+            AI_THINKING_STRUCT->funcResult = MOVE_MOST_POWERFUL;
+        else
+            AI_THINKING_STRUCT->funcResult = MOVE_NOT_MOST_POWERFUL;
+    }
+    else
+    {
+        // Move has a power of 0/1, or is in the group sIgnoredPowerfulMoveEffects
+        AI_THINKING_STRUCT->funcResult = MOVE_POWER_OTHER;
+    }
+
+    gAIScriptPtr++;
+}</code></pre>
+
+        <h4><a class="simple" target="_blank" rel="noopener noreferrer"
+                href="https://github.com/pret/pokeemerald/blob/9c8cfe3b7586471958c9b90a04e0fab65f04a37a/src/data/battle_frontier/battle_frontier_mons.h#L2796">Glalie
+                1 Frontier Set</a></h4>
+
+        <pre><code>[FRONTIER_MON_GLALIE_1] = {
+    .species = SPECIES_GLALIE,
+    .moves = {MOVE_ICE_BEAM, MOVE_CRUNCH, MOVE_HAIL, MOVE_PROTECT},
+    .itemTableId = BATTLE_FRONTIER_ITEM_PETAYA_BERRY,
+    .evSpread = F_EV_SPREAD_SP_ATTACK | F_EV_SPREAD_HP,
+    .nature = NATURE_MODEST
+},</code></pre>
+
+        <h3>Review</h3>
+        <p>As covered in the prior review, we are looking for how the function result, could be set to 0 (Sun), 1
+            (Rain), 2 (Sandstorm), or 3 (Hail) can be set by a prior function, & be read by the AI's weather check. An
+            exhaustive list of functions which make use of this variable are listed in the appendix. Here, we will focus
+            on the role of the Strong / Try to Faint AI, which is ran prior to the Expert / Check Viability AI.
+            For each move in order they are scored, 0 for move power other, 1, for not most powerful, & 2, for most
+            powerful.
+            As we have covered, these values correspond to Sun, Rain, & Sandstorm respectively.
+            Glalie-1's last move is protect, this will be scored as 0, move power other.
+            Therefore when the AI has completed the Strong/Try to Faint routine for each move, the final value stored in
+            <code>AI_THINKING_STRUCT->funcResult</code> will be 0 (Sun).
+            As Ice Beam, & Crunch do not contain any AI for Expert / Check Viability, this value will remain unchanged
+            once hail is reached.
+            Thus, when checking the current weather the AI will believe it is Sunny.</p>
+
+    </article>
+
+    <footer>
+        <p><a href="./">Back to trainer AI move selection</a></p>
+    </footer>
+</body>
+
+</html>
