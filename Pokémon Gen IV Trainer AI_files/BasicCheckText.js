@@ -321,7 +321,7 @@ If the target is a higher level than the user:
 
 
 ["RainDance"]:
-`If it is already raining:
+`If the weather is already rain:
 	Score -8 and terminate`,
 
 
@@ -393,7 +393,7 @@ If the user's HP is under 26%:
 
 
 ["SunnyDay"]:
-`If it is already sunny:
+`If the weather is already sun:
 	Score -8 and terminate`,
 
 
