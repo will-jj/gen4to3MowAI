@@ -14,6 +14,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
 
+    <script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/formatter.js"></script>
+
+    <script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/getBasicWeatherAI.js"></script>
+	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/getExpertWeatherAI.js"></script>
+    <script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/BasicWeatherText.js"></script>
+	<script src="Pok%C3%A9mon%20Gen%20IV%20Trainer%20AI_files/ExpertWeatherText.js"></script>
+
     <style>
         #switch-points-table {
             border-collapse: collapse;
@@ -41,36 +48,43 @@
             weather, this function sets the result based on whether it is Rain, Sandstorm, Sun, or Hail. However, as
             mentioned there is no state for no weather. Therefore, in this case, the function result is as it was set by
             the last function which makes use of the result variable. In certain cases, this can lead to erroneous
-            scoring which will be covered in the remainder of this article.</p>
+            scoring which is covered in the section below, & is described for the frontier sets available via the
+            dropdown.</p>
+    </article>
+
+    <details id="weather-code-panel">
+        <summary>Why it Happens: The Code</summary>
+        <article>
+            <p>Here, we will show the code, & go step by step through the process for a given example. It is necessary
+                to
+                understand, the function result variable is reset to 0 at the start of a turn, the AI scores each move
+                in
+                order, first with basic/check bad move AI, strong/try to faint AI, & expert/check viability AI (doubles
+                is
+                left as an exercise for the reader). We will focus, on the AI & only cover what is required to
+                understand
+                the weather related bug. The code snippets shown here are taken from the pret decompilation and will
+                include
+                perma-links to the source. It will focus on a simplistic example of a full health Glalie-1 from the
+                frontier.</p>
+
+            <h3>Definitions, & Functions</h3>
+
+            <h4><a class="simple" target="_blank" rel="noopener noreferrer"
+                    href="https://github.com/pret/pokeemerald/blob/9c8cfe3b7586471958c9b90a04e0fab65f04a37a/include/constants/battle_ai.h#L25">AI
+                    Weather Definitions</a></h4>
 
 
-        <h2>Why it Happens: The Code</h2>
-
-        <p>Here, we will show the code, & go step by step through the process for a given example. It is necessary to
-            understand, the function result variable is reset to 0 at the start of a turn, the AI scores each move in
-            order, first with basic/check bad move AI, strong/try to faint AI, & expert/check viability AI (doubles is
-            left as an exercise for the reader). We will focus, on the AI & only cover what is required to understand
-            the weather related bug. The code snippets shown here are taken from the pret decompilation and will include
-            perma-links to the source. It will focus on a simplistic example of a full health Glalie-1 from the
-            frontier.</p>
-
-        <h3>Definitions, & Functions</h3>
-
-        <h4><a class="simple" target="_blank" rel="noopener noreferrer"
-                href="https://github.com/pret/pokeemerald/blob/9c8cfe3b7586471958c9b90a04e0fab65f04a37a/include/constants/battle_ai.h#L25">AI
-                Weather Definitions</a></h4>
-
-
-        <pre><code class="language-c">#define AI_WEATHER_SUN 0
+            <pre><code class="language-c">#define AI_WEATHER_SUN 0
 #define AI_WEATHER_RAIN 1
 #define AI_WEATHER_SANDSTORM 2
 #define AI_WEATHER_HAIL 3</code></pre>
 
 
-        <h4><a class="simple" target="_blank" rel="noopener noreferrer"
-                href="https://github.com/pret/pokeemerald/blob/9c8cfe3b7586471958c9b90a04e0fab65f04a37a/src/battle_ai_script_commands.c#L1644">AI
-                Get Weather Function</a></h4>
-        <pre><code class="language-c">static void Cmd_get_weather(void)
+            <h4><a class="simple" target="_blank" rel="noopener noreferrer"
+                    href="https://github.com/pret/pokeemerald/blob/9c8cfe3b7586471958c9b90a04e0fab65f04a37a/src/battle_ai_script_commands.c#L1644">AI
+                    Get Weather Function</a></h4>
+            <pre><code class="language-c">static void Cmd_get_weather(void)
 {
     if (gBattleWeather & B_WEATHER_RAIN)
         AI_THINKING_STRUCT->funcResult = AI_WEATHER_RAIN;
@@ -84,10 +98,10 @@
     gAIScriptPtr += 1;
 }</code></pre>
 
-        <h4><a class="simple" target="_blank" rel="noopener noreferrer"
-                href="https://github.com/pret/pokeemerald/blob/9c8cfe3b7586471958c9b90a04e0fab65f04a37a/data/battle_ai_scripts.s#L2261">Expert/Check
-                Viabilty AI Script for Hail</a></h4>
-        <pre><code class="language-c">AI_CV_Hail:
+            <h4><a class="simple" target="_blank" rel="noopener noreferrer"
+                    href="https://github.com/pret/pokeemerald/blob/9c8cfe3b7586471958c9b90a04e0fab65f04a37a/data/battle_ai_scripts.s#L2261">Expert/Check
+                    Viabilty AI Script for Hail</a></h4>
+            <pre><code class="language-c">AI_CV_Hail:
 	if_hp_less_than AI_USER, 40, AI_CV_Hail_ScoreDown1
 	get_weather
 	if_equal AI_WEATHER_SUN, AI_CV_Hail2
@@ -104,30 +118,33 @@ AI_CV_Hail_ScoreDown1:
 AI_CV_Hail_End:
 	end</code></pre>
 
-        <h3>Review</h3>
-        <p>From these definitions, functions, & knowledge that the <code>AI_THINKING_STRUCT->funcResult</code> is only
-            cleared at the beginning of a turn, when there is no weather, & if the function result was previously set to
-            0, 1, or 2 (i.e. Sun, Rain, or Sandstorm), & the user is at 40% health or greater, then the move will receive
-            a +1 score.
-            Next we will cover how these values tend to get set.</p>
+            <h3>Review</h3>
+            <p>From these definitions, functions, & knowledge that the <code>AI_THINKING_STRUCT->funcResult</code> is
+                only
+                cleared at the beginning of a turn, when there is no weather, & if the function result was previously
+                set to
+                0, 1, or 2 (i.e. Sun, Rain, or Sandstorm), & the user is at 40% health or greater, then the move will
+                receive
+                a +1 score.
+                Next we will cover how these values tend to get set.</p>
 
-        <h3>(More) Definitions, & Functions</h3>
+            <h3>(More) Definitions, & Functions</h3>
 
-        <h4><a class="simple" target="_blank" rel="noopener noreferrer"
-                href="https://github.com/pret/pokeemerald/blob/9c8cfe3b7586471958c9b90a04e0fab65f04a37a/include/constants/battle_ai.h#L31">AI
-                Move Power Scoring Definitions</a></h4>
+            <h4><a class="simple" target="_blank" rel="noopener noreferrer"
+                    href="https://github.com/pret/pokeemerald/blob/9c8cfe3b7586471958c9b90a04e0fab65f04a37a/include/constants/battle_ai.h#L31">AI
+                    Move Power Scoring Definitions</a></h4>
 
 
-        <pre><code class="language-c">#define MOVE_POWER_OTHER        0
+            <pre><code class="language-c">#define MOVE_POWER_OTHER        0
 #define MOVE_NOT_MOST_POWERFUL  1
 #define MOVE_MOST_POWERFUL      2</code></pre>
 
 
-        <h4><a class="simple" target="_blank" rel="noopener noreferrer"
-                href="https://github.com/pret/pokeemerald/blob/9c8cfe3b7586471958c9b90a04e0fab65f04a37a/data/battle_ai_scripts.s#L2616">AI
-                Strong/Try to Faint Script</a></h4>
+            <h4><a class="simple" target="_blank" rel="noopener noreferrer"
+                    href="https://github.com/pret/pokeemerald/blob/9c8cfe3b7586471958c9b90a04e0fab65f04a37a/data/battle_ai_scripts.s#L2616">AI
+                    Strong/Try to Faint Script</a></h4>
 
-        <pre><code class="language-c">AI_TryToFaint:
+            <pre><code class="language-c">AI_TryToFaint:
 	if_target_is_ally AI_Ret
 	if_can_faint AI_TryToFaint_TryToEncourageQuickAttack
 	get_how_powerful_move_is
@@ -136,11 +153,11 @@ AI_CV_Hail_End:
 	end</code></pre>
 
 
-        <h4><a class="simple" target="_blank" rel="noopener noreferrer"
-                href="https://github.com/pret/pokeemerald/blob/9c8cfe3b7586471958c9b90a04e0fab65f04a37a/src/battle_ai_script_commands.c#L1174">AI
-                Get How Powerful Move is Function</a></h4>
+            <h4><a class="simple" target="_blank" rel="noopener noreferrer"
+                    href="https://github.com/pret/pokeemerald/blob/9c8cfe3b7586471958c9b90a04e0fab65f04a37a/src/battle_ai_script_commands.c#L1174">AI
+                    Get How Powerful Move is Function</a></h4>
 
-        <pre><code class="language-c">static void Cmd_get_how_powerful_move_is(void)
+            <pre><code class="language-c">static void Cmd_get_how_powerful_move_is(void)
 {
     s32 i, checkedMove;
     s32 moveDmgs[MAX_MON_MOVES];
@@ -163,11 +180,11 @@ AI_CV_Hail_End:
     gAIScriptPtr++;
 }</code></pre>
 
-        <h4><a class="simple" target="_blank" rel="noopener noreferrer"
-                href="https://github.com/pret/pokeemerald/blob/9c8cfe3b7586471958c9b90a04e0fab65f04a37a/src/data/battle_frontier/battle_frontier_mons.h#L2796">Glalie
-                1 Frontier Set</a></h4>
+            <h4><a class="simple" target="_blank" rel="noopener noreferrer"
+                    href="https://github.com/pret/pokeemerald/blob/9c8cfe3b7586471958c9b90a04e0fab65f04a37a/src/data/battle_frontier/battle_frontier_mons.h#L2796">Glalie
+                    1 Frontier Set</a></h4>
 
-        <pre><code>[FRONTIER_MON_GLALIE_1] = {
+            <pre><code>[FRONTIER_MON_GLALIE_1] = {
     .species = SPECIES_GLALIE,
     .moves = {MOVE_ICE_BEAM, MOVE_CRUNCH, MOVE_HAIL, MOVE_PROTECT},
     .itemTableId = BATTLE_FRONTIER_ITEM_PETAYA_BERRY,
@@ -175,50 +192,409 @@ AI_CV_Hail_End:
     .nature = NATURE_MODEST
 },</code></pre>
 
-        <h3>Review</h3>
-        <p>As covered in the prior review, we are looking for how the function result, could be set to 0 (Sun), 1
-            (Rain), 2 (Sandstorm), or 3 (Hail) can be set by a prior function, & be read by the AI's weather check. An
-            exhaustive list of functions which make use of this variable are listed in the appendix. Here, we will focus
-            on the role of the Strong / Try to Faint AI, which is ran prior to the Expert / Check Viability AI.
-            For each move in order, they are scored: 0 for move power other, 1, for not most powerful, & 2, for most
-            powerful.
-            As we have covered, these values correspond to Sun, Rain, & Sandstorm respectively.
-            Glalie-1's last move is protect, this will be scored as 0, move power other.
-            Therefore when the AI has completed the Strong/Try to Faint routine for each move, the final value stored in
-            <code>AI_THINKING_STRUCT->funcResult</code> will be 0 (Sun).
-            As Ice Beam, & Crunch do not contain any AI for Expert / Check Viability, this value will remain unchanged
-            once Hail is reached.
-            Thus, when checking the current weather, if there is none active, the AI will believe it is Sunny.</p>
+            <h3>Review</h3>
+            <p>As covered in the prior review, we are looking for how the function result, could be set to 0 (Sun), 1
+                (Rain), 2 (Sandstorm), or 3 (Hail) can be set by a prior function, & be read by the AI's weather check.
+                An
+                exhaustive list of functions which make use of this variable are listed in the appendix. Here, we will
+                focus
+                on the role of the Strong / Try to Faint AI, which is ran prior to the Expert / Check Viability AI.
+                For each move in order, they are scored: 0 for move power other, 1, for not most powerful, & 2, for most
+                powerful.
+                As we have covered, these values correspond to Sun, Rain, & Sandstorm respectively.
+                Glalie-1's last move is protect, this will be scored as 0, move power other.
+                Therefore when the AI has completed the Strong/Try to Faint routine for each move, the final value
+                stored in
+                <code>AI_THINKING_STRUCT->funcResult</code> will be 0 (Sun).
+                As Ice Beam, & Crunch do not contain any AI for Expert / Check Viability, this value will remain
+                unchanged
+                once Hail is reached.
+                Thus, when checking the current weather, if there is none active, the AI will believe it is Sunny.
+            </p>
+        </article>
 
-<h2>Moves checking the Weather in AI Scoring</h2>
+        <div style="text-align:center">
+            <button id="weather-close-code">Close info panel</button>
+            <script>
+                "use strict";
+                (function () {
+                    const infoPanel = document.getElementById("weather-code-panel");
+                    document.getElementById("weather-code-panel").addEventListener("click", function () {
+                        infoPanel.open = false;
+                        infoPanel.scrollIntoView();
+                    })
+                })();
+            </script>
+        </div>
 
-<h3>Weather Setting Moves</h3>
+    </details>
 
-<ul>
-    <li><a class="simple" target="_blank" rel="noopener noreferrer" href="../#Hail">Hail</a></li>
-    <li><a class="simple" target="_blank" rel="noopener noreferrer" href="../#Rain Dance">Rain Dance</a></li>
-    <li><a class="simple" target="_blank" rel="noopener noreferrer" href="../#Sandstorm">Sandstorm</a></li>
-    <li><a class="simple" target="_blank" rel="noopener noreferrer" href="../#Sunny Day">Sunny Day</a></li>
-</ul>
 
-<h3>Semi-Invulnerable Charge Moves</h3>
+    <details id="weather-moves-panel">
+        <summary>Moves checking the Weather in AI Scoring</summary>
+        <article>
 
-<ul>
-    <li><a class="simple" target="_blank" rel="noopener noreferrer" href="../#Bounce">Bounce</a></li>
-    <li><a class="simple" target="_blank" rel="noopener noreferrer" href="../#Dig">Dig</a></li>
-    <li><a class="simple" target="_blank" rel="noopener noreferrer" href="../#Dive">Dive</a></li>
-    <li><a class="simple" target="_blank" rel="noopener noreferrer" href="../#Fly">Fly</a></li>
-</ul>
+            <ul>
+                <li><a class="simple" target="_blank" rel="noopener noreferrer" href="../#Hail">Hail</a></li>
+                <li><a class="simple" target="_blank" rel="noopener noreferrer" href="../#Rain Dance">Rain Dance</a>
+                </li>
+                <li><a class="simple" target="_blank" rel="noopener noreferrer" href="../#Sandstorm">Sandstorm</a></li>
+                <li><a class="simple" target="_blank" rel="noopener noreferrer" href="../#Sunny Day">Sunny Day</a></li>
+            </ul>
 
-<h3>Weather Healing Moves</h3>
+            <h3>Semi-Invulnerable Charge Moves</h3>
 
-<ul>
-    <li><a class="simple" target="_blank" rel="noopener noreferrer" href="../#Moonlight">Moonlight</a></li>
-    <li><a class="simple" target="_blank" rel="noopener noreferrer" href="../#Morning Sun">Morning Sun</a></li>
-    <li><a class="simple" target="_blank" rel="noopener noreferrer" href="../#Synthesis">Synthesis</a></li>
-</ul>
+            <ul>
+                <li><a class="simple" target="_blank" rel="noopener noreferrer" href="../#Bounce">Bounce</a></li>
+                <li><a class="simple" target="_blank" rel="noopener noreferrer" href="../#Dig">Dig</a></li>
+                <li><a class="simple" target="_blank" rel="noopener noreferrer" href="../#Dive">Dive</a></li>
+                <li><a class="simple" target="_blank" rel="noopener noreferrer" href="../#Fly">Fly</a></li>
+            </ul>
 
-</article>
+            <h3>Weather Healing Moves</h3>
+
+            <ul>
+                <li><a class="simple" target="_blank" rel="noopener noreferrer" href="../#Moonlight">Moonlight</a></li>
+                <li><a class="simple" target="_blank" rel="noopener noreferrer" href="../#Morning Sun">Morning Sun</a>
+                </li>
+                <li><a class="simple" target="_blank" rel="noopener noreferrer" href="../#Synthesis">Synthesis</a></li>
+            </ul>
+        </article>
+
+        <div style="text-align:center">
+            <button id="weather-close-moves">Close info panel</button>
+            <script>
+                "use strict";
+                (function () {
+                    const infoPanel = document.getElementById("weather-moves-panel");
+                    document.getElementById("weather-moves-panel").addEventListener("click", function () {
+                        infoPanel.open = false;
+                        infoPanel.scrollIntoView();
+                    })
+                })();
+            </script>
+        </div>
+
+    </details>
+
+    <div class="form-container">
+        <form class="flex-column" id="ai-form">
+            <label for="weather-set-text-input" id="weather-set-label" style="text-align:center">Select a frontier set
+                to see their weather move scoring:</label>
+
+            <div class="flex-center">
+                <input type="text" id="weather-set-text-input" aria-description="Typeable move input field"
+                    placeholder="Frontier set..." autocomplete="off" maxlength="12" style="max-width:7em">
+
+                <select id="weather-set-select" data-alphabetized="true" aria-labelledby="weather-set-label"
+                    aria-description="Frontier set selection dropdown">
+
+                    <option>Ampharos1</option>
+                    <option>Arbok1</option>
+                    <option>Arcanine2</option>
+                    <option>Azumarill1</option>
+                    <option>Azumarill2</option>
+                    <option>Bellossom1</option>
+                    <option>Bellossom2</option>
+                    <option>Blastoise1</option>
+                    <option>Blaziken1</option>
+                    <option>Cacturne2</option>
+                    <option>Camerupt1</option>
+                    <option>Charizard1</option>
+                    <option>Chinchou1</option>
+                    <option>Clamperl1</option>
+                    <option>Claydol3</option>
+                    <option>Cloyster2</option>
+                    <option>Cradily3</option>
+                    <option>CrobatSS</option>
+                    <option>Croconaw2</option>
+                    <option>Delibird1</option>
+                    <option>Dragonite9</option>
+                    <option>Dragonite10</option>
+                    <option>Ekans1</option>
+                    <option>Electabuzz2</option>
+                    <option>Electrode2</option>
+                    <option>Entei2</option>
+                    <option>Exeggutor1</option>
+                    <option>Exploud2</option>
+                    <option>Feraligatr1</option>
+                    <option>Flareon4</option>
+                    <option>Flygon2</option>
+                    <option>Glalie1</option>
+                    <option>Gligar1</option>
+                    <option>Gloom1</option>
+                    <option>Gloom2</option>
+                    <option>Golduck1</option>
+                    <option>Gorebyss2</option>
+                    <option>Gyarados3</option>
+                    <option>Hitmontop1</option>
+                    <option>Houndoom4</option>
+                    <option>Huntail2</option>
+                    <option>Jolteon2</option>
+                    <option>Jumpluff1</option>
+                    <option>Kabutops1</option>
+                    <option>Lanturn3</option>
+                    <option>Lapras6</option>
+                    <option>Larvitar1</option>
+                    <option>Lotad1</option>
+                    <option>Ludicolo1</option>
+                    <option>Ludicolo3</option>
+                    <option>Ludicolo4</option>
+                    <option>Lunatone1</option>
+                    <option>Luvdisc1</option>
+                    <option>Magcargo1</option>
+                    <option>Magneton2</option>
+                    <option>Manectric2</option>
+                    <option>Mantine1</option>
+                    <option>Mantine2</option>
+                    <option>Marill1</option>
+                    <option>Meganium1</option>
+                    <option>Moltres3</option>
+                    <option>Moltres5</option>
+                    <option>Murkrow1</option>
+                    <option>Nincada1</option>
+                    <option>Ninetales2</option>
+                    <option>Ninjask1</option>
+                    <option>Nosepass1</option>
+                    <option>Numel1</option>
+                    <option>Oddish1</option>
+                    <option>Omastar2</option>
+                    <option>Onix1</option>
+                    <option>Parasect2</option>
+                    <option>Phanpy1</option>
+                    <option>Piloswine1</option>
+                    <option>Politoed1</option>
+                    <option>Poliwag1</option>
+                    <option>Poliwhirl1</option>
+                    <option>Poliwrath1</option>
+                    <option>Ponyta1</option>
+                    <option>Porygon22</option>
+                    <option>Pupitar1</option>
+                    <option>Raichu3</option>
+                    <option>Raikou2</option>
+                    <option>Rapidash2</option>
+                    <option>Rapidash3</option>
+                    <option>Regice2</option>
+                    <option>Regice4</option>
+                    <option>Rhyhorn1</option>
+                    <option>Roselia2</option>
+                    <option>Sandshrew1</option>
+                    <option>Sandslash1</option>
+                    <option>Sandslash2</option>
+                    <option>Seadra1</option>
+                    <option>Sealeo1</option>
+                    <option>Sealeo2</option>
+                    <option>Seel1</option>
+                    <option>Shiftry2</option>
+                    <option>Shiftry3</option>
+                    <option>Shuckle2</option>
+                    <option>ShuckleLS</option>
+                    <option>Skarmory3</option>
+                    <option>Skiploom1</option>
+                    <option>Slowbro1</option>
+                    <option>Solrock1</option>
+                    <option>Spheal1</option>
+                    <option>Spoink1</option>
+                    <option>Starmie2</option>
+                    <option>Steelix2</option>
+                    <option>Sudowoodo1</option>
+                    <option>Suicune2</option>
+                    <option>Suicune3</option>
+                    <option>Sunkern1</option>
+                    <option>Surskit1</option>
+                    <option>Swellow1</option>
+                    <option>Swinub1</option>
+                    <option>Taillow1</option>
+                    <option>Trapinch1</option>
+                    <option>Tropius2</option>
+                    <option>Typhlosion1</option>
+                    <option>Venusaur1</option>
+                    <option>Venusaur4</option>
+                    <option>Vibrava1</option>
+                    <option>Victreebel1</option>
+                    <option>Victreebel4</option>
+                    <option>Vileplume1</option>
+                    <option>Vileplume4</option>
+                    <option>Walrein1</option>
+                    <option>Wingull1</option>
+                    <option>Wooper1</option>
+                    <option>Xatu2</option>
+                    <option>Zapdos2</option>
+                    <option>Zapdos6</option>
+                </select>
+            </div>
+            <div class="flex-center">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+    <div class="flex-column">
+        <h2 id="ai-subtitle" style="display:none"></h2>
+
+        <div class="flex-column gapless" id="basic-ai-container" style="display:none">
+            <div class="ai-header basic">Basic AI</div>
+            <div id="basic-ai-body" class="ai-body flex-column"></div>
+        </div>
+
+        <div class="flex-column gapless" id="expert-ai-container" style="display:none">
+            <div class="ai-header expert">Expert AI</div>
+            <div id="expert-ai-body" class="ai-body flex-column"></div>
+        </div>
+    </div>
+
+
+    <script>
+        "use strict";
+        const bindTextToSelect = (function () {
+            function selectIndexOfPrefix(select, input) {
+                if (input.length === 0) {
+                    return -1;
+                }
+
+                if (select.dataset.alphabetized) {
+                    // Case-insensitive binary search
+                    input = input.toLocaleLowerCase();
+
+                    let idxl = 0;
+                    let idxh = select.options.length - 1;
+                    while (idxl != idxh) {
+                        let idxc = (idxl + idxh) >>> 1;
+                        let text = select.options[idxc].textContent.toLocaleLowerCase();
+                        switch (input.localeCompare(text)) {
+                            case 1:
+                                idxl = idxc + 1;
+                                break;
+
+                            case -1:
+                                idxh = idxc;
+                                break;
+
+                            case 0:
+                                // localeCompare returning 0 means the two supplied strings are equal
+                                return idxc;
+                        }
+                    }
+
+                    // idxl now contains the first index which is alphabetically after the input string
+
+                    let text = select.options[idxl].textContent.toLocaleLowerCase();
+                    if (text.startsWith(input)) {
+                        return idxl;
+                    }
+
+                } else {
+                    // Non-alphabetized list, use sequential search
+                    for (let i = 0; i < select.options.length; i++) {
+                        let text = select.options[i].textContent.toLocaleLowerCase();
+                        if (text.startsWith(input)) {
+                            return i;
+                        }
+                    }
+                }
+
+                return -1;
+            }
+
+            function matchOrTruncate(select, textInput) {
+                let index;
+                do {
+                    index = selectIndexOfPrefix(select, textInput.value);
+                    if (index === -1) {
+                        textInput.value = textInput.value.slice(0, -1);
+                    }
+                } while (index === -1 && textInput.value.length !== 0);
+
+                select.selectedIndex = index;
+            }
+
+            function bindTextToSelect(select, textInput) {
+                select.addEventListener("input", function () {
+                    if (select.selectedIndex === -1) {
+                        textInput.value = "";
+                    } else {
+                        textInput.value = select.options[select.selectedIndex].textContent;
+                    }
+                });
+
+                textInput.addEventListener("input", function () {
+                    matchOrTruncate(select, textInput);
+                });
+
+                matchOrTruncate(select, textInput);
+            }
+
+            return bindTextToSelect;
+        })();
+    </script>
+
+    <script>
+        "use strict";
+        (function () {
+            const select = document.getElementById("weather-set-select");
+            const text = document.getElementById("weather-set-text-input");
+
+            bindTextToSelect(select, text);
+
+            const subtitle = document.getElementById("ai-subtitle");
+
+            const basicBody = document.getElementById("basic-ai-body");
+            const expertBody = document.getElementById("expert-ai-body");
+            const basicMoveInfoBody = document.getElementById("basic-move-info-body");
+            const expertMoveInfoBody = document.getElementById("expert-move-info-body");
+
+            const basicContainer = document.getElementById("basic-ai-container");
+            const expertContainer = document.getElementById("expert-ai-container");
+
+
+            const form = document.getElementById("ai-form");
+
+            form.addEventListener("submit", function (formEvent) {
+                formEvent.preventDefault();
+
+                let set = select.value;
+               
+                subtitle.textContent = `Weather Specific AI procedures: ${set}`;
+                subtitle.style.display = "";
+
+
+
+
+					let resultsBasic = prepareChecks(getBasicWeatherAI(set), basicWeatherAICheckText);
+					basicBody.replaceChildren(...resultsBasic);
+					basicContainer.style.display = "";
+
+
+					let results = prepareChecks(getExpertWeatherAI(set), expertWeatherAICheckText);
+					expertBody.replaceChildren(...results);
+					expertContainer.style.display = "";
+
+            });
+
+            // Extra keyboard controls
+            window.addEventListener("keydown", function (keyEvent) {
+                if (document.activeElement && document.activeElement.form) {
+                    // Ignore if already interacting with form element
+                    return;
+                }
+
+                if (keyEvent.ctrlKey || keyEvent.metaKey) {
+                    // Ignore if command
+                    return;
+                }
+
+                if (keyEvent.key.length === 1 || keyEvent.key === "Backspace") {
+                    text.focus();
+                } else if (keyEvent.key === "Delete") {
+                    text.value = "";
+                    text.focus();
+                }
+            });
+
+        })();
+    </script>
+
+
 
     <footer>
         <p><a href="./">Back to trainer AI move selection</a></p>
