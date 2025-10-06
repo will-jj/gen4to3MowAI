@@ -3,103 +3,140 @@ expertWeatherAICheckText = {
 
 ["Ampharos1"]:
 `Rain Dance:
-	If the user is faster, and hp >= 40: score +1`,
+	If the user will move before the foe, and the user's HP is over 39%:
+		Score +1
+
+	Attract (move power other) causes sun hallucination, sun is checked for when the above conditions are met within the Rain Dance Expert AI`,
 
 
 
 ["Arbok1"]:
 `Dig:
-	NA (never broken - since glare is "move power other" and so dig will never mis-read weather)`,
+	NA
+	
+	Never broken, Glare (move power other) causes sun hallucination, which is not checked for in Dig Expert AI`,
 
 
 
 ["Arcanine2"]:
 `Sunny Day:
-	NA (never broken - since Roar is "move power other" and so sunny day will not hallucinate another weather (move power other = sun))`,
+	NA
+	
+	Never broken, Roar (move power other) causes sun hallucination, which is not checked for in Sunny Day Expert AI`,
 
 
 
 ["Azumarill1"]:
 `Dig:
-	NA (never broken - since protect is "move power other" and so dig will never mis-read weather)`,
+	NA
+	
+	Never broken, Protect (move power other) causes sun hallucination, which is not checked for in Dig Expert AI`,
 
 
 
 ["Azumarill2"]:
 `Dig:
-	NA (while dig can cause the AI to hallucinate sandstorm, Azumarill is not rock/steel/ground)`,
+	NA
+	
+	Never broken, Dig (as move most powerful) can cause the AI to hallucinate sandstorm, Azumarill is not rock/steel/ground`,
 
 
 
 ["Bellossom1"]:
 `Sunny Day & Synthesis:
-	NA (Synthesis causes "move power other" - and so sunny day and synthesis are unaffected)`,
+	NA 
+	
+	Never broken, Synthesis (move power other)  causes sun hallucination, which is not checked for in Sunny Day, & Synthesis Expert AI`,
 
 
 
 ["Bellossom2"]:
 `Sunny Day & Synthesis:
-	NA (Synthesis causes "move power other" - and so sunny day and synthesis are unaffected)`,
+	NA
+
+	Never broken, Synthesis (move power other)  causes sun hallucination, which is not checked for in Sunny Day, & Synthesis Expert AI`,
 
 
 
 ["Blastoise1"]:
 `Rain Dance:
-	If the user is faster, and hp >= 40: score +1 (Seismic Toss forces "move power other", which affects the "if enemy is slower" part of rain dance check to hallucinate sun)`,
+	If the user will move before the foe, and the user's HP is over 39%:
+		Score +1
+		
+	Seismic Toss (move power other), causes sun hallucination, sun is checked for when the above conditions are met within the Rain Dance Expert AI`,
 
 
 
 ["Blaziken1"]:
 `Sunny Day:
-	NA (Roar is "move power other" and so can never hallucinate the wrong weather for sunny day)`,
+	NA
+	
+	Never broken, Roar (move power other) causes sun hallucination, which is not checked for in Sunny Day Expert AI`,
 
 
 
 ["Cacturne2"]:
 `Sandstorm:
-	NA (sandstorm does not have expert AI)`,
+	NA
+	
+	Never broken, Sandstorm does not have expert AI`,
 
 
 
 ["Camerupt1"]:
 `Sandstorm:
-	NA (sandstorm does not have expert AI)`,
+	NA
+	
+	Never broken, Sandstorm does not have expert AI`,
 
 
 
 ["Charizard1"]:
 `Sunny Day:
-	NA (Scary Face is "move power other" and so can never hallucinate the wrong weather for sunny day)`,
+	NA
+	
+	Never broken, Scary Face (move power other) causes sun hallucination, which is not checked for in Sunny Day Expert AI`,
 
 
 
 ["Chinchou1"]:
 `Dive:
-	NA (while take down can cause the AI to hallucinate sandstorm, chinchou is not rock/steel/ground)`,
+	NA
+	
+	Never broken, Take Down (as move most powerful) can cause the AI to hallucinate sandstorm, Chinchou is not rock/steel/ground`,
 
 
 
 ["Clamperl1"]:
 `Dive:
-	NA (Double Team is "move power other" and so cannot hallucinate sandstorm/hail)`,
+	NA
+	
+	Never broken, Double Team (move power other) causes sun hallucination, which is not checked for in Dive Expert AI`,
 
 
 
 ["Claydol3"]:
 `Sunny Day:
-	NA (Sunny Day is "move power other" and so cannot hallucinate a non-sun weather)`,
+	NA
+	
+	Never broken, Sunny Day (move power other) causes sun hallucination, which is not checked for in Sunny Day Expert AI`,
 
 
 
 ["Cloyster2"]:
 `Dive:
-	NA (would be more interesting if order placed it after protect with the count at 2)`,
+	NA
+	
+	Never broken, Protect (move power other) causes sun hallucination, which is not checked for in Dive Expert AI`,
 
 
 
 ["Cradily3"]:
 `Sunny Day:
-	If the user is faster, and the target's last move inflicts sleep, poison (while dealing damage), or absorbtion (Substitute AI, checking the move effect will lead to the hallucination of rain, sandstorm, or hail): score +1`,
+	If the user will move before the foe, and the target's last move inflicts sleep, poison (while dealing damage), or absorbtion:
+		Score + 1
+	
+	Substitute Expert AI, checking the move effect causes the hallucination of rain, sandstorm, or hail`,
 
 
 
