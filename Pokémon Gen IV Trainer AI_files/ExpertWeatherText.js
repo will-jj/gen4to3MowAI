@@ -142,37 +142,54 @@ expertWeatherAICheckText = {
 
 ["CrobatSS"]:
 `Fly:
-	NA (Fly Can never hallucinate Sand or Hail, and Crobat has none of the types anyway)`,
+	NA
+	
+	Never broken, Fly (move most powerful) causes the AI to hallucinate sandstorm, Crobat is not rock/steel/ground`,
 
 
 
 ["Croconaw2"]:
 `Dig:
-	NA (Dig can never hallucainate Sand or Hail and Croconaw is the wrong type anyway)`,
+	NA
+	
+	Never broken, Dig (as move most powerful) can cause the AI to hallucinate sandstorm, Croconaw is not rock/steel/ground`,
 
 
 
 ["Delibird1"]:
 `Hail:
-	If user HP >= 40%, score +1 (Hail in trytofaint will hallucinate "move power other" as "sun")`,
+	If user's HP is over 38%:
+		Score +1
+	
+	Hail (move power other) causes sun hallucination`,
 
 
 
 ["Dragonite9"]:
 `Rain Dance:
-	If Earthquake is the strongest move AND the user is faster AND the user HP is >= 40%, score +1 (if Earthquake not strongest move; it hallucinates rain)`,
+	If the most powerful move is Earthquake:
+		If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Earthquake (as move most powerful) will hallucinate sandstorm, Earthquake (as move not most powerful) will hallucinate rain`,
 
 
 
 ["Dragonite10"]:
 `Sunny Day:
-	If user HP >= 40%, score +1 (Earthquake will always hallucinate either rain or sand)`,
+	If user's HP is over 39%:
+		Score +1
+
+	Earthquake (as move most powerful) will hallucinate sandstorm, Earthquake (as move not most powerful) will hallucinate rain`,
+
 
 
 
 ["Ekans1"]:
 `Dig:
-	NA (Torment is "move power other" and cannot hallucinate sandstorm or hail)`,
+	NA
+	
+	Never broken, Torment (move power other) causes sun hallucination, which is not checked for in Dig Expert AI`,
 
 
 
