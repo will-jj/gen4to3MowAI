@@ -158,7 +158,7 @@ expertWeatherAICheckText = {
 
 ["Delibird1"]:
 `Hail:
-	If user's HP is over 38%:
+	If user's HP is over 39%:
 		Score +1
 	
 	Hail (move power other) causes sun hallucination`,
