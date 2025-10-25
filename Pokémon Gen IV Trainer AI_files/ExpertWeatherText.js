@@ -38,7 +38,7 @@ expertWeatherAICheckText = {
 `Dig:
 	NA
 	
-	Never broken, Dig (as move most powerful) can cause the AI to hallucinate sandstorm, Azumarill is not rock/steel/ground`,
+	Never broken, Dig (as move most powerful) can cause the AI to hallucinate sandstorm, this does not impact Azumarill as a water type`,
 
 
 
@@ -103,7 +103,7 @@ expertWeatherAICheckText = {
 `Dive:
 	NA
 	
-	Never broken, Take Down (as move most powerful) can cause the AI to hallucinate sandstorm, Chinchou is not rock/steel/ground`,
+	Never broken, Take Down (as move most powerful) can cause the AI to hallucinate sandstorm, this does not impact Chinchou as a water/electric type`,
 
 
 
@@ -144,7 +144,7 @@ expertWeatherAICheckText = {
 `Fly:
 	NA
 	
-	Never broken, Fly (move most powerful) causes the AI to hallucinate sandstorm, Crobat is not rock/steel/ground`,
+	Never broken, Fly (move most powerful) causes the AI to hallucinate sandstorm, this does not impact Crobat as a poison/flying type`,
 
 
 
@@ -152,7 +152,7 @@ expertWeatherAICheckText = {
 `Dig:
 	NA
 	
-	Never broken, Dig (as move most powerful) can cause the AI to hallucinate sandstorm, Croconaw is not rock/steel/ground`,
+	Never broken, Dig (as move most powerful) can cause the AI to hallucinate sandstorm, this does not impact Croconaw as a water type`,
 
 
 
@@ -195,675 +195,974 @@ expertWeatherAICheckText = {
 
 ["Electabuzz2"]:
 `Rain Dance:
-	If the user is faster, and hp >= 40: score +1 (Focus Punch forces "move power other", which affects the "if enemy is slower" part of rain dance check to hallucinate sun)`,
+	If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Focus Punch (move power other) causes sun hallucination`,
 
 
 
 ["Electrode2"]:
 `Rain Dance:
-	If the user is faster, and hp >= 40: score +1 (Swagger forces "move power other", which affects the "if enemy is slower" part of rain dance check to hallucinate sun)`,
+	If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Swagger (move power other) causes sun hallucination`,
 
 
 
 ["Entei2"]:
 `Sunny Day:
-	NA (Reflect is "move power other" and so hallucinates sun)`,
+	NA 
+	
+	Never broken, Reflect (move power other) causes sun hallucination`,
 
 
 
 ["Exeggutor1"]:
 `Sunny Day & Synthesis:
-	NA (Light Screen is "move power other" and so hallucinates sun)`,
+	NA
+	
+	Never broken, Light Screen (move power other) causes sun hallucination`,
 
 
 
 ["Exploud2"]:
 `Sunny Day:
-	NA (Counter is "move power other" and so hallucinates sun)`,
+	NA
+	
+	Never broken, Counter (move power other) causes sun hallucination`,
 
 
 
 ["Feraligatr1"]:
 `Rain Dance:
-	If the user is faster, and hp >= 40: score +1 (Roar forces "move power other", which affects the "if enemy is slower" part of rain dance check to hallucinate sun)`,
+	If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Roar (move power other) causes sun hallucination`,
 
 
 
 ["Flareon4"]:
 `Sunny Day:
-	If user HP >= 40%, score +1 (Shadow Ball will always hallucinate either rain or sand)`,
+	If the user's HP is over 39%:
+		Score +1
+	
+	Shadow Ball (as move most powerful) will hallucinate sandstorm, Shadow Ball (as move not most powerful) will hallucinate rain`,
 
 
 
 ["Flygon2"]:
 `Sunny Day:
-	NA (Sunny Day is "move power other" and so cannot hallucinate a non-sun weather)`,
+	NA
+	
+	Never broken, Sunny Day (move power other) causes sun hallucination`,
 
 
 
 ["Glalie1"]:
-`Hail:
-	If user HP >= 40%, score +1 (Protect is "move power other" and so hallucinates sun)`,
+	`Hail:
+		If user's HP is over 39%:
+			Score +1
+	
+	Protect (move power other) causes sun hallucination`,
 
 
 
 ["Gligar1"]:
 `Dig:
-	NA (While quick attack can maybe hallucinate sand, the sand type check is bugged to ice, and gligar is not ice type)`,
+	NA
+	
+	Never broken, Dig (as move most powerful) can cause the AI to hallucinate sandstorm, this does not impact Gligar as a ground/flying type`,
 
 
 
 ["Gloom1"]:
 `Moonlight:
-	NA (Moonlight is "move power other" and so never hallucinates non-sun weather)`,
+	NA
+	
+	Never broken, Moonlight (move power other) causes sun hallucination`,
 
 
 
 ["Gloom2"]:
 `Sunny Day & Moonlight:
-	NA (Moonlight is "move power other" and so never hallucinates non-sun weather)`,
+	NA
+	
+	Never broken, Moonlight (move power other) causes sun hallucination`,
 
 
 
 ["Golduck1"]:
 `Dig:
-	NA (Light Screen is "move power other" and so cannot hallucinate sand/hail)`,
+	NA
+	
+	Never broken, Light Screen (move power other) causes sun hallucination, which is not checked for in Dig Expert AI`,
 
 
 
 ["Gorebyss2"]:
 `Rain Dance:
-	If Body Slam is the strongest move AND user is faster AND user HP >= 40%, score +1 (if body slam is not strongest move; it hallucinates rain)`,
-
+	If the most powerful move is Body Slam:
+		If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Body Slam (as move most powerful) will hallucinate sandstorm, Body Slam (as move not most powerful) will hallucinate rain`,
 
 
 ["Gyarados3"]:
 `Rain Dance:
-	If Earthquake is the strongest move AND user is faster AND user HP >= 40%, score +1 (if Earthquake is not strongest move; it hallucinates rain)`,
+	If the most powerful move is Earthquake:
+		If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Earthquake (as move most powerful) will hallucinate sandstorm, Earthquake (as move not most powerful) will hallucinate rain`,
 
 
 
 ["Hitmontop1"]:
 `Dig:
-	NA (While Quick attack can hallucinate sand, hitmontop is not ice type)`,
+	NA
+	
+	Never broken, Quick Attack (as move most powerful) can cause the AI to hallucinate sandstorm, this does not impact Hitmontop as a fighting type`,
 
 
 
 ["Houndoom4"]:
 `Sunny Day:
-	NA (Sunny Day is "move power other" and so cannot hallucinate a non-sun weather)`,
+	NA
+	
+	Never broken, Sunny Day (move power other) causes sun hallucination`,
 
 
 
 ["Huntail2"]:
 `Rain Dance:
-	If Body Slam is the strongest move AND user is faster AND user HP >= 40%, score +1 (if body slam is not strongest move; it hallucinates rain)`,
+	If the most powerful move is Body Slam:
+		If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Body Slam (as move most powerful) will hallucinate sandstorm, Body Slam (as move not most powerful) will hallucinate rain`,
 
 
 
 ["Jolteon2"]:
 `Dig:
-	NA (Roar is "move power other" and so can never hallucinate sand/hail)`,
+	NA
+	
+	Never broken, Roar (move power other) causes sun hallucination, which is not checked for in Dig Expert AI`,
 
 
 
 ["Jumpluff1"]:
 `Synthesis:
-	NA (Synthesis causes "move power other" which hallucinates sun and does not affect Synthesis)`,
+	
+	Never broken, Synthesis (move power other) causes sun hallucination`,
 
 
 
 ["Kabutops1"]:
 `Dig:
-	NA (while knock off can hallucinate sand, the sand type check for dig is bugged to check ice, and kabutops is not ice)`,
+	NA
+	
+	Never broken, Knock Off (as move most powerful) can cause the AI to hallucinate sandstorm, this does not impact Kabutops as a rock/water type`,
 
 
 
 ["Lanturn3"]:
 `Rain Dance:
-	If the user is faster, and hp >= 40: score +1 (Rain Dance forces "move power other", which affects the "if enemy is slower" part of rain dance check to hallucinate sun)`,
+	If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Rain Dance (move power other) causes sun hallucination`,
 
 
 
 ["Lapras6"]:
 `Rain Dance:
-	If Blizzard is the strongest move AND user is faster AND hp >= 40%, score +1 (Blizzard as strongest move hallucinates sandstorm which affects the "if enemy is slower" part of the rain dance check)`,
+	If the most powerful move is Blizzard:
+		If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Blizzard (as move most powerful) will hallucinate sandstorm, Blizzard (as move not most powerful) will hallucinate rain`,
 
 
 
 ["Larvitar1"]:
 `Dig:
-	NA (Dragon Dance is "move power other" and so cannot hallucinate sand/hail)`,
+	NA
+	
+	Never broken, Dragon Dance (move power other) causes sun hallucination, which is not checked for in Dig Expert AI`,
 
 
 
 ["Lotad1"]:
 `Rain Dance:
-	If Mega Drain is strongest move AND user is faster AND hp >= 40; score +1
+	If the most powerful move is Mega Drain:
+		If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Mega Drain (as move most powerful) will hallucinate sandstorm, Mega Drain (as move not most powerful) will hallucinate rain
+
 Sunny Day:
-	If user is faster and hp >=40; score +1 (mega drain will always hallucinate rain or sand, but if user is slower then rain dance will fix the func result when checking the ability)`,
+	If the user will move before the foe, and the user's HP is over 39%:
+		Score +1
+	
+	If the user will move after the foe, the ability check within Rain Dance expert AI will "fix" the AI.  Otherwise, Mega Drain (as move most powerful) will hallucinate sandstorm, Mega Drain (as move not most powerful) will hallucinate rain`,
 
 
 
 ["Ludicolo1"]:
 `Rain Dance:
-	NA (The bug technically affects ludicolo but since it must be rain dish OR swift swim, it always gets +1 anyway)`,
+	NA
+	
+	No change, Swift Swim, or Rain Dish will lead to Score +1 in any case`,
 
 
 
 ["Ludicolo3"]:
 `Rain Dance:
-	NA (The bug technically affects ludicolo but since it must be rain dish OR swift swim, it always gets +1 anyway)`,
+	NA
+	
+	No change, Swift Swim, or Rain Dish will lead to Score +1 in any case`,
 
 
 
 ["Ludicolo4"]:
 `Rain Dance:
-	NA (The bug technically affects ludicolo but since it must be rain dish OR swift swim, it always gets +1 anyway)`,
+	NA
+
+	No change, Swift Swim, or Rain Dish will lead to Score +1 in any case`,
 
 
 
 ["Lunatone1"]:
 `Sandstorm:
-	NA (No Sandstorm expert ai)`,
+	NA
+	
+	Never broken, Sandstorm does not have expert AI`,
 
 
 
 ["Luvdisc1"]:
 `Dive:
 	NA
-Rain Dance: 
-	If user is faster AND hp >= 40; score +1 (rain dance will always hallucinate sun)`,
+	
+	Never broken, Rain Dance (move power other) causes sun hallucination, which is not checked for in Dive Expert AI
+
+Rain Dance:
+	If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Rain Dance (move power other) causes sun hallucination`,
 
 
 
 ["Magcargo1"]:
 `Sandstorm:
-	NA (no Sandstorm expert ai)`,
+	NA
+	
+	Never broken, Sandstorm does not have Expert AI`,
 
 
 
 ["Magneton2"]:
 `Rain Dance:
-	If user is faster and hp >= 40%; score +1 (metal sound will hallucinate sun)`,
+	If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Metal Sound (move power other) causes sun hallucination`,
 
 
 
 ["Manectric2"]:
 `Rain Dance:
-	If user is faster and hp >= 40%; score +1 (roar will hallucinate sun)`,
+	If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Roar (move power other) causes sun hallucination`,
 
 
 
 ["Mantine1"]:
 `Rain Dance:
-	If Icy wind is strongest move AND user is faster AND hp >= 40%; score +1 (icy wind must be strongest move to hallucinate sandstorm)`,
+	If the most powerful move is Icy Wind:
+		If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Icy Wind (as move most powerful) will hallucinate sandstorm, Icy Wind (as move not most powerful) will hallucinate rain`,
 
 
 
 ["Mantine2"]:
 `Rain Dance:
-	If user is faster and hp >= 40%; score +1 (Confuse ray will hallucinate sun)`,
+	If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Confuse Ray (move power other) causes sun hallucination`,
 
 
 
 ["Marill1"]:
 `Rain Dance:
-	If return is strongest move AND user is faster AND hp >= 40%; score +1 (return must be strongest move to hallucinate sandstorm)`,
+	If the most powerful move is Return:
+		If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Return (as move most powerful) will hallucinate sandstorm, Return (as move not most powerful) will hallucinate rain`,
 
 
 
 ["Meganium1"]:
 `Sunny Day:
-	NA (Synthesis hallucinates sun, no change)
+	NA
+	
+	Never broken, Synthesis (move power other) causes sun hallucination
+
 Synthesis:
-	If enemy type1 is NOT a special type and type2 is fighting, flying or poison: score -2. todo; check if monotype hits this also`,
+	If the foe's first type is physical, and the second type is fighting, flying or poison:
+		Score -2
+	
+	Light Screen Expert AI, checking the foe's typing causes the hallucination of rain, sandstorm, or hail`,
 
 
 
 ["Moltres3"]:
 `Sunny Day:
-	NA (Rest hallucinates sun)`,
+	NA
+	
+	Never broken, Rest (move power other) causes sun hallucination`,
 
 
 
 ["Moltres5"]:
 `Sunny Day:
-	if user hp >= 40%; score +1 (facade will hallucinate rain or sand always)`,
+	If the user's HP is over 39%:
+		Score + 1
+	
+	Return (as move most powerful) will hallucinate sandstorm, Return (as move not most powerful) will hallucinate rain`,
 
 
 
 ["Murkrow1"]:
 `Fly:
-	NA (taunt never hallucinates hail/sand)`,
+	NA
+	
+	Never broken, Taunt (move power other) causes sun hallucination, which is not checked for in Fly Expert AI`,
 
 
 
 ["Nincada1"]:
 `Dig:
-	NA (protect never hallucinates hail/sand)`,
+	NA
+	
+	Never broken, Protect (move power other) causes sun hallucination, which is not checked for in Dig Expert AI`,
 
 
 
 ["Ninetales2"]:
 `Sunny Day:
-	NA (Sunny Day is "move power other" and so cannot hallucinate a non-sun weather)`,
+	NA
+	
+	Never broken, Sunny Day (move power other) causes sun hallucination`,
 
 
 
 ["Ninjask1"]:
 `Dig:
-	NA (Although dig can hallucinate sand if strongest move; ninjask is not ice type (the sand check is bugged to check ice))`,
+	NA
+	
+	Never broken, Dig (as move most powerful) can cause the AI to hallucinate sandstorm, this does not impact Ninjask as a bug/flying type`,
 
 
 
 ["Nosepass1"]:
 `Sandstorm:
-	NA (sandstorm does not have expert AI)`,
+	NA
+	
+	Never broken, Sandstorm does not have Expert AI`,
 
 
 
 ["Numel1"]:
 `Sandstorm:
-	NA (sandstorm does not have expert AI)`,
+	NA
+	
+	Never broken, Sandstorm does not have Expert AI`,
 
 
 
 ["Oddish1"]:
 `Moonlight:
-	NA (moonlight is "move power other" and so never hallucinates non-sun weather)`,
+	NA
+	
+	Never broken, Moonlight (move power other) causes sun hallucination`,
 
 
 
 ["Omastar2"]:
 `Rain Dance:
-	if user is faster AND hp >= 40%; score +1 (Protect will hallucinate sun)`,
+	If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Protect (move power other) causes sun hallucination`,
 
 
 
 ["Onix1"]:
 `Sandstorm:
-	NA (sandstorm does not have expert AI)`,
+	NA
+	
+	Never broken, Sandstorm does not have Expert AI`,
 
 
 
 ["Parasect2"]:
 `Dig:
-	NA (Double Team is "move power other" and so cannot hallucinate sandstorm/hail)`,
+	NA
+	
+	Never broken, Double Team (move power other) causes sun hallucination, which is not checked for in Dig Expert AI`,
 
 
 
 ["Phanpy1"]:
 `Sandstorm:
-	NA (sandstorm does not have expert AI)`,
+	NA
+	
+	Never broken, Sandstorm does not have Expert AI`,
 
 
 
 ["Piloswine1"]:
 `Dig:
-	NA (lightscreen hallucinates sun)
+	NA
+	
+	Never broken, Light Screen (move power other) causes sun hallucination, which is not checked for in Dig Expert AI
+
 Hail:
-	If user HP >= 40%; score +1 (light screen hallucinates sun)`,
+	If user's HP is over 39%:
+		Score +1
+	
+	Light Screen (move power other) causes sun hallucination`,
 
 
 
 ["Politoed1"]:
 `Dive & Dig:
-	NA (swagger cannot hallucinate sand/hail)`,
+	NA
+
+	Never broken, Swagger (move power other) causes sun hallucination, which is not checked for in Dive/Dig Expert AI`,
 
 
 
 ["Poliwag1"]:
 `Rain Dance:
-	if user is faster AND hp >= 40%; score +1 (Rain dance will hallucinate sun)`,
+	If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Rain Dance (move power other) causes sun hallucination`,
 
 
 
 ["Poliwhirl1"]:
 `Rain Dance:
-	if user is faster AND hp >= 40%; score +1 (Rain dance will hallucinate sun)`,
+	If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Rain Dance (move power other) causes sun hallucination`,
 
 
 
 ["Poliwrath1"]:
 `Dig:
-	NA (bubblebeam can hallucinate sand but poliwrath is not ice type)`,
+	NA
+	
+	Never broken, BubbleBeam (as move most powerful) can cause the AI to hallucinate sandstorm, this does not impact Poliwrath as a water/fighting type`,
 
 
 
 ["Ponyta1"]:
 `Bounce:
-	NA (Tail Whip is "move power other" and so cannot hallucinate sandstorm/hail)`,
+	NA
+	
+	Never broken, Tail Whip (move power other) causes sun hallucination, which is not checked for in Bounce Expert AI`,
 
 
 
 ["Porygon22"]:
 `Sunny Day:
-	NA (Recover will hallucinate sun)`,
+	NA
+	
+	Never broken, Recover (move power other) causes sun hallucination`,
 
 
 
 ["Pupitar1"]:
 `Sandstorm:
-	NA (sandstorm does not have expert AI)
+	NA
+	
+	Never broken, Sandstorm does not have Expert AI
+
 Dig:
-	NA (sandstorm cannot hallucinate sand/hail)`,
+	NA
+	
+	Never broken, Sandstorm (move power other) causes sun hallucination, which is not checked for in Dig Expert AI`,
 
 
 
 ["Raichu3"]:
 `Rain Dance:
-	if user is faster AND hp >= 40%; score +1 (Attract will hallucinate sun)`,
+	If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Attract (move power other) causes sun hallucination`,
 
 
 
 ["Raikou2"]:
 `Rain Dance:
-	if user is faster AND hp >= 40%; score +1 (Reflect will hallucinate sun)`,
+	If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Reflect (move power other) causes sun hallucination`,
 
 
 
 ["Rapidash2"]:
 `Bounce:
-	NA (attract can never hallucinate sand/hail)`,
+	NA
+	
+	Never broken, Attract (move power other) causes sun hallucination, which is not checked for in Bounce Expert AI`,
 
 
 
 ["Rapidash3"]:
 `Sunny Day:
-	NA (hypnosis will hallucinate sun)`,
+	NA
+	
+	Never broken, Hypnosis (move power other) causes sun hallucination`,
 
 
 
 ["Regice2"]:
 `Rain Dance:
-	if brick break is strongest move AND user is faster AND hp >= 40%; score +1 (brick break must be strongest move to hallucinate sand)`,
+	If the most powerful move is Brick Break:
+		If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Brick Break (as move most powerful) will hallucinate sandstorm, Brick Break (as move not most powerful) will hallucinate rain`,
 
 
 
 ["Regice4"]:
 `Hail:
-	If user HP >= 40%; score +1 (thunder wave will hallucinate sun)`,
+	If user's HP is over 39%:
+		Score +1
+	
+	Thunder Wave (move power other) causes sun hallucination`,
 
 
 
 ["Rhyhorn1"]:
 `Dig:
-	NA (Roar can never hallucinate sand/hail)`,
+	NA
+	
+	Never broken, Roar (move power other) causes sun hallucination, which is not checked for in Dig Expert AI`,
 
 
 
 ["Roselia2"]:
 `Synthesis:
-	NA (Synthesis can never hallucinate non-sun weather)`,
+	NA
+
+	Never broken, Synthesis (move power other) causes sun hallucination`,
 
 
 
 ["Sandshrew1"]:
-`Sandstorm:
-	Sandstorm: NA (sandstorm does not have expert AI)
-	NA (sand-attack cannot hallucinate sand/hail)`,
+`Dig:
+	NA
+	
+	Never broken, Roar (move power other) causes sun hallucination, which is not checked for in Dig Expert AI
+
+Sandstorm:
+	NA
+	
+	Never broken, Sandstorm does not have Expert AI`,
 
 
 
 ["Sandslash1"]:
 `Sandstorm:
-	NA (sandstorm does not have expert AI)`,
+	NA
+	
+	Never broken, Sandstorm does not have Expert AI`,
 
 
 
 ["Sandslash2"]:
 `Sandstorm:
-	NA (sandstorm does not have expert AI)`,
+	NA
+	
+	Never broken, Sandstorm does not have Expert AI`,
 
 
 
 ["Seadra1"]:
 `Rain Dance:
-	if user is faster AND hp >= 40%; score +1 (Rain dance will hallucinate sun)`,
+	If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Rain Dance (move power other) causes sun hallucination`,
 
 
 
 ["Sealeo1"]:
 `Hail:
-	if user hp >= 40%; score +1 (rest hallucinates sun)`,
+	If user's HP is over 39%:
+		Score +1
+	
+	Rest (move power other) causes sun hallucination`,
 
 
 
 ["Sealeo2"]:
 `Hail:
-	if user is faster AND hp >= 40%; score +1 (Hail will hallucinate sun)`,
+	If user's HP is over 39%:
+		Score +1
+	
+	Hail (move power other) causes sun hallucination`,
 
 
 
 ["Seel1"]:
 `Dive:
-	NA (Fake out cant hallucinate hail and Seel isnt a "sandstorm" type)`,
+	NA
+	
+	Never broken, Fake Out (as move most powerful) can cause the AI to hallucinate sandstorm, this does not impact Seel as a water type`,
 
 
 
 ["Shiftry2"]:
 `Dig:
-	NA (Rest can't hallucinate sand/hail)`,
+	NA
+	
+	Never broken, Rest (move power other) causes sun hallucination, which is not checked for in Dig Expert AI`,
 
 
 
 ["Shiftry3"]:
 `Sunny Day & Synthesis:
-	NA (Synthesis hallucinates sun; which does not impact Sunny day or synthesis)`,
+	NA
+	
+	Never broken, Synthesis (move power other) causes sun hallucination`,
 
 
 
 ["Shuckle2"]:
 `Sandstorm:
-	NA (sandstorm does not have expert AI)
+	NA
+	
+	Never broken, Sandstorm does not have Expert AI
+
 Dig:
-	NA (double team cannot hallucinate sand/hail)`,
+	NA
+	
+	Never broken, Double Team (move power other) causes sun hallucination, which is not checked for in Dig Expert AI`,
 
 
 
 ["ShuckleLS"]:
 `Sandstorm:
-	NA (sandstorm does not have expert AI)`,
+	NA
+	
+	Never broken, Sandstorm does not have Expert AI`,
 
 
 
 ["Skarmory3"]:
 `Fly:
-	NA (Fly activates sand hallucination, but fly is bugged to lookup ice type in sand anyway, and so skarm isnt affected)`,
+	NA
+	
+	Never broken, Fly (move most powerful) causes the AI to hallucinate sandstorm, this does not impact Skarmory as a steel/flying type`,
 
 
 
 ["Skiploom1"]:
 `Synthesis:
-	NA (Synthesis hallucinates sun; which does not impact synthesis)`,
+	NA
+
+	Never broken, Synthesis (move power other) causes sun hallucination`,
 
 
 
 ["Slowbro1"]:
 `Rain Dance:
-	If Ice Punch is strongest move AND user is faster AND hp >= 40%; score +1 (Ice Punch must be strongest move to hallucinate sandstorm)`,
+	If the most powerful move is Ice Punch:
+		If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Ice Punch (as move most powerful) will hallucinate sandstorm, Ice Punch (as move not most powerful) will hallucinate rain`,
 
 
 
 ["Solrock1"]:
 `Sandstorm:
-	NA (sandstorm does not have expert AI)`,
+	NA
+	
+	Never broken, Sandstorm does not have Expert AI`,
 
 
 
 ["Spheal1"]:
 `Hail:
-	if user hp >= 40%; score +1 (mud-slap will always hallucinate rain or sand)`,
+	If the user will move before the foe, and the user's HP is over 39%:
+		Score + 1
+	
+	Mud-Slap (as move most powerful) will hallucinate sandstorm, Mud-Slap (as move not most powerful) will hallucinate rain`,
 
 
 
 ["Spoink1"]:
 `Bounce:
-	NA (confuse ray will hallucinate sun)`,
+	NA
+	
+	Never broken, Confuse Ray (move power other) causes sun hallucination, which is not checked for in Bounce Expert AI`,
 
 
 
 ["Starmie2"]:
 `Rain Dance:
-	if user is faster AND hp >= 40%; score +1 (recover will hallucinate sun)`,
+	If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Recover (move power other) causes sun hallucination`,
 
 
 
 ["Steelix2"]:
 `Sandstorm:
-	NA (sandstorm does not have expert AI)`,
+	NA
+	
+	Never broken, Sandstorm does not have Expert AI`,
 
 
 
 ["Sudowoodo1"]:
 `Sandstorm:
-	NA (sandstorm does not have expert AI)`,
+	NA
+	
+	Never broken, Sandstorm does not have Expert AI`,
 
 
 
 ["Suicune2"]:
 `Dive:
-	NA (protect never hallucinates hail/sand)`,
+	NA
+
+	Never broken, Protect (move power other) causes sun hallucination, which is not checked for in Dive Expert AI`,
 
 
 
 ["Suicune3"]:
 `Rain Dance:
-	if user is faster AND hp >= 40%; score +1 (Roar will hallucinate sun)`,
+	If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Roar (move power other) causes sun hallucination`,
 
 
 
 ["Sunkern1"]:
 `Sunny Day:
-	NA (sun hallucination does not matter)`,
+	NA
+	
+	Never broken, Light Screen (move power other) causes sun hallucination`,
 
 
 
 ["Surskit1"]:
 `Rain Dance:
-	if quick attack is strongest move AND user is faster AND hp >= 40%; score +1 (QA must be strongest move to hallucinate sandstorm)`,
+	If the most powerful move is Quick Attack:
+		If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Quick Attack (as move most powerful) will hallucinate sandstorm, Quick Attack (as move not most powerful) will hallucinate rain`,
 
 
 
 ["Swellow1"]:
 `Fly:
-	NA (while quick attack can hallucinate sand, swellow is not ice type)`,
+	NA
+	
+	Never broken, Quick Attack (as move most powerful) causes the AI to hallucinate sandstorm, this does not impact Swellow as a normal/flying type`,
 
 
 
 ["Swinub1"]:
 `Dig:
-	NA (endure will never hallucinate sand/hail)`,
+	NA
+	
+	Never broken, Endure (move power other) causes sun hallucination, which is not checked for in Dig Expert AI`,
 
 
 
 ["Taillow1"]:
 `Fly:
-	NA (focus energy will never hallucinate sand/hail)`,
+	NA
+	
+	Never broken, Focus (move power other) causes sun hallucination, which is not checked for in Fly Expert AI`,
 
 
 
 ["Trapinch1"]:
 `Sandstorm:
-	NA (sandstorm does not have expert AI)
+	NA
+	
+	Never broken, Sandstorm does not have Expert AI
+
 Dig:
-	NA (sand-attack cannot hallucinate sand/hail)`,
+	NA
+	
+	Never broken, Sand-Attack (move power other) causes sun hallucination, which is not checked for in Dig Expert AI`,
 
 
 
 ["Tropius2"]:
 `Sunny Day:
-	If HP >= 40%; score +1 (Body slam will always hallucinate rain or sand)
+	If the user's HP is over 39%:
+		Score + 1
+	
+	Body Slam (as move most powerful) will hallucinate sandstorm, Body Slam (as move not most powerful) will hallucinate rain
+
 Synthesis:
-	score -2 (body slam will always hallucinate rain or sand)`,
+	Score -2 
+	
+	Body Slam (as move most powerful) will hallucinate sandstorm, Body Slam (as move not most powerful) will hallucinate rain`,
 
 
 
 ["Typhlosion1"]:
 `Sunny Day:
-	NA (Roar will always hallucinate sun)`,
+	NA
+	
+	Never broken, Roar (move power other) causes sun hallucination`,
 
 
 
 ["Venusaur1"]:
 `Sunny Day & Synthesis:
-	NA (sleep powder will always hallucinate sun)`,
+	NA
+	
+	Never broken, Sleep Powder (move power other) causes sun hallucination`,
 
 
 
 ["Venusaur4"]:
 `Sunny Day:
-	if user HP >= 40%; score +1 (Earthquake will always hallucinate rain or sand)`,
+	If the user's HP is over 39%:
+		Score + 1
+	
+	Earthquake (as move most powerful) will hallucinate sandstorm, Earthquake (as move not most powerful) will hallucinate rain`,
 
 
 
 ["Vibrava1"]:
 `Dig:
-	NA (while rock tomb can hallucinate sandstorm; the dig check looks up ice type due to a bug, and vibrava is not ice type)`,
+	NA
+	
+	Never broken, Rock Tomb (as move most powerful) causes the AI to hallucinate sandstorm, this does not impact Vibrava as a ground/dragon type`,
 
 
 
 ["Victreebel1"]:
 `Synthesis:
-	NA (synthesis will hallucinate sun, which has no effect)`,
+	NA
+	
+	Never broken, Synthesis (move power other) causes sun hallucination`,
 
 
 
 ["Victreebel4"]:
 `Synthesis:
-	NA (synthesis will hallucinate sun, which has no effect)`,
+	NA
+	
+	Never broken, Synthesis (move power other) causes sun hallucination`,
 
 
 
 ["Vileplume1"]:
 `Moonlight:
-	NA (aromatherapy will hallucinate sun, which has no effect)`,
+	NA
+	
+	Never broken, Aromatherapy (move power other) causes sun hallucination`,
 
 
 
 ["Vileplume4"]:
 `Sunny Day & Synthesis:
-	NA (synthesis will hallucinate sun, which has no effect)`,
+	NA
+	
+	Never broken, Synthesis (move power other) causes sun hallucination`,
 
 
 
 ["Walrein1"]:
 `Hail:
-	if user HP >= 40%; score +1 (protect will hallucinate sun)`,
+	If user's HP is over 39%:
+		Score +1
+	
+	Protect (move power other) causes sun hallucination`,
 
 
 
 ["Wingull1"]:
 `Fly:
-	NA (steel wing can hallucinate sand, but wingull is not an ice type for the check)`,
+	NA
+	
+	Never broken, Steel Wing (as move most powerful) causes the AI to hallucinate sandstorm, this does not impact Wingull as a water/flying type`,
 
 
 
 ["Wooper1"]:
 `Dig:
-	NA (rain dance hallucinates sun)
+	NA
+	
+	Never broken, Rain Dance (move power other) causes sun hallucination, which is not checked for in Dig Expert AI
 
 Rain Dance:
-	If user faster AND user HP >= 40%; score +1 (rain dance hallucinates sun)`,
+	If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Rain Dance (move power other) causes sun hallucination`,
 
 
 
 ["Xatu2"]:
 `Fly:
-	NA (attract can never hallucinate sand/hail)`,
+	NA
+	
+	Never broken, Attract (move power other) causes sun hallucination, which is not checked for in Fly Expert AI`,
 
 
 
 ["Zapdos2"]:
 `Rain Dance:
-	if user is faster AND hp >= 40%; score +1 (double team will hallucinate sun)`,
+	If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Double Team (move power other) causes sun hallucination`,
 
 
 
 ["Zapdos6"]:
 `Rain Dance:
-	if double-edge is strongest move AND user is faster AND hp >= 40%; score +1 (double edge must be most powerful to hallucinate sandstorm)`,
+	If the most powerful move is Double-Edge:
+		If the user will move before the foe, and the user's HP is over 39%:
+			Score + 1
+	
+	Double-Edge (as move most powerful) will hallucinate sandstorm, Double-Edge (as move not most powerful) will hallucinate rain`,
 
 
 
