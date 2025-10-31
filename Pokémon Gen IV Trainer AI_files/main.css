@@ -125,6 +125,13 @@ footer {
   --body-background-color: #b7eeb9;
 }
 
+#risky-ai-container {
+  --border-color: #29bc89;
+  --header-background-color: #6ef7d0;
+  --header-color: #0c3a36;
+  --body-background-color: #a6e4e7;
+}
+
 #double-enemy-ai-container {
   --border-color: #464b62;
   --header-background-color: #82889b;
