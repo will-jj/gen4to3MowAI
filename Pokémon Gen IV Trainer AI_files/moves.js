@@ -6,7 +6,7 @@ const DamageFormulaType = Object.freeze({
 
 const moves = {
 	"Pound"         : { name: "Pound",         battleEffect:  null,                         type: "Normal"   , damageFormula: DamageFormulaType.STANDARD_DAMAGE     }, 
-	"Karate Chop"   : { name: "Karate Chop",   battleEffect: "HighCritical",                type: "Fighting" , damageFormula: DamageFormulaType.NO_DAMAGE           }, 
+	"Karate Chop"   : { name: "Karate Chop",   battleEffect: "HighCritical",                type: "Fighting" , damageFormula: DamageFormulaType.STANDARD_DAMAGE     }, 
 	"DoubleSlap"    : { name: "DoubleSlap",    battleEffect: "MultiHit",                    type: "Normal"   , damageFormula: DamageFormulaType.STANDARD_DAMAGE     }, 
 	"Comet Punch"   : { name: "Comet Punch",   battleEffect: "MultiHit",                    type: "Normal"   , damageFormula: DamageFormulaType.STANDARD_DAMAGE     }, 
 	"Mega Punch"    : { name: "Mega Punch",    battleEffect:  null,                         type: "Normal"   , damageFormula: DamageFormulaType.STANDARD_DAMAGE     }, 
