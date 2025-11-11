@@ -885,7 +885,7 @@ Dig:
 `Fly:
 	NA
 	
-	Never broken, Fly (move most powerful) causes the AI to hallucinate sandstorm, this does not impact Skarmory as a steel/flying type`,
+	Never broken, Curse checking the first type (Steel) will set the value to 8 which does not correspond to any weather`,
 
 
 
