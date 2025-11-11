@@ -34,6 +34,7 @@ function getBasicAI(moveData) {
 					addCheckIfNegativeTypes(moveData.type, resultAiChecks);
 					break;
 			}
+			break;
 	}
 
 	// Omitted: Hyper Voice, Perish Song
