@@ -3,8 +3,28 @@ function getBasicAI(moveData) {
 
 	switch (moveData.damageFormula) {
 		case DamageFormulaType.STANDARD_DAMAGE:
-			addImmunityCheck(moveData.type, resultAiChecks);
-			addCheckIfNegativeTypes(moveData.type, resultAiChecks);
+			switch (moveData.battleEffect) {
+				// Verbose listing of MOVE_POWER_OTHER moves with standard damage
+				case "DreamEater":
+				case "RazorWind":
+				case "SkyAttack":
+				case "MustRecharge":
+				case "SkullBash":
+				case "Solarbeam":
+				case "SpitUp":
+				case "FocusPunch":
+				case "Superpower":
+				case "HighHpHighDamage":
+				case "DamageAndUserSpattackDown2":
+				case "Selfdestruction":
+					// by default no basic AI, unless added explicitly below
+					break;
+
+				default:
+					addImmunityCheck(moveData.type, resultAiChecks);
+					addCheckIfNegativeTypes(moveData.type, resultAiChecks);
+					break;
+			}
 			break;
 
 		case DamageFormulaType.NON_STANDARD_DAMAGE:
@@ -57,6 +77,9 @@ function getBasicAI(moveData) {
 			break;
 
 		case "Ohko":
+		case "Selfdestruction":
+		case "DreamEater":
+		case "SpitUp":
 			addImmunityCheck(moveData.type, resultAiChecks);
 			break;
 
