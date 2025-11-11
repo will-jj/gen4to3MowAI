@@ -37,6 +37,7 @@ function getBasicAI(moveData) {
 		case "Bide":
 		case "RazorWind":
 		case "SuperFang":
+		case "MustRecharge":
 		case "DamageIsLevel":
 		case "Psywave":
 		case "Counter":
