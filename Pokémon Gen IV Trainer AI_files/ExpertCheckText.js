@@ -1015,7 +1015,7 @@ Otherwise:
 `If the user's HP is under 70%, or the target's HP is under 71%:
 	60.9% (156/256) chance of score -1 and continue
 
-If the target's accuracy is reduced to -2 or lower:
+If the user's accuracy is reduced to -2 or lower:
 	68.8% (176/256) chance of score -2 and continue
 
 If the target is badly poisoned:
