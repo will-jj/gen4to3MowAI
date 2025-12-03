@@ -369,7 +369,7 @@ If the user's HP is under 71%:
 
 
 ["InflictSleep"]:
-`If the user also has the move Nightmare or Dream Eater:
+`If the target has the move Nightmare or Dream Eater:
 	50% (128/256) chance of score +1 and terminate`,
 
 
