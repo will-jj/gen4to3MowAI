@@ -300,7 +300,7 @@ const moves = {
 	"Camouflage"    : { name: "Camouflage",    battleEffect: "Camouflage",                  type:  null      , damageFormula: DamageFormulaType.NO_DAMAGE           }, 
 	"Tail Glow"     : { name: "Tail Glow",     battleEffect: "UserSpattackUp2",             type:  null      , damageFormula: DamageFormulaType.NO_DAMAGE           }, 
 	"Luster Purge"  : { name: "Luster Purge",  battleEffect:  null,                         type: "Psychic"  , damageFormula: DamageFormulaType.STANDARD_DAMAGE     }, 
-	"Mist Ball"     : { name: "Mist Ball",     battleEffect:  null,                         type: "Psychic"  , damageFormula: DamageFormulaType.NO_DAMAGE           }, 
+	"Mist Ball"     : { name: "Mist Ball",     battleEffect:  null,                         type: "Psychic"  , damageFormula: DamageFormulaType.STANDARD_DAMAGE     }, 
 	"FeatherDance"  : { name: "FeatherDance",  battleEffect: "TargetAttackDown2",           type:  null      , damageFormula: DamageFormulaType.NO_DAMAGE           }, 
 	"Teeter Dance"  : { name: "Teeter Dance",  battleEffect: "TeeterDance",                 type:  null      , damageFormula: DamageFormulaType.NO_DAMAGE           }, 
 	"Blaze Kick"    : { name: "Blaze Kick",    battleEffect: "BlazeKick",                   type: "Fire"     , damageFormula: DamageFormulaType.STANDARD_DAMAGE     }, 
