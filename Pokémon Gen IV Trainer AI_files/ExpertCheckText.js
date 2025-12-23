@@ -794,7 +794,7 @@ If the either of the foe's types is Special:
 
 
 ["Refresh"]:
-`If the user's HP is under 50%:
+`If the target's HP is under 50%:
 	Score -1 and terminate`,
 
 
