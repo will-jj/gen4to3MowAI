@@ -541,7 +541,7 @@ Synthesis:
 	If the user's HP is over 39%:
 		Score + 1
 	
-	Return (as move most powerful) will hallucinate sandstorm, Return (as move not most powerful) will hallucinate rain`,
+	Facade (as move most powerful) will hallucinate sandstorm, Facade (as move not most powerful) will hallucinate rain`,
 
 
 
