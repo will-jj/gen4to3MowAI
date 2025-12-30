@@ -198,7 +198,9 @@ function getBasicAI(moveData) {
 	}
 
 	// Main effect check
-	if (moveData.battleEffect !== null) {
+	if (moveData.battleEffect === "DreamEater") {
+		resultAiChecks.unshift(moveData.battleEffect);
+	} else if (moveData.battleEffect !== null) {
 		resultAiChecks.push(moveData.battleEffect);
 	}
 
