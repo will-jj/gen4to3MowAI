@@ -251,7 +251,7 @@ Otherwise:
 If the target is infatuated or confused, and the user is behind a substitute:
 	60.9% (156/256) chance of score +5 and terminate
 
-If this is the user's first turn in battle:
+If this is not the first turn the user has been in battle:
 	60.9% (156/256) chance of score +1 and terminate`,
 
 
