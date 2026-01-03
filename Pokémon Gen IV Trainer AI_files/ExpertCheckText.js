@@ -845,7 +845,7 @@ If the target's evasion is boosted to +3 or more:
 
 If the user's HP is under 80%, or the user will attack after the target:
 	If the user's HP is over 50%:
-		80% (206/256) chance of score -1 and terminate
+		80.5% (206/256) chance of score -1 and terminate
 	
 	If the user's HP is under 51%:
 		50% (128/256) chance of score +1 and continue
