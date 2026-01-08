@@ -23,7 +23,7 @@ const double_EnemyCheckText = {
 
 
 ["Check_ElectricAttack"]:
-`If the target's ally's ability is certainly Lightningrod:
+`If Lightningrod is a possible ability for the target's ally:
 	If the target's ally is Ground type:
 		Score -10 and terminate
 	Else:
