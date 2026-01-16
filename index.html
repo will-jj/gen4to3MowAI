@@ -782,6 +782,7 @@
 				formEvent.preventDefault();
 
 				let move = select.value;
+				let rawHtmlFlag = true;
 				if (!Object.hasOwn(moves, move)) {
 					// Reject invalid move
 					return false;
@@ -800,7 +801,7 @@
 						basicMoveInfoBody.remove()
 					}
 					else {
-						let resultsMoveInfoFormatted = prepareChecks(resultsMoveInfo, basicMoveInfoCheckText);
+						let resultsMoveInfoFormatted = prepareChecks(resultsMoveInfo, basicMoveInfoCheckText, rawHtmlFlag);
 						basicMoveInfoBody.replaceChildren(...resultsMoveInfoFormatted);
 						basicBody.prepend(basicMoveInfoBody)
 					}
@@ -819,7 +820,7 @@
 						strongMoveInfoBody.remove()
 					}
 					else {
-						let resultsMoveInfoFormatted = prepareChecks(resultsMoveInfo, strongMoveInfoCheckText);
+						let resultsMoveInfoFormatted = prepareChecks(resultsMoveInfo, strongMoveInfoCheckText,rawHtmlFlag);
 						strongMoveInfoBody.replaceChildren(...resultsMoveInfoFormatted);
 						strongBody.prepend(strongMoveInfoBody)
 					}
@@ -838,7 +839,7 @@
 						expertMoveInfoBody.remove()
 					}
 					else {
-						let resultsMoveInfoFormatted = prepareChecks(resultsMoveInfo, expertMoveInfoCheckText);
+						let resultsMoveInfoFormatted = prepareChecks(resultsMoveInfo, expertMoveInfoCheckText, rawHtmlFlag);
 						expertMoveInfoBody.replaceChildren(...resultsMoveInfoFormatted);
 						expertBody.prepend(expertMoveInfoBody)
 					}

@@ -1,9 +1,14 @@
-function createTextLine(indentationLevel, line) {
+function createTextLine(indentationLevel, line, rawHtmlFlag=false) {
 	const indentationLevelMultiplier = 4;
 	
 	let textLineNode = document.createElement("div");
 	textLineNode.classList.add("ai-textLine");
-	textLineNode.textContent = line;
+	if (rawHtmlFlag) {
+		textLineNode.innerHTML = line;
+	}
+	else {
+		textLineNode.textContent = line;
+	}
 	
 	textLineNode.style.paddingLeft = `${indentationLevel * indentationLevelMultiplier}ch`;
 	return textLineNode;
@@ -37,7 +42,7 @@ function createSpacer() {
 	return spacerNode;
 }
 
-function prepareChecks(keys, textSource) {
+function prepareChecks(keys, textSource, rawHtmlFlag=false) {
 	let lists = [];
 	let nodes = [];
 	
@@ -62,7 +67,7 @@ function prepareChecks(keys, textSource) {
 				}
 				
 				line = line.trim();
-				let node = createTextLine(indentationLevel, line);
+				let node = createTextLine(indentationLevel, line, rawHtmlFlag);
 				nodes.push(node);
 			}
 		});
