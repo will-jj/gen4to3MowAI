@@ -1,0 +1,2 @@
+const double_AllyMoveInfoCheckText = {
+}
