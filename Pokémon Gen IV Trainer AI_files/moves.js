@@ -277,7 +277,7 @@ const moves = {
 	"Helping Hand"  : { name: "Helping Hand",  battleEffect: "HelpingHand",                 type:  null      , damageFormula: DamageFormulaType.NO_DAMAGE           }, 
 	"Trick"         : { name: "Trick",         battleEffect: "SwitchItems",                 type:  null      , damageFormula: DamageFormulaType.NO_DAMAGE           }, 
 	"Role Play"     : { name: "Role Play",     battleEffect: "RolePlay",                    type:  null      , damageFormula: DamageFormulaType.NO_DAMAGE           }, 
-	"Wish"          : { name: "Wish",          battleEffect: "Wish",                        type:  null      , damageFormula: DamageFormulaType.STANDARD_DAMAGE     }, 
+	"Wish"          : { name: "Wish",          battleEffect: "Wish",                        type:  null      , damageFormula: DamageFormulaType.NO_DAMAGE           }, 
 	"Assist"        : { name: "Assist",        battleEffect: "Assist",                      type:  null      , damageFormula: DamageFormulaType.NO_DAMAGE           }, 
 	"Ingrain"       : { name: "Ingrain",       battleEffect: "Ingrain",                     type:  null      , damageFormula: DamageFormulaType.NO_DAMAGE           }, 
 	"Superpower"    : { name: "Superpower",    battleEffect: "Superpower",                  type: "Fighting" , damageFormula: DamageFormulaType.STANDARD_DAMAGE     }, 
