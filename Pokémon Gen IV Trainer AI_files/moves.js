@@ -272,7 +272,7 @@ const moves = {
 	"SmellingSalt"  : { name: "SmellingSalt",  battleEffect: "SmellingSalt",                type: "Normal"   , damageFormula: DamageFormulaType.STANDARD_DAMAGE     }, 
 	"Follow Me"     : { name: "Follow Me",     battleEffect: "FollowMe",                    type:  null      , damageFormula: DamageFormulaType.NO_DAMAGE           }, 
 	"Nature Power"  : { name: "Nature Power",  battleEffect: "NaturePower",                 type:  null      , damageFormula: DamageFormulaType.NO_DAMAGE           }, 
-	"Charge"        : { name: "Charge",        battleEffect: "Charge",                      type:  null      , damageFormula: DamageFormulaType.NO_DAMAGE           }, 
+	"Charge"        : { name: "Charge",        battleEffect: "Charge",                      type: "Electric" , damageFormula: DamageFormulaType.NO_DAMAGE           }, 
 	"Taunt"         : { name: "Taunt",         battleEffect: "Taunt",                       type:  null      , damageFormula: DamageFormulaType.NO_DAMAGE           }, 
 	"Helping Hand"  : { name: "Helping Hand",  battleEffect: "HelpingHand",                 type:  null      , damageFormula: DamageFormulaType.NO_DAMAGE           }, 
 	"Trick"         : { name: "Trick",         battleEffect: "SwitchItems",                 type:  null      , damageFormula: DamageFormulaType.NO_DAMAGE           }, 
