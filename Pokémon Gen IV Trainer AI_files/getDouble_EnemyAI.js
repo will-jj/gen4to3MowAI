@@ -16,7 +16,6 @@ function getDouble_EnemyAI(moveData) {
 			handled = true;
 			break;
 
-		case "Thunder Wave":
 		case "Charge":
 			resultAiChecks.push("Check_ElectricAttack");
 			handled = true;
